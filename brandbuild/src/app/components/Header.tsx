@@ -29,7 +29,7 @@ const HomePage = () => {
                     <div className="h-[60px] w-[120px]">
                         <Link href="/">
                         <img
-                            src="/assets/brandbuild-logo.png"
+                            src="./assets/new-logo-brandbuild.png"
                             alt="logo"
                             className="h-full w-full object-contain"
                         />

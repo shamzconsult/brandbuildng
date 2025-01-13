@@ -57,7 +57,7 @@ const TestimonialSection = () => {
 
   return (
     <section className="mt-5 flex w-full flex-col items-center p-[5%]">
-      <h3 className="primary-text-color text-3xl font-medium max-md:text-2xl">
+      <h3 className="text-orange-500 text-3xl font-medium max-md:text-2xl">
         What some of our Customers say
       </h3>
 
@@ -114,21 +114,19 @@ const TestimonialSection = () => {
       </div>
 
 
-      <section className="flex justify-center mb-32">
+      <section className="flex justify-center mb-10">
         <div className="container px-4 max-w-screen-xl mx-auto">
           <div className="flex justify-center">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.628886722685!2d7.410345440099051!3d9.097530787948692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e75d053859ca7%3A0xc86b8d69e7f15998!2s2%2032%20Cres%2C%20Gwarinpa%2C%20Abuja%20900108%2C%20Federal%20Capital%20Territory!5e0!3m2!1sen!2sng!4v1732536761850!5m2!1sen!2sng"
-              width="1000"
-              height="600"
-              className="rounded-md"
-              // allowFullScreen=""
+              className="rounded-md md:w-[700px] lg:w-[1000px] h-96 md:h-[600px]"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade" 
             ></iframe>
           </div>
         </div>
       </section>
+
 
 
     </section>

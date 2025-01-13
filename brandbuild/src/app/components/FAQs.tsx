@@ -10,7 +10,7 @@ function FAQs() {
         >
             <summary className="flex cursor-pointer items-center justify-between gap-1.5">
             <h2 className="text-lg font-medium text-gray-900">
-                Lorem ipsum dolor sit amet consectetur adipisicing?
+                What is the purpose of this feature, and how does it work?
             </h2>
 
             <span className="shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3">
@@ -30,9 +30,9 @@ function FAQs() {
             </summary>
 
             <p className="mt-4 leading-relaxed text-gray-700">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias culpa in,
-            recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo officiis explicabo
-            consequuntur distinctio corporis earum similique!
+                This feature is designed to provide an intuitive and user-friendly way to access additional 
+                information. By clicking on the expandable section, users can reveal more content without 
+                leaving the page, enhancing navigation and keeping the experience seamless.
             </p>
         </details>
 
@@ -41,7 +41,7 @@ function FAQs() {
         >
             <summary className="flex cursor-pointer items-center justify-between gap-1.5">
             <h2 className="text-lg font-medium text-gray-900">
-                Lorem ipsum dolor sit amet consectetur adipisicing?
+                What services does your company provide for brand development?
             </h2>
 
             <span className="shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3">
@@ -61,9 +61,10 @@ function FAQs() {
             </summary>
 
             <p className="mt-4 leading-relaxed text-gray-700">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias culpa in,
-            recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo officiis explicabo
-            consequuntur distinctio corporis earum similique!
+                We specialize in building brands from the ground up. Our services include brand strategy, 
+                logo and visual identity design, website development, social media branding, 
+                and content creation. We also offer consulting for digital marketing and brand positioning to 
+                help you make a lasting impact in your industry.
             </p>
         </details>
 
@@ -72,7 +73,7 @@ function FAQs() {
         >
             <summary className="flex cursor-pointer items-center justify-between gap-1.5">
             <h2 className="text-lg font-medium text-gray-900">
-                Lorem ipsum dolor sit amet consectetur adipisicing?
+                 Why should I choose your company over others?
             </h2>
 
             <span className="shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3">
@@ -92,9 +93,10 @@ function FAQs() {
             </summary>
 
             <p className="mt-4 leading-relaxed text-gray-700">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias culpa in,
-            recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo officiis explicabo
-            consequuntur distinctio corporis earum similique!
+                Our company stands out due to our personalized approach and commitment to understanding 
+                your vision. We combine creative excellence with data-driven strategies to deliver measurable 
+                results. With years of experience, a portfolio of successful projects, and a team of passionate 
+                experts, we help brands shine in competitive markets.
             </p>
         </details>
     </div>
