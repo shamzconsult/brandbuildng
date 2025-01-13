@@ -2,8 +2,8 @@ import React from 'react'
 
 function Services() {
   return (
-    <section className="mt-[3%] bg-black">
-    <div className="px-[5%] place-content-center place-items-center mt-12">
+    <section className="bg-black">
+    <div className=" py-5 place-content-center place-items-center">
         <h2 className="text-orange-500 text-4xl font-semibold">OUR SERVICES</h2>
     </div>
 

@@ -18,7 +18,7 @@ function Introduction() {
     <div
         className="flex h-full flex-col gap-[5%] max-md:mt-2 max-md:gap-[3%] max-md:text-center"
     >
-        <h2 className="primary-text-color text-3xl font-medium max-md:text-2xl">
+        <h2 className="text-orange-500 text-3xl font-medium max-md:text-2xl">
             Brandbuild
         </h2>
         <h3 className="text-5xl max-md:text-3xl">Welcomes you</h3>
@@ -41,10 +41,13 @@ function Introduction() {
         </div>
         <a
             href=""
-            className="btn mt-5 transition-transform duration-[0.3s] hover:translate-x-2 max-md:mx-auto gap-4"
+            className=" mt-5 transition-transform duration-[0.3s] hover:translate-x-2 max-md:mx-auto"
         >
-            <span>Learn More</span>
-            <i className="bi bi-arrow-right"></i>
+            <div className='bg-orange-500 inline-block p-3 px-6 text-white rounded-full'>
+                <span>Learn More</span>
+                <i className="bi bi-arrow-right px-2"></i>
+            </div>
+           
         </a>
     </div>
     </section>

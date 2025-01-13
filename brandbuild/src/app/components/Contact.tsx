@@ -10,7 +10,7 @@ function Contact() {
         className="flex h-[350px] w-[350px] overflow-hidden rounded-md max-md:hidden"
     >
         <img
-            src="./assets/images/homepage/restaurant.jpg"
+            src="./assets/images/branded-bag.jpg"
             alt="restaurant"
             className="w-full object-cover"
         />
@@ -48,9 +48,9 @@ function Contact() {
         </section>
 
         <div className="mt-4 flex flex-col gap-2 text-center">
-            <h3 className="text-xl">To book a reservation, call us:</h3>
+            <h3 className="text-xl">To brand your product, call us:</h3>
             <div className="text-3xl text-primary">
-                +123 232 123
+            +234 903 894 0088
             </div>
         </div>
     </div>

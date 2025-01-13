@@ -1,6 +1,7 @@
 "use client"
 
 
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const HomePage = () => {
@@ -26,11 +27,14 @@ const HomePage = () => {
                 <div className="max-w-screen-2xl mx-auto flex items-center justify-between">
                     {/* Logo */}
                     <div className="h-[60px] w-[120px]">
-                    <img
-                        src="/assets/brandbuild-logo.png"
-                        alt="logo"
-                        className="h-full w-full object-contain"
-                    />
+                        <Link href="/">
+                        <img
+                            src="/assets/brandbuild-logo.png"
+                            alt="logo"
+                            className="h-full w-full object-contain"
+                        />
+                        </Link>
+                   
                     </div>
 
                     {/* Navigation Links */}
@@ -62,7 +66,7 @@ const HomePage = () => {
                     {/* Social Media Icons */}
                     <div className="hidden md:flex items-center gap-4">
                     <a
-                        href="https://www.facebook.com/"
+                        href="https://www.facebook.com/brandbuild.ng"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="facebook"
@@ -73,7 +77,7 @@ const HomePage = () => {
                         <i className="bi bi-facebook text-xl"></i>
                     </a>
                     <a
-                        href="https://www.instagram.com/"
+                        href="https://www.instagram.com/brandbuild.ng"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="instagram"
@@ -190,10 +194,9 @@ const HomePage = () => {
                     </p>
                     <div>
                         <a
-                        href="https://5"
-                        target="_blank"
+                        href="#contact"
                         rel="noreferrer"
-                        className="flex text-lg font-bold w-auto rounded-full bg-white p-3 px-[20px] text-black transition-colors duration-[0.3s] hover:bg-primary hover:text-white"
+                        className="flex text-lg font-bold w-auto rounded-full bg-white p-3 px-[20px] text-black transition-colors duration-[0.3s] hover:bg-primary hover:text-orange-500"
                         style={{ maxWidth: "300px" }}
                         >
                         Let us build your brand today!

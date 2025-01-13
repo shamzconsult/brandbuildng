@@ -8,6 +8,8 @@ import Services from "./components/Services";
 import Contact from "./components/Contact";
 import TestimonialSection from "./components/Testimonial";
 import Footer from "./components/Footer";
+import FAQs from "./components/FAQs";
+// import Slider from "./components/Slider";
 
 export default function Home() {
   return (
@@ -22,10 +24,12 @@ export default function Home() {
       <Introduction />
       <Values />
       <About/>
+      {/* <Slider/> */}
       <Statistics />
       <Services/>
       <Contact />
       <TestimonialSection />
+      <FAQs />
       <Footer />
    </div>
   );
