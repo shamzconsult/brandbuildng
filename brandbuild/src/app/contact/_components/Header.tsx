@@ -161,7 +161,7 @@ function Header() {
         </header>
 
         <section
-            className="relative flex h-[60vh] w-full max-w-[100vw] flex-col overflow-hidden max-md:h-[100dvh]"
+            className="relative flex h-[60vh] w-full max-w-[100vw] flex-col overflow-hidden"
             id="hero-section"
             >
                 <img
