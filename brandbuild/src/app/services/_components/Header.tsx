@@ -180,7 +180,7 @@ function Header() {
                     <div
                     className="mt-3 place-content-start gap-4 max-md:gap-2"
                     >
-                    <p
+                    {/* <p
                         className="text-left text-2xl"
                         style={{
                         marginBottom: "26px",
@@ -191,16 +191,14 @@ function Header() {
                         strategies. We blend professionalism with originality, ensuring every
                         brand stands out in the competitive market and resonates deeply with
                         its audience.
-                    </p>
+                    </p> */}
                     <div>
-                        <a
-                        href="#contact"
-                        rel="noreferrer"
+                        <p
                         className="flex text-lg font-bold w-auto rounded-full bg-white p-3 px-[20px] text-black transition-colors duration-[0.3s] hover:bg-primary hover:text-orange-500"
                         style={{ maxWidth: "300px" }}
                         >
                         Let us build your brand today!
-                        </a>
+                        </p>
                     </div>
                     </div>
                 </div>

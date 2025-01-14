@@ -7,7 +7,7 @@ function Services() {
         <h2 className="text-orange-500 text-4xl font-semibold">OUR SERVICES</h2>
     </div>
 
-    <div className="flex w-full place-content-center gap-5 max-md:flex-wrap p-[2%] max-md:px-[5%]">
+    <div className="flex w-full place-content-center gap-5 max-md:flex-wrap p-[4%] max-md:px-[5%]">
         <div className="flex max-w-[650px] flex-col gap-5 overflow-clip md:max-h-[700px]">
             <div className="flex gap-5 max-md:flex-col">
                 <div className="menu-item-container text-center relative h-[450px] w-[80%] cursor-pointer overflow-clip rounded-lg max-md:w-full group">

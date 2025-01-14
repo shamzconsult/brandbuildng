@@ -185,11 +185,9 @@ function Header() {
                             marginBottom: "26px",
                             }}
                         >
-                            Empowering brands to craft distinct identities with unparalleled
-                            creativity, fostering meaningful connections through innovative
-                            strategies. We blend professionalism with originality, ensuring every
-                            brand stands out in the competitive market and resonates deeply with
-                            its audience.
+                            We specialize in crafting unique brand identities, blending creativity with strategic 
+                            innovation. Our mission is to help brands connect meaningfully with their audience and 
+                            stand out in a competitive market.
                         </p>
                         
                     </div>

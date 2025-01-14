@@ -6,7 +6,7 @@ function Content() {
         <div className='md:w-1/2'>
             <div>
                 <img 
-                    src="./assets/images/contact-image.avif" 
+                    src="./assets/images/contact-hero-image.jpg" 
                     alt="" 
                     className=''
                 />
@@ -42,54 +42,49 @@ function Content() {
                     <div className="mx-auto max-w-lg">
                         <form action="#" className="mb-0 mt-6 space-y-4 rounded-lg p-4 h-[500px] shadow-lg sm:p-6 lg:p-8 bg-gray-200">
 
-                        <div>
-                            <label htmlFor="email" className="mb-6">Your Name <span className='text-red-600'>*</span></label>
+                            <div>
+                                <label htmlFor="email" className="mb-6">Your Name <span className='text-red-600'>*</span></label>
 
-                            <div className="relative">
-                            <input
-                                type="text"
-                                className="w-full rounded-lg border-gray-200 mt-6 p-4 pe-12 text-sm shadow-sm"
-                                placeholder="Enter email"
-                            />
-                            
+                                <div className="relative">
+                                <input
+                                    type="text"
+                                    className="w-full rounded-lg border-gray-200 mt-6 p-4 pe-12 text-sm shadow-sm"
+                                    placeholder="Enter email"
+                                />
+                                
+                                </div>
                             </div>
-                        </div>
 
-                        <div>
-                            <label htmlFor="email" className="mb-6">Your Email <span className='text-red-600'>*</span></label>
+                            <div>
+                                <label htmlFor="email" className="mb-6">Your Email <span className='text-red-600'>*</span></label>
 
-                            <div className="relative">
-                            <input
-                                type="email"
-                                className="w-full rounded-lg border-gray-200 mt-6 p-4 pe-12 text-sm shadow-sm"
-                                placeholder="Enter email"
-                            />
+                                <div className="relative">
+                                <input
+                                    type="email"
+                                    className="w-full rounded-lg border-gray-200 mt-6 p-4 pe-12 text-sm shadow-sm"
+                                    placeholder="Enter email"
+                                />
+                                </div>
                             </div>
-                        </div>
                        
-                        <div>
-                        <label htmlFor="OrderNotes" className="block text-sm font-medium text-gray-700"> Order notes </label>
+                            <div>
+                            <label htmlFor="OrderNotes" className="block text-sm font-medium text-gray-700"> Order notes </label>
 
-                        <textarea
-                            id="OrderNotes"
-                            className="mt-2 w-full rounded-lg border-gray-200 align-top shadow-sm sm:text-sm"
-                            // rows="4"
-                            placeholder="Enter any additional order notes..."
-                        ></textarea>
-                        </div>
+                            <textarea
+                                id="OrderNotes"
+                                className="mt-2 w-full h-[100px] rounded-lg border-gray-200 align-top shadow-sm sm:text-sm"
+                                // rows="4"
+                                placeholder="Enter any additional order notes..."
+                            ></textarea>
+                            </div>
 
 
-                        <button
-                            type="submit"
-                            className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
-                        >
-                            Sign in
-                        </button>
-
-                        <p className="text-center text-sm text-gray-500">
-                            No account?
-                            <a className="underline" href="#">Sign up</a>
-                        </p>
+                            <button
+                                type="submit"
+                                className="block w-full rounded-lg bg-orange-500 px-5 py-3 text-sm font-medium text-white"
+                            >
+                                Send us a message
+                            </button>
                         </form>
                     </div>
                 </div>

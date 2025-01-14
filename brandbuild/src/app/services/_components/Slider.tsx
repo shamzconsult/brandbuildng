@@ -12,7 +12,7 @@ function Slider() {
 
   return (
     <div className='flex w-full mt-20'>
-        <div className='slider-container mb-16 '>
+        <div className='slider-container'>
             <div className="slider-track">
                 {images.map((image, index) => (
                     <div key={index} className='slide'>

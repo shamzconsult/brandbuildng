@@ -12,7 +12,7 @@ function Intro() {
                     alt=""
                     />
                     <div className='text-center'>
-                        <h1 className='text-3xl font-semibold'>ABK</h1>
+                        <h1 className='text-2xl font-semibold mt-2'>Abdulrasaq Kaosarah Adeyi</h1>
                         <p className='font-semibold'>Founder and CEO</p>
                     </div>
                 </div>
@@ -22,7 +22,7 @@ function Intro() {
                         Brief Introduction
                     </h2>
 
-                        <p className="mt-4 text-gray-700">
+                        <p className="mt-4 text-gray-700 p-2">
                             Brandbuild.ng is an emerging corporate branding powerhouse,
                             established to create a unique appearance and excellent outlook for our
                             clients. We achieve this mandate through holistic branding audits with our

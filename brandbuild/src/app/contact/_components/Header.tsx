@@ -160,17 +160,17 @@ function Header() {
                 </div>
         </header>
 
-        <section
+        {/* <section
             className="relative flex h-[60vh] w-full max-w-[100vw] flex-col overflow-hidden"
             id="hero-section"
             >
                 <img
-                    src="./assets/images/contact-hero.jpg"
+                    src="./assets/images/contact-us-hero.webp"
                     alt="Hero"
                     className="h-full w-full object-cover"
                 />
                 <div className="absolute h-full w-full bg-[#0000007d]"></div>
-        </section>
+        </section> */}
    </>
   )
 }
