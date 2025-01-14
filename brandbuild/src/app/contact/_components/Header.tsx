@@ -20,9 +20,9 @@ function Header() {
         }, [])
   return (
    <>
-        <header
+         <header
             className={`fixed top-0 z-20 w-full px-8 md:px-16 lg:px-32 transition-all duration-300 ${
-                isScrolled ? "bg-white shadow-lg" : "bg-transparent"
+                isScrolled ? "bg-white shadow-lg" : "bg-white"
             }`}
             >
                 <div className="max-w-screen-2xl mx-auto flex items-center justify-between">
@@ -41,7 +41,7 @@ function Header() {
                     {/* Navigation Links */}
                     <nav
                     className={`hidden md:flex items-center gap-8 ${
-                        isScrolled ? "text-black" : "text-white"
+                        isScrolled ? "text-black" : "text-black"
                     }`}
                     >
                     <a
@@ -72,7 +72,7 @@ function Header() {
                         rel="noopener noreferrer"
                         aria-label="facebook"
                         className={`transition-colors duration-300 ${
-                        isScrolled ? "text-black" : "text-white"
+                        isScrolled ? "text-black" : "text-black"
                         }`}
                     >
                         <i className="bi bi-facebook text-xl"></i>
@@ -83,7 +83,7 @@ function Header() {
                         rel="noopener noreferrer"
                         aria-label="instagram"
                         className={`transition-colors duration-300 ${
-                        isScrolled ? "text-black" : "text-white"
+                        isScrolled ? "text-black" : "text-black"
                         }`}
                     >
                         <i className="bi bi-instagram text-xl"></i>
@@ -94,7 +94,7 @@ function Header() {
                         rel="noopener noreferrer"
                         aria-label="whatsapp"
                         className={`transition-colors duration-300 ${
-                        isScrolled ? "text-black" : "text-white"
+                        isScrolled ? "text-black" : "text-black"
                         }`}
                     >
                         <i className="bi bi-whatsapp text-xl"></i>
@@ -104,7 +104,7 @@ function Header() {
                     {/* Mobile Menu Toggle */}
                     <button
                     className={`md:hidden text-3xl transition-colors duration-300 ${
-                        isScrolled ? "text-black" : "text-white"
+                        isScrolled ? "text-black" : "text-black"
                     }`}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     aria-label="menu"
@@ -165,45 +165,11 @@ function Header() {
             id="hero-section"
             >
                 <img
-                    src="./assets/images/corporate-branding.webp"
+                    src="./assets/images/contact-hero.jpg"
                     alt="Hero"
                     className="h-full w-full object-cover"
                 />
                 <div className="absolute h-full w-full bg-[#0000007d]"></div>
-
-                <div
-                    className="absolute left-1/2 top-1/2 flex w-full translate-x-[-50%] translate-y-[-50%] flex-col place-content-center gap-4 p-8 text-white max-w-screen-xl"
-                >
-                    <h1 className="text-7xl font-semibold text-left max-md:text-5xl">
-                    Creating a Unique <span>BRAND</span>
-                    </h1>
-                    <div
-                    className="mt-3 place-content-start gap-4 max-md:gap-2"
-                    >
-                    <p
-                        className="text-left text-2xl"
-                        style={{
-                        marginBottom: "26px",
-                        }}
-                    >
-                        Empowering brands to craft distinct identities with unparalleled
-                        creativity, fostering meaningful connections through innovative
-                        strategies. We blend professionalism with originality, ensuring every
-                        brand stands out in the competitive market and resonates deeply with
-                        its audience.
-                    </p>
-                    <div>
-                        <a
-                        href="#contact"
-                        rel="noreferrer"
-                        className="flex text-lg font-bold w-auto rounded-full bg-white p-3 px-[20px] text-black transition-colors duration-[0.3s] hover:bg-primary hover:text-orange-500"
-                        style={{ maxWidth: "300px" }}
-                        >
-                        Let us build your brand today!
-                        </a>
-                    </div>
-                    </div>
-                </div>
         </section>
    </>
   )
