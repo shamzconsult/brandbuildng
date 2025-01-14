@@ -32,7 +32,7 @@
 
 .slide {
   flex: 0 0 auto;
-  width: 15%; /* Each slide takes full width */
+  width: 10%; /* Each slide takes full width */
 }
 
 img {

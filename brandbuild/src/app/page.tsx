@@ -1,14 +1,14 @@
 import Head from "next/head";
-import HomePage from "./components/Header";
-import Introduction from "./components/Introduction";
-import Values from "./components/Values";
-import About from "./components/About";
-import Statistics from "./components/Statistics";
-import Services from "./components/Services";
-import Contact from "./components/Contact";
-import TestimonialSection from "./components/Testimonial";
-import Footer from "./components/Footer";
-import FAQs from "./components/FAQs";
+import HomePage from "./_components/Header";
+import Introduction from "./_components/Introduction";
+import Values from "./_components/Values";
+import About from "./_components/About";
+import Statistics from "./_components/Statistics";
+import Services from "./_components/Services";
+import Contact from "./_components/Contact";
+import TestimonialSection from "./_components/Testimonial";
+import Footer from "./_components/Footer";
+import FAQs from "./_components/FAQs";
 // import Slider from "./components/Slider";
 
 export default function Home() {

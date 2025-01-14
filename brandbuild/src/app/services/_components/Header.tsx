@@ -1,25 +1,26 @@
 "use client"
 
+import Link from 'next/link';
+import React, { useEffect, useState } from 'react'
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
-import Link from "next/link";
-import React, { useEffect, useState } from "react";
 
-const HomePage = () => {
+function Header() {
 
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50)
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [])
-    return (
-        <>
-            <header
+        const [isMenuOpen, setIsMenuOpen] = useState(false);
+    
+        useEffect(() => {
+            const handleScroll = () => {
+                setIsScrolled(window.scrollY > 50)
+            };
+    
+            window.addEventListener("scroll", handleScroll);
+            return () => window.removeEventListener("scroll", handleScroll);
+        }, [])
+  return (
+   <>
+        <header
             className={`fixed top-0 z-20 w-full px-8 md:px-16 lg:px-32 transition-all duration-300 ${
                 isScrolled ? "bg-white shadow-lg" : "bg-transparent"
             }`}
@@ -45,19 +46,19 @@ const HomePage = () => {
                     >
                     <a
                         className="text-base font-medium transition-colors duration-300 hover:text-gray-500"
-                        href="#about"
+                        href="/about"
                     >
                         About us
                     </a>
                     <a
                         className="text-base font-medium transition-colors duration-300 hover:text-gray-500"
-                        href="#services"
+                        href="/services"
                     >
                         Our Services
                     </a>
                     <a
                         className="text-base font-medium transition-colors duration-300 hover:text-gray-500"
-                        href="#contact"
+                        href="/contact"
                     >
                         Contact us
                     </a>
@@ -116,13 +117,13 @@ const HomePage = () => {
                     <nav
                         className={`absolute top-full left-0 w-full bg-white shadow-lg py-4 flex flex-col items-center gap-4 text-black`}
                     >
-                        <a className="text-base font-medium hover:text-gray-500" href="#about">
+                        <a className="text-base font-medium hover:text-gray-500" href="/about">
                         About us
                         </a>
-                        <a className="text-base font-medium hover:text-gray-500" href="#services">
+                        <a className="text-base font-medium hover:text-gray-500" href="/services">
                         Our Services
                         </a>
-                        <a className="text-base font-medium hover:text-gray-500" href="#contact">
+                        <a className="text-base font-medium hover:text-gray-500" href="/contact">
                         Contact us
                         </a>
                         <div className="flex items-center gap-4">
@@ -157,15 +158,14 @@ const HomePage = () => {
                     </nav>
                     )}
                 </div>
-            </header>
+        </header>
 
-            {/* Hero Section */}
-            <section
-            className="relative flex h-[100vh] w-full max-w-[100vw] flex-col overflow-hidden max-md:h-[100dvh]"
+        <section
+            className="relative flex h-[60vh] w-full max-w-[100vw] flex-col overflow-hidden max-md:h-[100dvh]"
             id="hero-section"
             >
                 <img
-                    src="./assets/images/rebrand.webp"
+                    src="./assets/images/corporate-branding.webp"
                     alt="Hero"
                     className="h-full w-full object-cover"
                 />
@@ -205,9 +205,8 @@ const HomePage = () => {
                     </div>
                 </div>
             </section>
+   </>
+  )
+}
 
-        </>
-    );
-};
-
-export default HomePage;
+export default Header

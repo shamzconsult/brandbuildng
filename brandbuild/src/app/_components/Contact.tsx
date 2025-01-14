@@ -3,7 +3,7 @@ import React from 'react'
 function Contact() {
   return (
     <section
-    className="flex w-full justify-center items-center gap-[10%] overflow-hidden bg-[#EFEFEF] p-4 px-[10%] max-md:flex-col"
+    className="flex w-full justify-center items-center gap-[10%] overflow-hidden bg-gray-50 p-4 px-[10%] max-md:flex-col"
     id="reservation"
 >
     <div
@@ -16,7 +16,7 @@ function Contact() {
         />
     </div>
     <div className="mt-[5%] flex h-full flex-col gap-[5%]">
-        <section id="contact" className="contact-section py-8 bg-gray-100">
+        <section id="contact" className="contact-section py-8 bg-gray-50">
             <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold text-[#ff6600] mb-4">Contact & Availability</h2>
                
