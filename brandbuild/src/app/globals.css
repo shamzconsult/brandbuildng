@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.dot {
+/* .dot {
   height: 12px;
   width: 12px;
   margin: 0 4px;
@@ -14,7 +14,7 @@
 
 .dot.active {
   background-color: #ff6600;
-}
+} */
 
 /* Slider */
 .slider-container {

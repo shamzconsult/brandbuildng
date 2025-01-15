@@ -29,10 +29,10 @@ function Content() {
 
         </div>
 
-        <div className='md:w-1/2 mt-20 text-gray-600 p-10'>
+        <div className='md:w-1/2  text-gray-600 p-10'>
             <div className=''>
-                <h2 className='text-xl md:text-5xl lg:text-7xl text-orange-500'>Have questions?</h2>
-                <h3 className='text-xl md:text-5xl lg:text-7xl text-orange-500 mb-6'>Shoot us an Email.</h3>
+                <h2 className='text-3xl md:text-5xl lg:text-7xl text-orange-500'>Have questions?</h2>
+                <h3 className='text-3xl md:text-5xl lg:text-7xl text-orange-500 mb-6'>Shoot us an Email.</h3>
                 <p className='lg:text-xl'>Brandbuild.ng are available on the internet and across all social media platforms.</p>
             </div>
 
@@ -40,7 +40,7 @@ function Content() {
             <div className=''>
                 <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6  lg:px-8">
                     <div className="mx-auto max-w-lg">
-                        <form action="#" className="mb-0 mt-6 space-y-4 rounded-lg p-4 h-[500px] shadow-lg sm:p-6 lg:p-8 bg-gray-200">
+                        <form action="#" className="mb-0 mt-2 space-y-4 rounded-lg p-4 h-[500px] shadow-lg sm:p-6 lg:p-8 bg-gray-200">
 
                             <div>
                                 <label htmlFor="email" className="mb-6">Your Name <span className='text-red-600'>*</span></label>

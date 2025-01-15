@@ -47,12 +47,7 @@ function Contact() {
             </div>
         </section>
 
-        <div className="mt-4 flex flex-col gap-2 text-center">
-            <h3 className="text-xl">To brand your product, call us:</h3>
-            <div className="text-3xl text-primary">
-            +234 903 894 0088
-            </div>
-        </div>
+        
     </div>
 </section>
 

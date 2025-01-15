@@ -169,6 +169,7 @@ function Header() {
                 <div className='w-1/2 bg-orange-300 h-[70vh] rounded-l-full'>
 
                 </div>
+                <div className="absolute h-[70vh] bg-[#0000007d] w-full"></div>
             </div>
             <div
                     className="absolute left-1/2 top-1/2 flex w-full translate-x-[-50%] translate-y-[-50%] flex-col place-content-center gap-4 p-8 text-white max-w-screen-xl"
@@ -189,6 +190,21 @@ function Header() {
                             innovation. Our mission is to help brands connect meaningfully with their audience and 
                             stand out in a competitive market.
                         </p>
+
+                        <div
+                    className="mt-3 place-content-start gap-4 max-md:gap-2"
+                    >
+                        <div>
+                            <a
+                            href="#contact"
+                            rel="noreferrer"
+                            className="text-lg font-bold rounded-full bg-white p-4 px-[45px] text-orange-500 transition-colors duration-[0.3s] hover:bg-orange-200 hover:text-white"
+                            
+                            >
+                            Work with us!
+                            </a>
+                        </div>
+                    </div>
                         
                     </div>
                 </div>

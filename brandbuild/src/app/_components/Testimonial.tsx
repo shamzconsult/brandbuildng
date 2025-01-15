@@ -55,6 +55,12 @@ const TestimonialSection = () => {
     return () => clearInterval(interval); 
   }, [testimonials.length]);
 
+  const handleDotClick = (index: number): void => {
+    setCurrentIndex(index);
+  };
+
+
+  
   return (
     <section className="mt-5 flex w-full flex-col items-center p-[5%]">
       <h3 className="text-orange-500 text-3xl font-medium max-md:text-2xl">
@@ -62,28 +68,22 @@ const TestimonialSection = () => {
       </h3>
 
       <div className="mt-[5%] flex w-full justify-center gap-[5%]">
-        <div className="review-container flex flex-col">
-          <div className="flex !h-[350px] max-w-[550px] mb-36 relative">
+        <div className="review-container flex flex-col items-center">
+          <div className="flex !h-[350px] max-w-[550px] mb-6 relative">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
                 className={`slides fade text-justify text-lg max-md:text-base bg-white shadow-md ${
-                  index === currentIndex ? 'block' : 'hidden'
+                  index === currentIndex ? "block" : "hidden"
                 } px-6 py-4 rounded-lg relative`}
               >
-                {/* Decorative Curved Borders */}
                 <span className="absolute top-0 left-0 h-6 w-6 border-t-4 border-l-4 border-orange-500 rounded-tl-lg"></span>
-                {/* <span className="absolute top-0 right-0 h-6 w-6 border-t-4 border-r-4 border-orange-500 rounded-tr-lg"></span> */}
-                {/* <span className="absolute bottom-0 left-0 h-6 w-6 border-b-4 border-l-4 border-orange-500 rounded-bl-lg"></span> */}
                 <span className="absolute bottom-0 right-0 h-6 w-6 border-b-4 border-r-4 border-orange-500 rounded-br-lg"></span>
-
-                {/* Testimonial Image */}
                 <img
                   src={testimonial.image}
                   alt={`${testimonial.name}'s Testimonial`}
                   className="w-24 h-24 rounded-full object-cover mb-4 shadow-lg border border-gray-200 mx-auto"
                 />
-                {/* Testimonial Text */}
                 <q className="italic text-gray-600 block text-center">
                   {testimonial.quote}
                 </q>
@@ -100,35 +100,21 @@ const TestimonialSection = () => {
           </div>
 
           {/* Navigation dots */}
-          {/* <div className="dots-container tw-mt-auto mb-16">
+          <div className="dots-container flex justify-center space-x-2 mt-4">
             {testimonials.map((_, index) => (
               <span
                 key={index}
-                className={`dot ${
-                  index === currentIndex ? 'bg-yellow-400' : 'bg-gray-300'
-                } inline-block h-2 w-2 rounded-full mx-1`}
+                onClick={() => handleDotClick(index)}
+                className={`cursor-pointer dot ${
+                  index === currentIndex
+                    ? "bg-orange-400"
+                    : "bg-gray-300"
+                } inline-block h-3 w-3 rounded-full`}
               ></span>
             ))}
-          </div> */}
-        </div>
-      </div>
-
-
-      <section className="flex justify-center mb-10">
-        <div className="container px-4 max-w-screen-xl mx-auto">
-          <div className="flex justify-center">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.628886722685!2d7.410345440099051!3d9.097530787948692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e75d053859ca7%3A0xc86b8d69e7f15998!2s2%2032%20Cres%2C%20Gwarinpa%2C%20Abuja%20900108%2C%20Federal%20Capital%20Territory!5e0!3m2!1sen!2sng!4v1732536761850!5m2!1sen!2sng"
-              className="rounded-md md:w-[700px] lg:w-[1000px] h-96 md:h-[600px]"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade" 
-            ></iframe>
           </div>
         </div>
-      </section>
-
-
-
+      </div>
     </section>
   );
 };

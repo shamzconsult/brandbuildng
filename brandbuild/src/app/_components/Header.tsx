@@ -180,7 +180,7 @@ const HomePage = () => {
                     Creating a Unique <span>BRAND</span>
                     </h1>
                     <div
-                    className="mt-3 place-content-start gap-4 max-md:gap-2"
+                    className="mt-3 place-content-start gap-4 max-md:gap-2 text-gray-300"
                     >
                     <p
                         className="text-left text-2xl"
@@ -198,10 +198,10 @@ const HomePage = () => {
                         <a
                         href="#contact"
                         rel="noreferrer"
-                        className="flex text-lg font-bold w-auto rounded-full bg-white p-3 px-[20px] text-black transition-colors duration-[0.3s] hover:bg-primary hover:text-orange-500"
-                        style={{ maxWidth: "300px" }}
+                        className="text-lg font-bold rounded-full bg-orange-500 p-4 px-[45px] text-white transition-colors duration-[0.3s] hover:bg-white hover:text-orange-500"
+                        
                         >
-                        Let us build your brand today!
+                        Work with us!
                         </a>
                     </div>
                     </div>

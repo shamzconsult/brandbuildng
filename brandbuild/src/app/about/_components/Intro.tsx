@@ -18,7 +18,7 @@ function Intro() {
                 </div>
                 <div className='mb-20'>
                     <div className="max-w-lg md:max-w-none">
-                    <h2 className="text-2xl font-semibold text-orange-500 sm:text-3xl">
+                    <h2 className="text-2xl p-2 font-semibold text-orange-500 sm:text-3xl">
                         Brief Introduction
                     </h2>
 
@@ -28,21 +28,25 @@ function Intro() {
                             clients. We achieve this mandate through holistic branding audits with our
                             clients and helping them portray their organizations to the admiration of
                             customers, business associates, and clients alike.
+                        </p>
+                        <p className='mt-2 text-gray-700 p-2'>
                             We are committed to helping small businesses, corporate organizations,
                             and development institutions portray excellent representation to the
                             outside world. We collaborate with these institutions to produce
                             well-dened and detailed brand assets that resonate with their
                             organizational philosophy, communicate their value, generate leads, and
                             attract opportunities.
-                            At brandbuild.ng, we are determined to help our clients create a unique
-                            persona that positions them for greater income generation.
-                            Our approach to business is client-focused and customer-centric. We do
-                            this by keeping our clients in the loop in various stages of planning and
-                            execution of tasks. From conception, through ideation to execution, we
-                            deploy cutting-edge project management technology and human-centered
-                            design to bring our clients brands to the faces of their audience.
                         </p>
-                        <p className='md:hidden lg:block text-gray-700'> We are intentional about providing quality services to budding businesses,
+                        <p className='mt-2 text-gray-700 p-2'>
+                                At brandbuild.ng, we are determined to help our clients create a unique
+                                persona that positions them for greater income generation.
+                                Our approach to business is client-focused and customer-centric. We do
+                                this by keeping our clients in the loop in various stages of planning and
+                                execution of tasks. From conception, through ideation to execution, we
+                                deploy cutting-edge project management technology and human-centered
+                                design to bring our clients brands to the faces of their audience.
+                        </p>
+                        <p className='md:hidden lg:block text-gray-700 p-2 mt-2'> We are intentional about providing quality services to budding businesses,
                             established private organizations, corporate enterprise, development
                             organizations, politicians and private individuals who takes branding
                             seriously and are desirous to create a unique persona that will ultimately
