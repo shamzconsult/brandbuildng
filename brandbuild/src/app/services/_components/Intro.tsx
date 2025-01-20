@@ -16,7 +16,7 @@ function Intro() {
       <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
         <div className='border shadow-md rounded-lg p-6'>
           <h3 className='text-orange-500 font-semibold mb-4 text-center'>Brand Strategy Development</h3>
-          <p>We help businesses craft compelling brand strategies that resonate with 
+          <p>We  help businesses craft compelling brand strategies that resonate with 
             their target audience. From market analysis to brand positioning, we ensure
             your brand stands out and remains memorable.
           </p>
