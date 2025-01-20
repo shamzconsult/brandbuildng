@@ -9,7 +9,6 @@ import Contact from "./_components/Contact";
 import TestimonialSection from "./_components/Testimonial";
 import Footer from "./_components/Footer";
 import FAQs from "./_components/FAQs";
-// import Slider from "./components/Slider";
 
 export default function Home() {
   return (

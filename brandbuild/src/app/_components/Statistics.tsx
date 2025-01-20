@@ -8,7 +8,7 @@ const Counters = () => {
 
     let start = 0;
     const end = parseInt(target);
-    const duration = 2000; // 2 seconds
+    const duration = 2000; 
     const stepTime = Math.abs(Math.floor(duration / end));
 
     const timer = setInterval(() => {

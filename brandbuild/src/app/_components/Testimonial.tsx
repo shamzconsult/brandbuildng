@@ -1,12 +1,10 @@
 "use client"
 
-// import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 const TestimonialSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Testimonials data
   const testimonials = [
     {
       quote: "This service is phenomenal! From start to finish, the team demonstrated outstanding professionalism, creativity, and attention to detail. They transformed my vision into reality far beyond what I imagined. Highly recommend them!",
