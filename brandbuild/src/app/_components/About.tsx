@@ -2,7 +2,7 @@ import React from 'react';
 
 function About() {
   return (
-    <section className="flex w-full flex-col items-center bg-white p-8 max-md:px-4">
+    <section className="flex w-full flex-col items-center bg-white p-10 max-md:px-4">
       <h3 className="text-primary text-4xl text-orange-500 font-semibold mb-8">ABOUT US</h3>
 
       <div className="text-lg text-center max-w-[900px] mb-5">

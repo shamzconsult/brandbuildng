@@ -2,7 +2,7 @@ import React from 'react'
 
 function Intro() {
   return (
-    <section className='-mt-52'>
+    <section className='-mt-40'>
         <div className="mx-auto max-w-screen-xl px-4 py-2 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
                 <div className='mb-20'>
@@ -37,7 +37,7 @@ function Intro() {
                             organizational philosophy, communicate their value, generate leads, and
                             attract opportunities.
                         </p>
-                        <p className='mt-2 text-gray-700 p-2'>
+                        <p className='md:hidden lg:block  mt-2 text-gray-700 p-2'>
                                 At brandbuild.ng, we are determined to help our clients create a unique
                                 persona that positions them for greater income generation.
                                 Our approach to business is client-focused and customer-centric. We do

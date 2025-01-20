@@ -160,7 +160,7 @@ function Header() {
                 </div>
         </header>
 
-        <section className="relative flex h-[100vh] w-full max-w-[100vw] flex-col overflow-hidden max-md:h-[100dvh]">
+        <section className="relative flex h-[100vh] w-full max-w-[100vw] flex-col overflow-hidden max-md:h-[100dvh] mb-10 md:mb-0">
             <div className="flex bg-orange-500">
                 <div className="w-1/2 bg-orange-500 h-[70vh] animate-slideInLeft"></div>
                 <div className="w-1/2 bg-orange-300 h-[70vh] rounded-l-full animate-slideInRight"></div>
@@ -168,15 +168,15 @@ function Header() {
             </div>
 
             <div
-                className="absolute left-1/2 top-1/2 flex w-full translate-x-[-50%] translate-y-[-50%] flex-col place-content-center gap-4 p-8 text-white max-w-screen-xl"
+                className="absolute left-1/2 top-1/2 flex w-full translate-x-[-50%] translate-y-[-50%] flex-col place-content-center gap-4 p-8 text-white max-w-screen-xl lg:-mt-20"
             >
-                <h1 className="text-7xl font-semibold text-left max-md:text-5xl animate-fadeIn">
+                <h1 className="text-7xl font-semibold text-left max-md:text-3xl animate-fadeIn">
                 Get to know <span>US</span>
                 </h1>
 
                 <div className="mt-3 place-content-start gap-4 max-md:gap-2 animate-slideIn">
                 <p
-                    className="text-left text-xl lg:text-2xl"
+                    className="text-left text-sm md:text-xl lg:text-2xl"
                     style={{
                     marginBottom: "26px",
                     }}
@@ -190,7 +190,7 @@ function Header() {
                     <a
                     href="/contact"
                     rel="noreferrer"
-                    className="text-lg font-bold rounded-full bg-white p-4 px-[45px] text-orange-500 transition-colors duration-[0.3s] hover:bg-orange-200 hover:text-white animate-fadeIn"
+                    className="md:text-lg text-sm font-bold rounded-full bg-white p-4 px-[45px] text-orange-500 transition-colors duration-[0.3s] hover:bg-orange-200 hover:text-white animate-fadeIn"
                     >
                     Work with us!
                     </a>
