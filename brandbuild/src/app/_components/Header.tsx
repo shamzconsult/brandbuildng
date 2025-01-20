@@ -23,7 +23,7 @@ const HomePage = () => {
         <>
             <header
             className={`fixed top-0 z-20 w-full px-8 md:px-16 lg:px-32 transition-all duration-300 ${
-                isScrolled ? "bg-white shadow-lg" : "bg-transparent"
+                isScrolled ? "bg-white shadow-lg" : "bg-white"
             }`}
             >
                 <div className="max-w-screen-2xl mx-auto flex items-center justify-between">
@@ -42,7 +42,7 @@ const HomePage = () => {
                     {/* Navigation Links */}
                     <nav
                     className={`hidden md:flex items-center gap-8 ${
-                        isScrolled ? "text-black" : "text-white"
+                        isScrolled ? "text-black" : "text-black"
                     }`}
                     >
                     <a
@@ -72,8 +72,8 @@ const HomePage = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="facebook"
-                        className={`transition-colors duration-300 ${
-                        isScrolled ? "text-black" : "text-white"
+                        className={`transition-colors duration-300 hover:text-orange-500 ${
+                        isScrolled ? "text-black" : "text-black"
                         }`}
                     >
                         <i className="bi bi-facebook text-xl"></i>
@@ -83,8 +83,8 @@ const HomePage = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="instagram"
-                        className={`transition-colors duration-300 ${
-                        isScrolled ? "text-black" : "text-white"
+                        className={`transition-colors duration-300 hover:text-orange-500 ${
+                        isScrolled ? "text-black" : "text-black"
                         }`}
                     >
                         <i className="bi bi-instagram text-xl"></i>
@@ -94,8 +94,8 @@ const HomePage = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="whatsapp"
-                        className={`transition-colors duration-300 ${
-                        isScrolled ? "text-black" : "text-white"
+                        className={`transition-colors duration-300 hover:text-orange-500 ${
+                        isScrolled ? "text-black" : "text-black"
                         }`}
                     >
                         <i className="bi bi-whatsapp text-xl"></i>
@@ -105,7 +105,7 @@ const HomePage = () => {
                     {/* Mobile Menu Toggle */}
                     <button
                     className={`md:hidden text-3xl transition-colors duration-300 ${
-                        isScrolled ? "text-black" : "text-white"
+                        isScrolled ? "text-black" : "text-black"
                     }`}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     aria-label="menu"
@@ -163,9 +163,9 @@ const HomePage = () => {
 
             {/* Hero Section */}
             <section
-            className="relative flex h-[100vh] w-full max-w-[100vw] flex-col overflow-hidden max-md:h-[100dvh]"
-            id="hero-section"
-            >
+                className="relative flex h-[100vh] w-full max-w-[100vw] flex-col overflow-hidden max-md:h-[100dvh]"
+                id="hero-section"
+                >
                 <img
                     src="./assets/images/rebrand.webp"
                     alt="Hero"
@@ -176,14 +176,15 @@ const HomePage = () => {
                 <div
                     className="absolute left-1/2 top-1/2 flex w-full translate-x-[-50%] translate-y-[-50%] flex-col place-content-center gap-4 p-8 text-white max-w-screen-xl"
                 >
-                    <h1 className="text-7xl font-semibold text-left max-md:text-5xl">
+                    <h1
+                    className="text-7xl font-semibold text-left max-md:text-5xl animate-fadeIn"
+                    >
                     Creating a Unique <span>BRAND</span>
                     </h1>
-                    <div
-                    className="mt-3 place-content-start gap-4 max-md:gap-2 text-gray-300"
-                    >
+
+                    <div className="mt-3 place-content-start gap-4 max-md:gap-2 text-gray-300">
                     <p
-                        className="text-left text-2xl"
+                        className="text-left text-xl lg:text-2xl animate-slideIn"
                         style={{
                         marginBottom: "26px",
                         }}
@@ -194,12 +195,12 @@ const HomePage = () => {
                         brand stands out in the competitive market and resonates deeply with
                         its audience.
                     </p>
+
                     <div>
                         <a
-                        href="#contact"
+                        href="/contact"
                         rel="noreferrer"
                         className="text-lg font-bold rounded-full bg-orange-500 p-4 px-[45px] text-white transition-colors duration-[0.3s] hover:bg-white hover:text-orange-500"
-                        
                         >
                         Work with us!
                         </a>
@@ -207,6 +208,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </section>
+
 
         </>
     );

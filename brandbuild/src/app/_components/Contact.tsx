@@ -3,54 +3,56 @@ import React from 'react'
 function Contact() {
   return (
     <section
-    className="flex w-full justify-center items-center gap-[10%] overflow-hidden bg-gray-50 p-4 px-[10%] max-md:flex-col"
+    className="flex mt-10 mx-auto max-w-screen-xl justify-center items-center gap-8 lg:gap-40  p-4 max-md:flex-col"
     id="reservation"
->
-    <div
-        className="flex h-[350px] w-[350px] overflow-hidden rounded-md max-md:hidden"
     >
-        <img
+        {/* Left Image */}
+        <div
+            className="flex h-[450px] w-[450px] overflow-hidden rounded-md max-md:hidden"
+        >
+            <img
             src="./assets/images/branded-bag.jpg"
             alt="restaurant"
             className="w-full object-cover"
-        />
-    </div>
-    <div className="mt-[5%] flex h-full flex-col gap-[5%]">
-        <section id="contact" className="contact-section py-8 bg-gray-50">
-            <div className="container mx-auto px-4">
+            />
+        </div>
+
+        {/* Right Content */}
+        <div className="flex flex-col gap-8">
+            <section id="contact" className="contact-section py-8">
+            <div className="text-center">
+                {/* Heading */}
                 <h2 className="text-3xl font-bold text-[#ff6600] mb-4">Contact & Availability</h2>
-               
+
+                {/* Working Hours */}
                 <div className="mb-8">
-                    <h3 className="text-xl font-semibold mb-2">Working Hours</h3>
-                    <p className="mb-2">Monday – Friday: 9:00 AM – 6:00 PM</p>
-                    <p className="mb-2">Saturday: 10:00 AM – 4:00 PM</p>
+                <h3 className="text-xl font-semibold mb-2">Working Hours</h3>
+                <p className="mb-2">Monday – Friday: 9:00 AM – 6:00 PM</p>
+                <p className="mb-2">Saturday: 10:00 AM – 4:00 PM</p>
                 </div>
 
-              
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="">
-                        <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
-                        <div className="flex gap-6 mb-2">
-                            <i className="bi bi-telephone-fill"></i>
-                            <p>Phone: +234 903 894 0088</p>
-                        </div>
-                        <div className="flex gap-6 mb-2">
-                            <i className="bi bi-envelope-fill"></i>
-                            <p>Email: brandbuildng@gmail.com</p>
-                        </div>
-                        <div className="flex gap-6 mb-2">
-                            <i className="bi bi-geo-alt-fill"></i>
-                            <p>Address: 123 Corporate Ave, Business City</p>
-                        </div>
+                {/* Contact Information */}
+                <div className="grid grid-cols-1 gap-4">
+                <div>
+                    <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
+                    <div className="flex gap-2 mb-2 items-center">
+                    <i className="bi bi-telephone-fill"></i>
+                    <p>Phone: +234 903 894 0088</p>
+                    </div>
+                    <div className="flex gap-2 mb-2 items-center">
+                    <i className="bi bi-envelope-fill"></i>
+                    <p>Email: brandbuildng@gmail.com</p>
+                    </div>
+                    <div className="flex gap-2 mb-2 items-center">
+                    <i className="bi bi-geo-alt-fill"></i>
+                    <p>Address: 123 Corporate Ave, Business City</p>
                     </div>
                 </div>
+                </div>
             </div>
-        </section>
-
-        
-    </div>
-</section>
-
+            </section>
+        </div>
+    </section>
   )
 }
 

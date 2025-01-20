@@ -5,7 +5,7 @@ function About() {
     <section className="flex w-full flex-col items-center bg-white p-8 max-md:px-4">
       <h3 className="text-primary text-4xl text-orange-500 font-semibold mb-8">ABOUT US</h3>
 
-      <div className="text-lg max-w-[900px] mb-5">
+      <div className="text-lg text-center max-w-[900px] mb-5">
         <h2>
           Our approach to business is client-focused and customer-centric. We do this by keeping our clients in the loop in various stages of planning and execution of tasks. From conception, through ideation to execution, we deploy cutting-edge project management technology and human-centered design to bring our clients’ brands to the faces of their audience.
         </h2>

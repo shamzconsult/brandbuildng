@@ -20,7 +20,7 @@ function Header() {
         }, [])
   return (
    <>
-         <header
+        <header
             className={`fixed top-0 z-20 w-full px-8 md:px-16 lg:px-32 transition-all duration-300 ${
                 isScrolled ? "bg-white shadow-lg" : "bg-white"
             }`}
@@ -71,7 +71,7 @@ function Header() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="facebook"
-                        className={`transition-colors duration-300 ${
+                        className={`transition-colors duration-300 hover:text-orange-500 ${
                         isScrolled ? "text-black" : "text-black"
                         }`}
                     >
@@ -82,7 +82,7 @@ function Header() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="instagram"
-                        className={`transition-colors duration-300 ${
+                        className={`transition-colors duration-300 hover:text-orange-500 ${
                         isScrolled ? "text-black" : "text-black"
                         }`}
                     >
@@ -93,7 +93,7 @@ function Header() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="whatsapp"
-                        className={`transition-colors duration-300 ${
+                        className={`transition-colors duration-300 hover:text-orange-500 ${
                         isScrolled ? "text-black" : "text-black"
                         }`}
                     >
@@ -161,54 +161,44 @@ function Header() {
         </header>
 
         <section className="relative flex h-[100vh] w-full max-w-[100vw] flex-col overflow-hidden max-md:h-[100dvh]">
-            <div className='flex bg-orange-500'>
-                <div className='w-1/2 bg-orange-500 h-[70vh]'>
-
-                </div>
-
-                <div className='w-1/2 bg-orange-300 h-[70vh] rounded-l-full'>
-
-                </div>
+            <div className="flex bg-orange-500">
+                <div className="w-1/2 bg-orange-500 h-[70vh] animate-slideInLeft"></div>
+                <div className="w-1/2 bg-orange-300 h-[70vh] rounded-l-full animate-slideInRight"></div>
                 <div className="absolute h-[70vh] bg-[#0000007d] w-full"></div>
             </div>
-            <div
-                    className="absolute left-1/2 top-1/2 flex w-full translate-x-[-50%] translate-y-[-50%] flex-col place-content-center gap-4 p-8 text-white max-w-screen-xl"
-                >
-                    <h1 className="text-7xl font-semibold text-left max-md:text-5xl">
-                    Get to know <span>US</span>
-                    </h1>
-                    <div
-                        className="mt-3 place-content-start gap-4 max-md:gap-2"
-                        >
-                        <p
-                            className="text-left text-2xl"
-                            style={{
-                            marginBottom: "26px",
-                            }}
-                        >
-                            We specialize in crafting unique brand identities, blending creativity with strategic 
-                            innovation. Our mission is to help brands connect meaningfully with their audience and 
-                            stand out in a competitive market.
-                        </p>
 
-                        <div
-                    className="mt-3 place-content-start gap-4 max-md:gap-2"
+            <div
+                className="absolute left-1/2 top-1/2 flex w-full translate-x-[-50%] translate-y-[-50%] flex-col place-content-center gap-4 p-8 text-white max-w-screen-xl"
+            >
+                <h1 className="text-7xl font-semibold text-left max-md:text-5xl animate-fadeIn">
+                Get to know <span>US</span>
+                </h1>
+
+                <div className="mt-3 place-content-start gap-4 max-md:gap-2 animate-slideIn">
+                <p
+                    className="text-left text-xl lg:text-2xl"
+                    style={{
+                    marginBottom: "26px",
+                    }}
+                >
+                    We specialize in crafting unique brand identities, blending creativity
+                    with strategic innovation. Our mission is to help brands connect
+                    meaningfully with their audience and stand out in a competitive market.
+                </p>
+
+                <div>
+                    <a
+                    href="/contact"
+                    rel="noreferrer"
+                    className="text-lg font-bold rounded-full bg-white p-4 px-[45px] text-orange-500 transition-colors duration-[0.3s] hover:bg-orange-200 hover:text-white animate-fadeIn"
                     >
-                        <div>
-                            <a
-                            href="#contact"
-                            rel="noreferrer"
-                            className="text-lg font-bold rounded-full bg-white p-4 px-[45px] text-orange-500 transition-colors duration-[0.3s] hover:bg-orange-200 hover:text-white"
-                            
-                            >
-                            Work with us!
-                            </a>
-                        </div>
-                    </div>
-                        
-                    </div>
+                    Work with us!
+                    </a>
                 </div>
+                </div>
+            </div>
         </section>
+
    </>
   )
 }

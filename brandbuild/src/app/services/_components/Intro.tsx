@@ -15,7 +15,7 @@ function Intro() {
 
       <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
         <div className='border shadow-md rounded-lg p-6'>
-          <h3 className='text-orange-500 font-semibold mb-4'>Brand Strategy Development</h3>
+          <h3 className='text-orange-500 font-semibold mb-4 text-center'>Brand Strategy Development</h3>
           <p>We help businesses craft compelling brand strategies that resonate with 
             their target audience. From market analysis to brand positioning, we ensure
             your brand stands out and remains memorable.
@@ -23,7 +23,7 @@ function Intro() {
         </div>
         
         <div className='border shadow-md rounded-lg p-6'>
-          <h3 className='text-orange-500 font-semibold mb-4'>Digital Marketing Solutions</h3>
+          <h3 className='text-orange-500 font-semibold mb-4 text-center'>Digital Marketing Solutions</h3>
           <p>Leverage the power of digital with our cutting-edge marketing strategies. 
             Our team specializes in SEO, social media marketing, email campaigns, and more, 
             ensuring your brand reaches and engages the right audience.
@@ -31,14 +31,14 @@ function Intro() {
         </div>
 
         <div className='border shadow-md rounded-lg p-6'>
-          <h3 className='text-orange-500 font-semibold mb-4'>Creative Design and Visual Identity</h3>
+          <h3 className='text-orange-500 font-semibold mb-4 text-center'>Creative Design and Visual Identity</h3>
           <p>Your brand deserves to look its best. Our design experts create stunning logos, 
             packaging, and visual assets that align with your brand-s personality and leave a lasting impression.
           </p>
         </div>
 
         <div className='border shadow-md rounded-lg p-6'>
-          <h3 className='text-orange-500 font-semibold mb-4'>Web Development and E-Commerce Solutions</h3>
+          <h3 className='text-orange-500 font-semibold mb-4 text-center'>Web Development and E-Commerce Solutions</h3>
           <p>Build a seamless online presence with our customized web development services. 
             Whether it is a corporate website or a full-fledged e-commerce platform, we deliver 
             user-friendly designs optimized for performance.
@@ -46,14 +46,14 @@ function Intro() {
         </div>
 
         <div className='border shadow-md rounded-lg p-6'>
-          <h3 className='text-orange-500 font-semibold mb-4'>Content Creation and Storytelling</h3>
+          <h3 className='text-orange-500 font-semibold mb-4 text-center'>Content Creation and Storytelling</h3>
           <p>Share your brand-s story with compelling content that connects. From blogs and videos 
             to photography and copywriting, we create content that engages and inspires.
           </p>
         </div>
         
         <div className='border shadow-md rounded-lg p-6'>
-          <h3 className='text-orange-500 font-semibold mb-4'>Event Branding and Marketing</h3>
+          <h3 className='text-orange-500 font-semibold mb-4 text-center'>Event Branding and Marketing</h3>
           <p>Make your events unforgettable with our tailored branding solutions. 
             From concept to execution, we ensure your event reflects your brand-s essence and 
             achieves its objectives.

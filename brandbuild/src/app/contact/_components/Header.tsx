@@ -20,7 +20,7 @@ function Header() {
         }, [])
   return (
    <>
-         <header
+        <header
             className={`fixed top-0 z-20 w-full px-8 md:px-16 lg:px-32 transition-all duration-300 ${
                 isScrolled ? "bg-white shadow-lg" : "bg-white"
             }`}
@@ -71,7 +71,7 @@ function Header() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="facebook"
-                        className={`transition-colors duration-300 ${
+                        className={`transition-colors duration-300 hover:text-orange-500 ${
                         isScrolled ? "text-black" : "text-black"
                         }`}
                     >
@@ -82,7 +82,7 @@ function Header() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="instagram"
-                        className={`transition-colors duration-300 ${
+                        className={`transition-colors duration-300 hover:text-orange-500 ${
                         isScrolled ? "text-black" : "text-black"
                         }`}
                     >
@@ -93,7 +93,7 @@ function Header() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="whatsapp"
-                        className={`transition-colors duration-300 ${
+                        className={`transition-colors duration-300 hover:text-orange-500 ${
                         isScrolled ? "text-black" : "text-black"
                         }`}
                     >
@@ -159,18 +159,6 @@ function Header() {
                     )}
                 </div>
         </header>
-
-        {/* <section
-            className="relative flex h-[60vh] w-full max-w-[100vw] flex-col overflow-hidden"
-            id="hero-section"
-            >
-                <img
-                    src="./assets/images/contact-us-hero.webp"
-                    alt="Hero"
-                    className="h-full w-full object-cover"
-                />
-                <div className="absolute h-full w-full bg-[#0000007d]"></div>
-        </section> */}
    </>
   )
 }

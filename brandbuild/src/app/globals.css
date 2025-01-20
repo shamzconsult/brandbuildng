@@ -2,19 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .dot {
-  height: 12px;
-  width: 12px;
-  margin: 0 4px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-}
-
-.dot.active {
-  background-color: #ff6600;
-} */
 
 /* Slider */
 .slider-container {
@@ -32,7 +19,7 @@
 
 .slide {
   flex: 0 0 auto;
-  width: 10%; /* Each slide takes full width */
+  width: 10%; 
 }
 
 img {
