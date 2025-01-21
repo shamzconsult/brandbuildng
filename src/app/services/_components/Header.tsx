@@ -112,7 +112,6 @@ function Header() {
                     <i className={`bi ${isMenuOpen ? "bi-x" : "bi-list"}`}></i>
                     </button>
 
-                    {/* Mobile Navigation */}
                     {isMenuOpen && (
                     <nav
                         className={`absolute top-full left-0 w-full bg-white shadow-lg py-4 flex flex-col items-center gap-4 text-black`}
@@ -164,25 +163,20 @@ function Header() {
             className="relative flex h-[60vh] w-full max-w-[100vw] flex-col overflow-hidden max-md:h-[100dvh]"
             id="hero-section"
             >
-            {/* Background Image */}
             <img
                 src="./assets/images/corporate-branding.webp"
                 alt="Hero"
                 className="h-full w-full object-cover"
             />
-            {/* Overlay */}
             <div className="absolute h-full w-full bg-[#0000007d]"></div>
 
-            {/* Animated Content */}
             <div
                 className="absolute left-1/2 top-1/2 flex w-full translate-x-[-50%] translate-y-[-50%] flex-col place-content-center gap-4 p-8 text-white max-w-screen-xl"
             >
-                {/* Animated Heading */}
                 <h1 className="text-7xl font-semibold text-left max-md:text-5xl animate-fadeIn">
-                Creating a Unique <span>BRAND</span>
+                Creating a Unique <span>PERSONAL</span>
                 </h1>
 
-                {/* Animated Button */}
                 <div className="mt-3 place-content-start gap-4 max-md:gap-2 animate-slideIn">
                 <div>
                     <a

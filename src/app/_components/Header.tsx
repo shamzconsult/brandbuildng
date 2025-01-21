@@ -113,7 +113,6 @@ const HomePage = () => {
                     <i className={`bi ${isMenuOpen ? "bi-x" : "bi-list"}`}></i>
                     </button>
 
-                    {/* Mobile Navigation */}
                     {isMenuOpen && (
                     <nav
                         className={`absolute top-full left-0 w-full bg-white shadow-lg py-4 flex flex-col items-center gap-4 text-black`}
@@ -189,7 +188,7 @@ const HomePage = () => {
                         marginBottom: "26px",
                         }}
                     >
-                        Empowering brands to craft distinct identities with unparalleled
+                        We empower brands to craft distinct identities with unparalleled
                         creativity, fostering meaningful connections through innovative
                         strategies. We blend professionalism with originality, ensuring every
                         brand stands out in the competitive market and resonates deeply with

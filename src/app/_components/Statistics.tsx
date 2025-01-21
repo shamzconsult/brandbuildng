@@ -45,7 +45,7 @@ const Counters = () => {
       <div className="md:flex gap-32 lg:gap-40 counter-container p-6">
         <div className="counter-item text-center mb-4">
           <h2 className="flex items-center justify-center text-black text-6xl font-bold rounded-full">
-            <span className="counter" data-target="7">
+            <span className="counter" data-target="10">
               0
             </span>
             +
@@ -67,7 +67,7 @@ const Counters = () => {
 
         <div className="counter-item text-center mb-4">
           <h2 className="flex items-center justify-center text-black text-6xl font-bold rounded-full">
-            <span className="counter" data-target="4">
+            <span className="counter" data-target="5">
               0
             </span>
             +
@@ -77,12 +77,12 @@ const Counters = () => {
 
         <div className="counter-item text-center mb-4">
           <h2 className="flex items-center justify-center text-black text-6xl font-bold rounded-full">
-            <span className="counter" data-target="5">
+            <span className="counter" data-target="10">
               0
             </span>
             +
           </h2>
-          <p className="text-black text-lg font-medium mt-4">Products</p>
+          <p className="text-black text-lg font-medium mt-4">Projects</p>
         </div>
       </div>
     </div>

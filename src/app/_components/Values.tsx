@@ -12,7 +12,6 @@ function Values() {
             <h2 className="text-4xl font-semibold text-[#ff6600]">Our Core Values</h2>
         </div>
         <div className="mt-6 flex max-w-[60%] flex-wrap place-content-center gap-2 max-lg:flex-col">
-            {/* Creativity */}
             <div className="flex h-[250px] w-[350px] flex-col gap-2 p-4 text-center">
                 <i className="bi bi-palette-fill text-5xl text-[#ff6600]"></i>
                 <h3 className="text-2xl font-semibold text-[#6d6565]">Creativity</h3>
@@ -22,7 +21,6 @@ function Values() {
                 </div>
             </div>
 
-            {/* Innovation */}
             <div className="flex h-[250px] w-[350px] flex-col gap-2 p-4 text-center">
                 <i className="bi bi-lightbulb-fill text-5xl text-[#ff6600]"></i>
                 <h3 className="text-2xl font-semibold text-[#6d6565]">Innovation</h3>
@@ -33,17 +31,15 @@ function Values() {
                 </div>
             </div>
 
-            {/* Client Success */}
             <div className="flex h-[250px] w-[350px] flex-col gap-2 p-4 text-center">
                 <i className="bi bi-trophy-fill text-5xl text-[#ff6600]"></i>
-                <h3 className="text-2xl font-semibold text-[#6d6565]">Client Success</h3>
+                <h3 className="text-2xl font-semibold text-[#6d6565]">Client’s Success</h3>
                 <div className="text-[#9c9494]">
                     Our clients are treated as kings and queens, and projects are carried out to
                     deliver values that align with our client’s overall business goals.
                 </div>
             </div>
 
-            {/* Excellence */}
             <div className="flex h-[250px] w-[350px] flex-col gap-2 p-4 text-center">
                 <i className="bi bi-award-fill text-5xl text-[#ff6600]"></i>
                 <h3 className="text-2xl font-semibold text-[#6d6565]">Excellence</h3>
@@ -53,7 +49,6 @@ function Values() {
                 </div>
             </div>
 
-            {/* Collaboration */}
             <div className="flex h-[250px] w-[350px] flex-col gap-2 p-4 text-center">
                 <i className="bi bi-people-fill text-5xl text-[#ff6600]"></i>
                 <h3 className="text-2xl font-semibold text-[#6d6565]">Collaboration</h3>
@@ -63,7 +58,6 @@ function Values() {
                 </div>
             </div>
 
-            {/* Impact Driven */}
             <div className="flex h-[250px] w-[350px] flex-col gap-2 p-4 text-center">
                 <i className="bi bi-bullseye text-5xl text-[#ff6600]"></i>
                 <h3 className="text-2xl font-semibold text-[#6d6565]">Impact Driven</h3>

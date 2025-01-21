@@ -21,9 +21,8 @@ export default function Home() {
 
       <HomePage />
       <Introduction />
-      <Values />
       <About/>
-      {/* <Slider/> */}
+      <Values />
       <Statistics />
       <Services/>
       <Contact />

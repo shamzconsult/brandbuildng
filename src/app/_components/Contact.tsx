@@ -21,31 +21,28 @@ function Contact() {
         <div className="flex flex-col gap-8">
             <section id="contact" className="contact-section py-8">
             <div className="">
-                {/* Heading */}
                 <h2 className="text-3xl font-bold text-[#ff6600] mb-4">Contact & Availability</h2>
 
-                {/* Working Hours */}
                 <div className="mb-8">
                 <h3 className="text-xl font-semibold mb-2">Working Hours</h3>
                 <p className="mb-2">Monday – Friday: 9:00 AM – 6:00 PM</p>
                 <p className="mb-2">Saturday: 10:00 AM – 4:00 PM</p>
                 </div>
 
-                {/* Contact Information */}
                 <div className="grid grid-cols-1 gap-4">
                 <div>
                     <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
                     <div className="flex gap-2 mb-2 items-center">
                     <i className="bi bi-telephone-fill"></i>
-                    <p>Phone: +234 903 894 0088</p>
+                    <p>+234 903 894 0088</p>
                     </div>
                     <div className="flex gap-2 mb-2 items-center">
                     <i className="bi bi-envelope-fill"></i>
-                    <p>Email: brandbuildng@gmail.com</p>
+                    <p>brandbuildng@gmail.com</p>
                     </div>
                     <div className="flex gap-2 mb-2 items-center">
                     <i className="bi bi-geo-alt-fill"></i>
-                    <p>Address: 123 Corporate Ave, Business City</p>
+                    <p>Abuja, Nigeria</p>
                     </div>
                 </div>
                 </div>

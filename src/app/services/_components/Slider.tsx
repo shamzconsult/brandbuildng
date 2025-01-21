@@ -11,7 +11,7 @@ function Slider() {
     ];
 
   return (
-    <div className='flex w-full mt-10 -mb-52 md:-mb-14 lg:mb-10'>
+    <div className='md:flex w-full mt-10 -mb-52 md:-mb-14 lg:mb-10'>
         <div className='slider-container'>
             <div className="slider-track">
                 {images.map((image, index) => (

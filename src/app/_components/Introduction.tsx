@@ -10,7 +10,7 @@ function Introduction() {
             className="flex h-[450px] w-[450px] overflow-hidden rounded-md max-md:mt-[5%] max-md:h-[300px] max-md:w-[300px]"
         >
             <img
-                src="./assets/images/branded-cup.jpg"
+                src="./assets/images/branded-shirt.jpg"
                 alt="coffee"
                 className="w-full object-cover"
             />
@@ -19,7 +19,7 @@ function Introduction() {
         className="flex h-full flex-col gap-[5%] max-md:mt-2 max-md:gap-[3%] max-md:text-center"
     >
         <h2 className="text-orange-500 text-3xl font-medium max-md:text-2xl">
-            Brandbuild
+            Brandbuild.ng
         </h2>
         <h3 className="text-5xl max-md:text-3xl">Welcomes you</h3>
         <div className="mt-6 max-w-[550px] text-justify">
