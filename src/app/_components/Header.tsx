@@ -177,14 +177,14 @@ const HomePage = () => {
                     className="absolute left-1/2 top-1/2 flex w-full translate-x-[-50%] translate-y-[-50%] flex-col place-content-center gap-4 p-8 text-white max-w-screen-xl"
                 >
                     <h1
-                    className="text-7xl mt-14 md:mt-0 font-semibold text-left max-md:text-3xl animate-fadeIn"
+                    className="text-7xl mt-14 md:mt-0 font-semibold text-left max-md:text-5xl animate-fadeIn"
                     >
                     Creating a Unique <span>BRAND</span>
                     </h1>
 
                     <div className="mt-3 place-content-start gap-4 max-md:gap-2 text-gray-300">
                     <p
-                        className="text-left text-sm md:xl lg:text-2xl animate-slideIn"
+                        className="text-left text-sm md:text-xl lg:text-2xl animate-slideIn"
                         style={{
                         marginBottom: "26px",
                         }}

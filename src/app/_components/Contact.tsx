@@ -20,7 +20,7 @@ function Contact() {
         {/* Right Content */}
         <div className="flex flex-col gap-8">
             <section id="contact" className="contact-section py-8">
-            <div className="text-center">
+            <div className="">
                 {/* Heading */}
                 <h2 className="text-3xl font-bold text-[#ff6600] mb-4">Contact & Availability</h2>
 

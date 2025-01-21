@@ -4,7 +4,7 @@ function Services() {
   return (
     <section className="bg-black">
     <div className=" py-5 place-content-center place-items-center">
-        <h2 className="text-orange-500 text-4xl font-semibold">OUR SERVICES</h2>
+        <h2 className="text-orange-500 text-center text-4xl font-semibold">OUR SERVICES</h2>
     </div>
 
     <div className="flex w-full place-content-center gap-5 max-md:flex-wrap p-6 max-md:px-[5%]">

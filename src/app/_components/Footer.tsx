@@ -1,6 +1,8 @@
 import React from 'react'
 
 function Footer() {
+
+    const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-white">
     <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
@@ -255,7 +257,7 @@ function Footer() {
 
         <div className="mt-12 border-t border-gray-100 pt-6">
         <div className="text-center sm:flex sm:justify-between sm:text-left">
-            <p className="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0">&copy; 2023 BrandBuild.ng</p>
+            <p className="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0">&copy; {currentYear} BrandBuild.ng</p>
         </div>
         </div>
     </div>
