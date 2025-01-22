@@ -61,13 +61,13 @@ function Services() {
                 </div>
             </div>
             <div className="menu-item-container text-center relative h-[33%] w-[350px] overflow-clip rounded-lg max-md:w-full group">
-                <img src="./assets/images/creative-design.avif" alt="authentic wine" className="h-full w-full object-cover transform transition-transform duration-[0.4s] group-hover:scale-110" />
+                <img src="./assets/images/kappframework-Jsgnic(1)(1).png" alt="authentic wine" className="h-full w-full object-cover transform transition-transform duration-[0.4s] group-hover:scale-110" />
                 <div className="absolute inset-0 flex items-center justify-center text-black z-10">
                     <h1 className='bg-white p-3 rounded-xl font-semibold tracking-[0.5rem] '>CREATIVE DESIGN</h1>
                 </div>
             </div>
             <div className="menu-item-container text-center relative h-[33%] w-[350px] overflow-clip rounded-lg max-md:w-full group">
-                <img src="./assets/images/rebrand.webp" alt="Desserts" className="h-full w-full object-cover transform transition-transform duration-[0.4s] group-hover:scale-110" />
+                <img src="./assets/images/Brandbuildng 8.jpg" alt="Desserts" className="h-full w-full object-cover transform transition-transform duration-[0.4s] group-hover:scale-110" />
                 <div className="absolute inset-0 flex items-center justify-center text-black z-10">
                     <h1 className='bg-white p-3 rounded-xl font-semibold tracking-[0.5rem]'>REBRANDING</h1>
                 </div>
