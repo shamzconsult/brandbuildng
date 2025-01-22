@@ -146,7 +146,7 @@ const HomePage = () => {
                             <i className="bi bi-instagram text-xl"></i>
                         </a>
                         <a
-                            href="https://api.whatsapp.com/send?phone=+2349038940088"
+                            href="https://api.whatsapp.com/send?phone=%2B2349038940088"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="whatsapp"

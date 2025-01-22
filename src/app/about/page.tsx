@@ -5,7 +5,9 @@ import Footer from '../_components/Footer'
 import TestimonialSection from '../_components/Testimonial'
 import AboutSection from './_components/AboutSection'
 import Counters from '../_components/Statistics'
-import Contact from '../_components/Contact'
+// import Contact from '../_components/Contact'
+import VideoSection from './_components/Video'
+import Team from './_components/Team'
 
 function page() {
   return (
@@ -14,7 +16,9 @@ function page() {
         <Intro />
         <AboutSection/>
         <Counters/>
-        <Contact/>
+        <Team/>
+        <VideoSection/>
+        {/* <Contact/> */}
         <TestimonialSection/>
         <Footer/>
     </div>

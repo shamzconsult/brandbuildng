@@ -85,7 +85,7 @@ function Footer() {
 
                 <li>
                     <a
-                        href="https://api.whatsapp.com/send?phone=+2349038940088"
+                          href="https://api.whatsapp.com/send?phone=%2B2349038940088"
                         rel="noreferrer"
                         target="_blank"
                         className="text-orange-500 transition hover:text-teal-700/75"
@@ -104,6 +104,27 @@ function Footer() {
                         </svg>
                     </a>
                 </li>
+
+                <li>
+                    <a
+                        href="https://twitter.com/brandbuildng"
+                        rel="noreferrer"
+                        target="_blank"
+                        className="text-orange-500 transition hover:text-teal-700/75"
+                    >
+                        <span className="sr-only">Twitter</span>
+                        <svg
+                        className="size-6"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        >
+                        <path d="M23.44 4.83c-.81.36-1.68.6-2.6.71a4.48 4.48 0 0 0 1.96-2.48 8.94 8.94 0 0 1-2.83 1.09 4.48 4.48 0 0 0-7.64 4.08 12.72 12.72 0 0 1-9.25-4.69 4.48 4.48 0 0 0 1.39 5.98 4.41 4.41 0 0 1-2.03-.56v.06a4.48 4.48 0 0 0 3.59 4.39 4.51 4.51 0 0 1-2.02.08 4.48 4.48 0 0 0 4.18 3.11 8.97 8.97 0 0 1-5.55 1.91c-.36 0-.71-.02-1.06-.06a12.67 12.67 0 0 0 6.87 2.01c8.25 0 12.77-6.84 12.77-12.77 0-.2 0-.41-.02-.61a9.12 9.12 0 0 0 2.25-2.32z" />
+                        </svg>
+                    </a>
+                </li>
+
 
             </ul>
         </div>

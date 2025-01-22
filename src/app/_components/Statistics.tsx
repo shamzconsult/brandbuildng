@@ -41,7 +41,7 @@ const Counters = () => {
   }, []);
 
   return (
-    <div className="bg-gray-100 flex items-center justify-center p-5 mt-6">
+    <div className="bg-gray-100 flex items-center justify-center p-5 mt-">
       <div className="md:flex gap-32 lg:gap-40 counter-container p-6">
         <div className="counter-item text-center mb-4">
           <h2 className="flex items-center justify-center text-black text-6xl font-bold rounded-full">
