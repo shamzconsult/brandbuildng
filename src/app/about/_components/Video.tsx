@@ -1,21 +1,33 @@
-import React from "react";
+"use client";
 
-const VideoSection = () => {
+export function YTVideo({
+  ytVideoId,
+  removeRounded,
+}: {
+  ytVideoId: string;
+  removeRounded?: boolean;
+}) {
   return (
-    <section className="video-section flex items-center justify-center p-8 ">
-      <div className="max-w-screen-xl w-full">
-        <h2 className="text-3xl font-bold text-orange-500 mb-10 text-center">Our Introduction Video</h2>
-        <video
-          className="w-full rounded-lg h-[500px] shadow-lg"
-          controls
-          poster="./assets/images/brandbuild-hero-image.webp"
-        >
-          <source src="./assets/videos/VIDEO-2025-01-21-22-01-43.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+    <div
+      className={`relative border-none bg-white aspect-video overflow-hidden max-w-screen-xl mx-auto  ${
+        removeRounded ? "" : ""
+      }`}
+    >
+      <div className="absolute inset-0 flex justify-center items-center">
+        <div className="loader"></div>
       </div>
-    </section>
+      <div className="relative z-[1]">
+        <div className="aspect-video">
+          <iframe
+            className="w-full h-full"
+            src={`https://www.youtube.com/embed/${ytVideoId}`}
+            title="testimonial from our student"
+            loading="eager"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
+      </div>
+    </div>
   );
-};
-
-export default VideoSection;
+}

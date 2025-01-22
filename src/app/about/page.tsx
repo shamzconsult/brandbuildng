@@ -5,8 +5,7 @@ import Footer from '../_components/Footer'
 import TestimonialSection from '../_components/Testimonial'
 import AboutSection from './_components/AboutSection'
 import Counters from '../_components/Statistics'
-// import Contact from '../_components/Contact'
-import VideoSection from './_components/Video'
+import  { YTVideo } from './_components/Video'
 import Team from './_components/Team'
 
 function page() {
@@ -17,8 +16,7 @@ function page() {
         <AboutSection/>
         <Counters/>
         <Team/>
-        <VideoSection/>
-        {/* <Contact/> */}
+        <YTVideo  ytVideoId="AaiSd3SrU6A"/>
         <TestimonialSection/>
         <Footer/>
     </div>
