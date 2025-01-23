@@ -13,7 +13,7 @@ function Team() {
           />
         </div>
 
-        <div className="h-[400px] md:h-[600px] md:w-1/2 bg-gray-100 flex items-center">
+        <div className="h-[400px] md:h-[600px] md:w-1/2 bg-gray-200 flex items-center">
           <div className="p-6 lg:p-10 w-full lg:w-5/6">
             <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl px-4 lg:px-16 mb-6 leading-6">
               Focused team with specialized skills
