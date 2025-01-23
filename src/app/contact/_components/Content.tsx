@@ -47,7 +47,7 @@ function Content() {
     };
 
     return (
-        <div className='max-w-screen-2xl mx-auto md:flex md:gap-10 mt-20'>
+        <div className='max-w-screen-xl mx-auto md:flex md:gap-10 mt-20'>
             <div className='md:w-1/2'>
                 <div>
                     <img 
