@@ -29,12 +29,17 @@ export default {
           "0%": { opacity: "0", transform: "translateX(100%)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
       },
       animation: {
         fadeIn: "fadeIn 1.2s ease-out",
         slideIn: "slideIn 1.5s ease-out",
         slideInLeft: "slideInLeft 1.5s ease-out",
         slideInRight: "slideInRight 1.5s ease-out",
+        marquee: "marquee 25s linear infinite",
       },
     },
   },

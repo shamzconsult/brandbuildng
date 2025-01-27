@@ -129,7 +129,7 @@ function Content() {
                                     onChange={handleChange}
                                     required
                                     className="mt-2 p-4 w-full h-[100px] rounded-lg border-gray-200 align-top shadow-sm sm:text-sm"
-                                    placeholder="Enter any additional order notes..."
+                                    placeholder="Enter any additional message..."
                                 ></textarea>
                                 </div>
 
