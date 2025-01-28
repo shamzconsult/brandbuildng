@@ -12,10 +12,9 @@ const LogoSlider = () => {
                 <span className="bg-orange-500 text-white px-4 ml-2 transform rotate-3 inline-block">Our Brand</span>
                 </h2>
                 <p className="mt-4 max-w-2xl mx-auto text-gray-500">
-                We have had the privilege of working with esteemed organizations and
-                institutions across various sectors, including export, energy,
-                corporate businesses, and public health. These collaborations reflect
-                our commitment to delivering exceptional services.
+                We have worked with different organizations on arrays of projects. These
+                organizations have had their brands represented well before their
+                customers.
                 </p>
             </header>
 

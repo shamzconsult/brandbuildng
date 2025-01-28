@@ -5,15 +5,18 @@ function Collection() {
     <section>
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
             <header>
-            <h2 className="text-xl font-bold text-gray-900 sm:text-3xl">Product Collection</h2>
+            <h2 className="text-xl font-bold text-orange-500 sm:text-3xl">Product Collection</h2>
 
-            <p className="mt-4 max-w-md text-gray-500">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque praesentium cumque iure
-                dicta incidunt est ipsam, officia dolor fugit natus?
+            <p className="mt-4 max-w-3xl text-gray-500 mb-6">
+            At brandbuild.ng, we offer a wide range of products and services designed to help our clients effectively 
+            communicate their brand identity. From custom-designed logos and marketing materials to premium packaging 
+            solutions, each product is tailored to meet your unique needs. Explore our collection to find high-quality items 
+            at competitive prices, ensuring value for your investment. Whether you are looking for budget-friendly options or 
+            premium offerings, our catalog has something for everyone.
             </p>
             </header>
 
-            <div className="mt-8 sm:flex sm:items-center sm:justify-between">
+            {/* <div className="mt-8 sm:flex sm:items-center sm:justify-between">
                 <div className="block sm:hidden">
                     <button
                     className="flex cursor-pointer items-center gap-2 border-b border-gray-400 pb-1 text-gray-900 transition hover:border-gray-600"
@@ -192,26 +195,26 @@ function Collection() {
                     <option value="Price, ASC">Price, ASC</option>
                     </select>
                 </div>
-            </div>
+            </div> */}
 
             <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <li>
                     <a href="#" className="group block overflow-hidden">
                     <img
-                        src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                        src="./assets/images/Brandbuildng 1.jpg"
                         alt=""
                         className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
                     />
 
                     <div className="relative bg-white pt-3">
                         <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                        Basic Tee
+                        10 Capacity Umbrella
                         </h3>
 
                         <p className="mt-2">
                         <span className="sr-only"> Regular Price </span>
 
-                        <span className="tracking-wider text-gray-900"> £24.00 GBP </span>
+                        <span className="tracking-wider text-gray-900"> #24,000.00 NGN </span>
                         </p>
                     </div>
                     </a>
@@ -220,20 +223,20 @@ function Collection() {
                 <li>
                     <a href="#" className="group block overflow-hidden">
                     <img
-                        src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                        src="./assets/images/Brandbuildng 4.jpg"
                         alt=""
                         className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
                     />
 
                     <div className="relative bg-white pt-3">
                         <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                        Basic Tee
+                        Double padded Steel Jotter
                         </h3>
 
                         <p className="mt-2">
                         <span className="sr-only"> Regular Price </span>
 
-                        <span className="tracking-wider text-gray-900"> £24.00 GBP </span>
+                        <span className="tracking-wider text-gray-900"> #6000.00 NGN </span>
                         </p>
                     </div>
                     </a>
@@ -242,20 +245,20 @@ function Collection() {
                 <li>
                     <a href="#" className="group block overflow-hidden">
                     <img
-                        src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                        src="./assets/images/Brandbuildng 5.jpg"
                         alt=""
                         className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
                     />
 
                     <div className="relative bg-white pt-3">
                         <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                        Basic Tee
+                        USB and memory card
                         </h3>
 
                         <p className="mt-2">
                         <span className="sr-only"> Regular Price </span>
 
-                        <span className="tracking-wider text-gray-900"> £24.00 GBP </span>
+                        <span className="tracking-wider text-gray-900"> #3000.00 NGN </span>
                         </p>
                     </div>
                     </a>
@@ -264,20 +267,20 @@ function Collection() {
                 <li>
                     <a href="#" className="group block overflow-hidden">
                     <img
-                        src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                        src="./assets/images/Brandbuildng 6.jpg"
                         alt=""
                         className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
                     />
 
                     <div className="relative bg-white pt-3">
                         <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                        Basic Tee
+                        Mini Exclusive Package
                         </h3>
 
                         <p className="mt-2">
                         <span className="sr-only"> Regular Price </span>
 
-                        <span className="tracking-wider text-gray-900"> £24.00 GBP </span>
+                        <span className="tracking-wider text-gray-900"> #25000.00 NGN </span>
                         </p>
                     </div>
                     </a>
@@ -286,20 +289,20 @@ function Collection() {
                 <li>
                     <a href="#" className="group block overflow-hidden">
                     <img
-                        src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                        src="./assets/images/Brandbuildng 7.jpg"
                         alt=""
                         className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
                     />
 
                     <div className="relative bg-white pt-3">
                         <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                        Basic Tee
+                        Branded Paper Bag
                         </h3>
 
                         <p className="mt-2">
                         <span className="sr-only"> Regular Price </span>
 
-                        <span className="tracking-wider text-gray-900"> £24.00 GBP </span>
+                        <span className="tracking-wider text-gray-900"> #12000.00 NGN </span>
                         </p>
                     </div>
                     </a>
@@ -308,20 +311,20 @@ function Collection() {
                 <li>
                     <a href="#" className="group block overflow-hidden">
                     <img
-                        src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                        src="./assets/images/Brandbuildng 8.jpg"
                         alt=""
                         className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
                     />
 
                     <div className="relative bg-white pt-3">
                         <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                        Basic Tee
+                        Basic T-Shirt
                         </h3>
 
                         <p className="mt-2">
                         <span className="sr-only"> Regular Price </span>
 
-                        <span className="tracking-wider text-gray-900"> £24.00 GBP </span>
+                        <span className="tracking-wider text-gray-900"> #6000.00 NGN </span>
                         </p>
                     </div>
                     </a>
@@ -330,20 +333,20 @@ function Collection() {
                 <li>
                     <a href="#" className="group block overflow-hidden">
                     <img
-                        src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                        src="./assets/images/branded-box.jpg"
                         alt=""
                         className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
                     />
 
                     <div className="relative bg-white pt-3">
                         <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                        Basic Tee
+                        Branded Gift box
                         </h3>
 
                         <p className="mt-2">
                         <span className="sr-only"> Regular Price </span>
 
-                        <span className="tracking-wider text-gray-900"> £24.00 GBP </span>
+                        <span className="tracking-wider text-gray-900"> #11000.00 NGN </span>
                         </p>
                     </div>
                     </a>
@@ -352,20 +355,20 @@ function Collection() {
                 <li>
                     <a href="#" className="group block overflow-hidden">
                     <img
-                        src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                        src="./assets/images/Brandbuild.ng 3.jpg"
                         alt=""
                         className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
                     />
 
                     <div className="relative bg-white pt-3">
                         <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                        Basic Tee
+                        Branded Umbrella
                         </h3>
 
                         <p className="mt-2">
                         <span className="sr-only"> Regular Price </span>
 
-                        <span className="tracking-wider text-gray-900"> £24.00 GBP </span>
+                        <span className="tracking-wider text-gray-900"> #24000.00 NGN </span>
                         </p>
                     </div>
                     </a>

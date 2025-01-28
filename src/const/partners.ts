@@ -1,23 +1,28 @@
 export const partners = [
     {
       id: 1,
-      src: "/assets/images/avatar3.jpeg",
-      alt: "GTB",
+      src: "/assets/images/nedc2.png",
+      alt: "North-east development commission",
     },
     {
       id: 2,
-      src: "/assets/images/avatar4.avif",
-      alt: "Kuda",
+      src: "/assets/images/Police-academy.jpg",
+      alt: "Police academy",
     },
     {
       id: 3,
-      src: "/assets/images/avatar1.jpeg",
-      alt: "UBA",
+      src: "/assets/images/nedc3.jpeg",
+      alt: "North-east development commission",
     },
     {
       id: 4,
-      src: "/assets/images/ABK.jpg",
-      alt: "Piggyvest",
+      src: "/assets/images/police2.jpeg",
+      alt: "Police academy",
+    },
+    {
+      id: 5,
+      src: "/assets/images/avatar1.jpeg",
+      alt: "North-east development commission",
     },
   ];
   
