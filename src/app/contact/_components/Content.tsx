@@ -154,8 +154,8 @@ function Content() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="facebook"
-                                    className="text-white p-4 rounded-full bg-orange-500"
-                                >
+                                    className="text-white p-4 rounded-full bg-[#1877F2]" // Facebook Blue
+                                    >
                                     <i className="bi bi-facebook text-xl"></i>
                                 </a>
 
@@ -164,8 +164,8 @@ function Content() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="instagram"
-                                    className="text-white p-4 rounded-full bg-orange-500"
-                                >
+                                    className="text-white p-4 rounded-full bg-[#E4405F]" // Instagram Pink
+                                    >
                                     <i className="bi bi-instagram text-xl"></i>
                                 </a>
 
@@ -174,8 +174,8 @@ function Content() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="whatsapp"
-                                    className="text-white p-4 rounded-full bg-orange-500"
-                                >
+                                    className="text-white p-4 rounded-full bg-[#25D366]" // WhatsApp Green
+                                    >
                                     <i className="bi bi-whatsapp text-xl"></i>
                                 </a>
 
@@ -183,22 +183,24 @@ function Content() {
                                     href="https://twitter.com/brandbuildng"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    aria-label="whatsapp"
-                                    className="text-white p-4 rounded-full bg-orange-500"
-                                >
+                                    aria-label="twitter"
+                                    className="text-white p-4 rounded-full bg-black" // Twitter (X) Black
+                                    >
                                     <i className="text-xl">
-                                    <svg
+                                        <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="currentColor"
                                         viewBox="0 0 24 24"
                                         className="w-5 h-6"
-                                    >
+                                        >
                                         <path d="M3 0h7l4 8 4-8h7l-9 12 9 12h-7l-4-8-4 8H3l9-12L3 0z" />
-                                    </svg>
+                                        </svg>
                                     </i>
                                 </a>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
             </div>

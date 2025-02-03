@@ -8,19 +8,21 @@ import Counters from '../_components/Statistics'
 import  { YTVideo } from './_components/Video'
 import Team from './_components/Team'
 import LogoSlider from './_components/LogoSlider'
+import Offers from './_components/Offers'
 
 function page() {
   return (
     <div>
         <Header />
         <Intro />
-        <AboutSection/>
-        <Counters/>
-        <Team/>
-        <YTVideo  ytVideoId="AaiSd3SrU6A"/>
-        <LogoSlider/>
-        <TestimonialSection/>
-        <Footer/>
+        <AboutSection />
+        <Counters />
+        <Team />
+        <Offers />
+        <YTVideo  ytVideoId="AaiSd3SrU6A" />
+        <LogoSlider />
+        <TestimonialSection />
+        <Footer />
     </div>
   )
 }

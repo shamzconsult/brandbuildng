@@ -15,7 +15,7 @@ function Intro() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
         <div className="border shadow-md rounded-lg p-6 text-center">
           <i className="bi bi-lightbulb-fill text-5xl text-[#ff6600] mb-10"></i>
           <h3 className="text-orange-500 mt-4 font-semibold mb-4">
@@ -73,6 +73,15 @@ function Intro() {
           </h3>
           <p>We make your events unforgettable with our tailored branding solutions.</p>
         </div>
+
+        <div className="border shadow-md rounded-lg p-6 text-center ">
+          <i className="bi bi-printer-fill text-5xl text-[#ff6600] mb-10"></i>
+          <h3 className="text-orange-500 mt-4 font-semibold mb-4">
+            General Printing
+          </h3>
+          <p>We offer high-quality printing services for business cards, brochures, banners, flyers, and more.</p>
+        </div>
+        
       </div>
     </div>
   );

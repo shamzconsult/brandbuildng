@@ -4,10 +4,10 @@ function Collection() {
   return (
     <section>
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-            <header>
-            <h2 className="text-xl font-bold text-orange-500 sm:text-3xl">Product Collection</h2>
+            <header className='text-center'>
+            <h2 className="text-3xl font-bold text-orange-500 ">Product Collection</h2>
 
-            <p className="mt-4 max-w-3xl text-gray-500 mb-6">
+            <p className="mt-4 max-w-4xl mx-auto text-gray-500 mb-6">
             At brandbuild.ng, we offer a wide range of products and services designed to help our clients effectively 
             communicate their brand identity. From custom-designed logos and marketing materials to premium packaging 
             solutions, each product is tailored to meet your unique needs. Explore our collection to find high-quality items 
@@ -197,163 +197,121 @@ function Collection() {
                 </div>
             </div> */}
 
-            <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <ul className="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 <li>
-                    <a href="#" className="group block overflow-hidden">
-                    <img
-                        src="./assets/images/Brandbuildng 1.jpg"
-                        alt=""
-                        className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-                    />
+                    <div className="group block overflow-hidden">
+                        <img
+                            src="./assets/images/Brandbuildng 1.jpg"
+                            alt=""
+                            className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+                        />
 
-                    <div className="relative bg-white pt-3">
-                        <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                        10 Capacity Umbrella
-                        </h3>
-
-                        <p className="mt-2">
-                        <span className="sr-only"> Regular Price </span>
-
-                        <span className="tracking-wider text-gray-900"> #24,000.00 NGN </span>
-                        </p>
+                        <div className="relative bg-white pt-3">
+                            <h3 className="text-lg text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                            10 Capacity Umbrella
+                            </h3>
+                        </div>
                     </div>
-                    </a>
                 </li>
 
                 <li>
-                    <a href="#" className="group block overflow-hidden">
-                    <img
-                        src="./assets/images/Brandbuildng 4.jpg"
-                        alt=""
-                        className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-                    />
+                    <div className="group block overflow-hidden">
+                        <img
+                            src="./assets/images/Brandbuildng 4.jpg"
+                            alt=""
+                            className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+                        />
 
-                    <div className="relative bg-white pt-3">
-                        <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                        Double padded Steel Jotter
-                        </h3>
-
-                        <p className="mt-2">
-                        <span className="sr-only"> Regular Price </span>
-
-                        <span className="tracking-wider text-gray-900"> #6000.00 NGN </span>
-                        </p>
+                        <div className="relative bg-white pt-3">
+                            <h3 className="text-lg text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                            Double padded Steel Jotter
+                            </h3>
+                        </div>
                     </div>
-                    </a>
                 </li>
 
                 <li>
-                    <a href="#" className="group block overflow-hidden">
-                    <img
-                        src="./assets/images/Brandbuildng 5.jpg"
-                        alt=""
-                        className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-                    />
+                    <div className="group block overflow-hidden">
+                        <img
+                            src="./assets/images/Brandbuildng 5.jpg"
+                            alt=""
+                            className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+                        />
 
-                    <div className="relative bg-white pt-3">
-                        <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                        USB and memory card
-                        </h3>
-
-                        <p className="mt-2">
-                        <span className="sr-only"> Regular Price </span>
-
-                        <span className="tracking-wider text-gray-900"> #3000.00 NGN </span>
-                        </p>
+                        <div className="relative bg-white pt-3">
+                            <h3 className="text-lg text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                            USB and memory card
+                            </h3>
+                        </div>
                     </div>
-                    </a>
                 </li>
 
                 <li>
-                    <a href="#" className="group block overflow-hidden">
-                    <img
-                        src="./assets/images/Brandbuildng 6.jpg"
-                        alt=""
-                        className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-                    />
+                    <div className="group block overflow-hidden">
+                        <img
+                            src="./assets/images/Brandbuildng 6.jpg"
+                            alt=""
+                            className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+                        />
 
-                    <div className="relative bg-white pt-3">
-                        <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                        Mini Exclusive Package
-                        </h3>
-
-                        <p className="mt-2">
-                        <span className="sr-only"> Regular Price </span>
-
-                        <span className="tracking-wider text-gray-900"> #25000.00 NGN </span>
-                        </p>
+                        <div className="relative bg-white pt-3">
+                            <h3 className="text-lg text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                            Mini Exclusive Package
+                            </h3>
+                        </div>
                     </div>
-                    </a>
                 </li>
 
                 <li>
-                    <a href="#" className="group block overflow-hidden">
-                    <img
-                        src="./assets/images/Brandbuildng 7.jpg"
-                        alt=""
-                        className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-                    />
+                    <div className="group block overflow-hidden">
+                        <img
+                            src="./assets/images/Brandbuildng 7.jpg"
+                            alt=""
+                            className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+                        />
 
-                    <div className="relative bg-white pt-3">
-                        <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                        Branded Paper Bag
-                        </h3>
-
-                        <p className="mt-2">
-                        <span className="sr-only"> Regular Price </span>
-
-                        <span className="tracking-wider text-gray-900"> #12000.00 NGN </span>
-                        </p>
+                        <div className="relative bg-white pt-3">
+                            <h3 className="text-lg text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                            Branded Paper Bag
+                            </h3>
+                        </div>
                     </div>
-                    </a>
                 </li>
 
                 <li>
-                    <a href="#" className="group block overflow-hidden">
-                    <img
-                        src="./assets/images/Brandbuildng 8.jpg"
-                        alt=""
-                        className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-                    />
+                    <div className="group block overflow-hidden">
+                        <img
+                            src="./assets/images/Brandbuildng 8.jpg"
+                            alt=""
+                            className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+                        />
 
-                    <div className="relative bg-white pt-3">
-                        <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                        Basic T-Shirt
-                        </h3>
-
-                        <p className="mt-2">
-                        <span className="sr-only"> Regular Price </span>
-
-                        <span className="tracking-wider text-gray-900"> #6000.00 NGN </span>
-                        </p>
+                        <div className="relative bg-white pt-3">
+                            <h3 className="text-lg text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                            Basic T-Shirt
+                            </h3>
+                        </div>
                     </div>
-                    </a>
                 </li>
 
                 <li>
-                    <a href="#" className="group block overflow-hidden">
-                    <img
-                        src="./assets/images/branded-box.jpg"
-                        alt=""
-                        className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-                    />
+                    <div className="group block overflow-hidden">
+                        <img
+                            src="./assets/images/branded-box.jpg"
+                            alt=""
+                            className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+                        />
 
-                    <div className="relative bg-white pt-3">
-                        <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                        Branded Gift box
-                        </h3>
-
-                        <p className="mt-2">
-                        <span className="sr-only"> Regular Price </span>
-
-                        <span className="tracking-wider text-gray-900"> #11000.00 NGN </span>
-                        </p>
+                        <div className="relative bg-white pt-3">
+                            <h3 className="text-lg text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                            Branded Gift box
+                            </h3>
+                        </div>
                     </div>
-                    </a>
                 </li>
 
                 <li>
-                    <a href="#" className="group block overflow-hidden">
+                    <div className="group block overflow-hidden">
                     <img
                         src="./assets/images/Brandbuild.ng 3.jpg"
                         alt=""
@@ -361,17 +319,11 @@ function Collection() {
                     />
 
                     <div className="relative bg-white pt-3">
-                        <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                        <h3 className="text-lg text-gray-700 group-hover:underline group-hover:underline-offset-4">
                         Branded Umbrella
                         </h3>
-
-                        <p className="mt-2">
-                        <span className="sr-only"> Regular Price </span>
-
-                        <span className="tracking-wider text-gray-900"> #24000.00 NGN </span>
-                        </p>
                     </div>
-                    </a>
+                    </div>
                 </li>
             </ul>
         </div>
