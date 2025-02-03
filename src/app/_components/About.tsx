@@ -3,7 +3,7 @@ import React from 'react';
 function About() {
   return (
     <section className="flex w-full flex-col items-center bg-white p-10 max-md:px-4">
-      <h3 className="text-primary text-4xl text-gray-500 font-semibold mb-8">Our <span className='text-orange-500'>ORGANIZATION</span> at a glance</h3>
+      <h3 className="text-primary text-4xl text-gray-500 font-semibold mb-8">Our <span className='text-white bg-orange-500 p-2 rounded-full '>ORGANIZATION</span> at a glance</h3>
 
       <div className="text-lg text-center max-w-[900px] mb-5">
         <h2>

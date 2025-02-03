@@ -4,9 +4,10 @@ function Offers() {
   return (
     <div className='mx-auto max-w-screen-xl p-4 mb-16'>
         <h2 className='mb-10 text-3xl md:text-5xl text-gray-500'>Hey Friend, Check out our Offer!</h2>
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-16 md:px-4'>
 
-            <div className="relative block rounded-tr-3xl border bg-slate-50 shadow-md rounded-2xl border-gray-100">
+            {/* Gift-items card */}
+            <div className="relative block rounded-tr-3xl border bg-slate-50 rounded-2xl border-gray-100">
                 <span
                     className="absolute -right-px -top-px rounded-bl-3xl rounded-tr-3xl bg-orange-500 px-6 py-4 font-medium uppercase tracking-widest text-white"
                 >
@@ -22,20 +23,23 @@ function Offers() {
                 <div className="p-4 text-center">
                     <strong className="text-xl font-medium text-gray-900"> Gift-items </strong>
 
-                    <p className="mt-2 text-pretty text-gray-700">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet officia rem vel voluptatum in
-                    eum vitae aliquid at sed dignissimos.
+                    <p className="mt-2 text-pretty text-gray-400">
+                    Our premium gift items are carefully curated to leave a lasting impression.
                     </p>
+
+                    <p className='text-3xl text-orange-500 mt-4'>$30.99</p>
+                    <p className='mt-2 text-yellow-400 text-xl'>★★★★☆</p>
 
                     <span
                     className="mt-4 block rounded-md border border-orange-900 bg-orange-500 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors"
                     >
-                    #20,000 NGN
+                    LEARN MORE
                     </span>
                 </div>
             </div>
 
-            <div className="relative block rounded-tr-3xl border bg-slate-50 shadow-md rounded-2xl border-gray-100">
+            {/* Event branding card */}
+            <div className="relative block rounded-tr-3xl border bg-slate-50 rounded-2xl border-gray-100">
                 <span
                     className="absolute -right-px -top-px rounded-bl-3xl rounded-tr-3xl bg-orange-500 px-6 py-4 font-medium uppercase tracking-widest text-white"
                 >
@@ -51,20 +55,23 @@ function Offers() {
                 <div className="p-4 text-center">
                     <strong className="text-xl font-medium text-gray-900"> Event Branding </strong>
 
-                    <p className="mt-2 text-pretty text-gray-700">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet officia rem vel voluptatum in
-                    eum vitae aliquid at sed dignissimos.
+                    <p className="mt-2 text-pretty text-gray-400">
+                    We create eye-catching event branding that enhances visibility and engagement.
                     </p>
+
+                    <p className='text-3xl text-orange-500 mt-4'>$110.99</p>
+                    <p className='mt-2 text-yellow-400 text-xl'>★★★★★</p>
 
                     <span
                     className="mt-4 block rounded-md border border-orange-900 bg-orange-500 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors"
                     >
-                    #20,000 NGN
+                    LEARN MORE
                     </span>
                 </div>
             </div>
 
-            <div className="relative block rounded-tr-3xl border bg-slate-50 shadow-md rounded-2xl border-gray-100">
+            {/* Zip-lock bag card */}
+            <div className="relative block rounded-tr-3xl border bg-slate-50 rounded-2xl border-gray-100">
                 <span
                     className="absolute -right-px -top-px rounded-bl-3xl rounded-tr-3xl bg-orange-500 px-6 py-4 font-medium uppercase tracking-widest text-white"
                 >
@@ -80,20 +87,23 @@ function Offers() {
                 <div className="p-4 text-center">
                     <strong className="text-xl font-medium text-gray-900"> Zip-lock bags </strong>
 
-                    <p className="mt-2 text-pretty text-gray-700">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet officia rem vel voluptatum in
-                    eum vitae aliquid at sed dignissimos.
+                    <p className="mt-2 text-pretty text-gray-400">
+                    Durable and reusable zip-lock bags, perfect for packaging and storage.
                     </p>
+
+                    <p className='text-3xl text-orange-500 mt-4'>$20.99</p>
+                    <p className='mt-2 text-yellow-400 text-xl'>★★★★☆</p>
 
                     <span
                     className="mt-4 block rounded-md border border-orange-900 bg-orange-500 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors"
                     >
-                    #20,000 NGN
+                    LEARN MORE
                     </span>
                 </div>
             </div>
 
-            <div className="relative block rounded-tr-3xl border bg-slate-50 shadow-md rounded-2xl border-gray-100">
+            {/* Content Creation card */}
+            <div className="relative block rounded-tr-3xl border bg-slate-50 rounded-2xl border-gray-100">
                 <span
                     className="absolute -right-px -top-px rounded-bl-3xl rounded-tr-3xl bg-orange-500 px-6 py-4 font-medium uppercase tracking-widest text-white"
                 >
@@ -109,20 +119,23 @@ function Offers() {
                 <div className="p-4 text-center">
                     <strong className="text-xl font-medium text-gray-900"> Content Creation </strong>
 
-                    <p className="mt-2 text-pretty text-gray-700">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet officia rem vel voluptatum in
-                    eum vitae aliquid at sed dignissimos.
+                    <p className="mt-2 text-pretty text-gray-400">
+                    Engaging and high-quality content tailored to captivate your audience.
                     </p>
+
+                    <p className='text-3xl text-orange-500 mt-4'>$40.99</p>
+                    <p className='mt-2 text-yellow-400 text-xl'>★★★★☆</p>
 
                     <span
                     className="mt-4 block rounded-md border border-orange-900 bg-orange-500 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors"
                     >
-                    #20,000 NGN
+                    LEARN MORE
                     </span>
                 </div>
             </div>
 
-            <div className="relative block rounded-tr-3xl border bg-slate-50 shadow-md rounded-2xl border-gray-100">
+            {/* Waterproof bag card */}
+            <div className="relative block rounded-tr-3xl border bg-slate-50 rounded-2xl border-gray-100">
                 <span
                     className="absolute -right-px -top-px rounded-bl-3xl rounded-tr-3xl bg-orange-500 px-6 py-4 font-medium uppercase tracking-widest text-white"
                 >
@@ -138,20 +151,23 @@ function Offers() {
                 <div className="p-4 text-center">
                     <strong className="text-xl font-medium text-gray-900"> Waterproof transparent bags </strong>
 
-                    <p className="mt-2 text-pretty text-gray-700">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet officia rem vel voluptatum in
-                    eum vitae aliquid at sed dignissimos.
+                    <p className="mt-2 text-pretty text-gray-400">
+                    Durable and stylish waterproof bags designed to keep your essentials safe and visible.
                     </p>
+
+                    <p className='text-3xl text-orange-500 mt-4'>$15.99</p>
+                    <p className='mt-2 text-yellow-400 text-xl'>★★★☆☆</p>
 
                     <span
                     className="mt-4 block rounded-md border border-orange-900 bg-orange-500 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors"
                     >
-                    #20,000 NGN
+                    LEARN MORE
                     </span>
                 </div>
             </div>
 
-            <div className="relative block rounded-tr-3xl border bg-slate-50 shadow-md rounded-2xl border-gray-100">
+            {/* Branded-shit card */}
+            <div className="relative block rounded-tr-3xl border bg-slate-50 rounded-2xl border-gray-100">
                 <span
                     className="absolute -right-px -top-px rounded-bl-3xl rounded-tr-3xl bg-orange-500 px-6 py-4 font-medium uppercase tracking-widest text-white"
                 >
@@ -167,24 +183,27 @@ function Offers() {
                 <div className="p-4 text-center">
                     <strong className="text-xl font-medium text-gray-900"> Branded Shirt </strong>
 
-                    <p className="mt-2 text-pretty text-gray-700">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet officia rem vel voluptatum in
-                    eum vitae aliquid at sed dignissimos.
+                    <p className="mt-2 text-pretty text-gray-400">
+                    High-quality branded shirts designed for style, comfort, and a professional look.
                     </p>
+
+                    <p className='text-3xl text-orange-500 mt-4'>$25.99</p>
+                    <p className='mt-2 text-yellow-400 text-xl'>★★★★★</p>
 
                     <span
                     className="mt-4 block rounded-md border border-orange-900 bg-orange-500 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors"
                     >
-                    #20,000 NGN
+                    LEARN MORE
                     </span>
                 </div>
             </div>
 
-            <div className="relative block rounded-tr-3xl border bg-slate-50 shadow-md rounded-2xl border-gray-100">
+            {/* Umbrella card */}
+            <div className="relative block rounded-tr-3xl border bg-slate-50 rounded-2xl border-gray-100">
                 <span
                     className="absolute -right-px -top-px rounded-bl-3xl rounded-tr-3xl bg-orange-500 px-6 py-4 font-medium uppercase tracking-widest text-white"
                 >
-                    Save 8%
+                    Save 2%
                 </span>
 
                 <img
@@ -196,24 +215,27 @@ function Offers() {
                 <div className="p-4 text-center">
                     <strong className="text-xl font-medium text-gray-900"> Max-size Branded Umbrella </strong>
 
-                    <p className="mt-2 text-pretty text-gray-700">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet officia rem vel voluptatum in
-                    eum vitae aliquid at sed dignissimos.
+                    <p className="mt-2 text-pretty text-gray-400">
+                    Durable, wind-resistant umbrella designed for maximum coverage and brand visibility.
                     </p>
+
+                    <p className='text-3xl text-orange-500 mt-4'>$120.99</p>
+                    <p className='mt-2 text-yellow-400 text-xl'>★★★★☆</p>
 
                     <span
                     className="mt-4 block rounded-md border border-orange-900 bg-orange-500 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors"
                     >
-                    #20,000 NGN
+                    LEARN MORE
                     </span>
                 </div>
             </div>
 
-            <div className="relative block rounded-tr-3xl border bg-slate-50 shadow-md rounded-2xl border-gray-100">
+            {/* Digital Marketing card */}
+            <div className="relative block rounded-tr-3xl border bg-slate-50 rounded-2xl border-gray-100">
                 <span
                     className="absolute -right-px -top-px rounded-bl-3xl rounded-tr-3xl bg-orange-500 px-6 py-4 font-medium uppercase tracking-widest text-white"
                 >
-                    Save 8%
+                    Save 13%
                 </span>
 
                 <img
@@ -225,24 +247,27 @@ function Offers() {
                 <div className="p-4 text-center">
                     <strong className="text-xl font-medium text-gray-900"> Digital Marketing </strong>
 
-                    <p className="mt-2 text-pretty text-gray-700">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet officia rem vel voluptatum in
-                    eum vitae aliquid at sed dignissimos.
+                    <p className="mt-2 text-pretty text-gray-400">
+                    Boost your brand online presence with data-driven digital marketing strategies.
                     </p>
+
+                    <p className='text-3xl text-orange-500 mt-4'>$70.99</p>
+                    <p className='mt-2 text-yellow-400 text-xl'>★★★★★</p>
 
                     <span
                     className="mt-4 block rounded-md border border-orange-900 bg-orange-500 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors"
                     >
-                    #20,000 NGN
+                    LEARN MORE
                     </span>
                 </div>
             </div>
 
-            <div className="relative block rounded-tr-3xl border bg-slate-50 shadow-md rounded-2xl border-gray-100">
+            {/* Brand Banner card */}
+            <div className="relative block rounded-tr-3xl border bg-slate-50 rounded-2xl border-gray-100">
                 <span
                     className="absolute -right-px -top-px rounded-bl-3xl rounded-tr-3xl bg-orange-500 px-6 py-4 font-medium uppercase tracking-widest text-white"
                 >
-                    Save 8%
+                    Save 7%
                 </span>
 
                 <img
@@ -254,15 +279,17 @@ function Offers() {
                 <div className="p-4 text-center">
                     <strong className="text-xl font-medium text-gray-900"> Brand Banner Customization </strong>
 
-                    <p className="mt-2 text-pretty text-gray-700">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet officia rem vel voluptatum in
-                    eum vitae aliquid at sed dignissimos.
+                    <p className="mt-2 text-pretty text-gray-400">
+                    Create custom banners that make your brand stand out and leave a lasting impression.
                     </p>
+
+                    <p className='text-3xl text-orange-500 mt-4'>$50.99</p>
+                    <p className='mt-2 text-yellow-400 text-xl'>★★★★☆</p>
 
                     <span
                     className="mt-4 block rounded-md border border-orange-900 bg-orange-500 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors"
                     >
-                    #20,000 NGN
+                    LEARN MORE
                     </span>
                 </div>
             </div>

@@ -21,7 +21,7 @@ export const partners = [
     },
     {
       id: 5,
-      src: "/assets/images/avatar1.jpeg",
+      src: "/assets/images/nedc6.jpg",
       alt: "North-east development commission",
     },
   ];
