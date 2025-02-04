@@ -4,7 +4,7 @@ function Offers() {
   return (
     <div className='mx-auto max-w-screen-xl p-4 mb-16'>
         <h2 className='mb-10 text-3xl md:text-5xl text-gray-500'>Hey Friend, Check out our Offer!</h2>
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-16 md:px-4'>
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-12 md:px-4'>
 
             {/* Gift-items card */}
             <div className="relative block rounded-tr-3xl border bg-slate-50 rounded-2xl border-gray-100">

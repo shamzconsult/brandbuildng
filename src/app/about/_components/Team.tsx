@@ -2,7 +2,7 @@ import React from 'react';
 
 function Team() {
   return (
-    <div className="mb-20 h-auto">
+    <div className="mb-20 hidden md:block h-auto">
       <div className="flex flex-col md:flex-row">
         {/* Left Image Section */}
         <div className="w-full md:w-1/2 relative">
