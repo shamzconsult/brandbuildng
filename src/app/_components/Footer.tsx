@@ -5,7 +5,7 @@ function Footer() {
     const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-white">
-    <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
+    <div className="mx-auto max-w-screen-2xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
 
         <div className='-mt-12'>
@@ -85,7 +85,7 @@ function Footer() {
 
                 <li>
                     <a
-                        href="https://api.whatsapp.com/send?phone=+2349038940088"
+                          href="https://api.whatsapp.com/send?phone=%2B2349038940088"
                         rel="noreferrer"
                         target="_blank"
                         className="text-orange-500 transition hover:text-teal-700/75"
@@ -104,6 +104,28 @@ function Footer() {
                         </svg>
                     </a>
                 </li>
+
+                <li>
+                    <a
+                        href="https://twitter.com/brandbuildng"
+                        rel="noreferrer"
+                        target="_blank"
+                        className="text-orange-500 transition hover:text-teal-700/75"
+                        >
+                        <span className="sr-only">Twitter</span>
+                        <svg
+                            className="size-6"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path d="M3 0h7l4 8 4-8h7l-9 12 9 12h-7l-4-8-4 8H3l9-12L3 0z" />
+                        </svg>
+                    </a>
+
+                </li>
+
 
             </ul>
         </div>

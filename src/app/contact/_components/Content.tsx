@@ -47,7 +47,7 @@ function Content() {
     };
 
     return (
-        <div className='max-w-screen-2xl mx-auto md:flex md:gap-10 mt-20'>
+        <div className='max-w-screen-xl mx-auto md:flex md:gap-10 mt-20'>
             <div className='md:w-1/2'>
                 <div>
                     <img 
@@ -83,7 +83,8 @@ function Content() {
 
 
                 <div className=''>
-                    <div className="mx-auto max-w-screen-xl px-2 py-10 sm:px-2 lg:px-4">
+                    <div className="mx-auto max-w-screen-xl px-2 py-6 sm:px-2 lg:px-4">
+                        {/* Form section */}
                         <div className="mx-auto max-w-lg">
                             <form onSubmit={handleSubmit} className="mb-0 mt-2 space-y-4 rounded-lg p-4 h-[500px] shadow-lg sm:p-6 lg:p-8 bg-gray-200">
 
@@ -129,7 +130,7 @@ function Content() {
                                     onChange={handleChange}
                                     required
                                     className="mt-2 p-4 w-full h-[100px] rounded-lg border-gray-200 align-top shadow-sm sm:text-sm"
-                                    placeholder="Enter any additional order notes..."
+                                    placeholder="Enter any additional message..."
                                 ></textarea>
                                 </div>
 
@@ -144,6 +145,62 @@ function Content() {
                             </form>
                             {status && <p className='mt-4 text-center text-sm'>{status}</p>}
                         </div>
+
+                        <div className='mt-20 text-center'>
+                            <h2 className='mb-10 text-2xl font-bold'>Follow Us</h2>
+                            <div className="flex items-center justify-center gap-4">
+                                <a
+                                    href="https://www.facebook.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="facebook"
+                                    className="text-white p-4 rounded-full bg-[#1877F2]" // Facebook Blue
+                                    >
+                                    <i className="bi bi-facebook text-xl"></i>
+                                </a>
+
+                                <a
+                                    href="https://www.instagram.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="instagram"
+                                    className="text-white p-4 rounded-full bg-[#E4405F]" // Instagram Pink
+                                    >
+                                    <i className="bi bi-instagram text-xl"></i>
+                                </a>
+
+                                <a
+                                    href="https://api.whatsapp.com/send?phone=+2349038940088"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="whatsapp"
+                                    className="text-white p-4 rounded-full bg-[#25D366]" // WhatsApp Green
+                                    >
+                                    <i className="bi bi-whatsapp text-xl"></i>
+                                </a>
+
+                                <a
+                                    href="https://twitter.com/brandbuildng"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="twitter"
+                                    className="text-white p-4 rounded-full bg-black" // Twitter (X) Black
+                                    >
+                                    <i className="text-xl">
+                                        <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="currentColor"
+                                        viewBox="0 0 24 24"
+                                        className="w-5 h-6"
+                                        >
+                                        <path d="M3 0h7l4 8 4-8h7l-9 12 9 12h-7l-4-8-4 8H3l9-12L3 0z" />
+                                        </svg>
+                                    </i>
+                                </a>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
             </div>

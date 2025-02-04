@@ -5,18 +5,24 @@ import Footer from '../_components/Footer'
 import TestimonialSection from '../_components/Testimonial'
 import AboutSection from './_components/AboutSection'
 import Counters from '../_components/Statistics'
-import Contact from '../_components/Contact'
+import  { YTVideo } from './_components/Video'
+import Team from './_components/Team'
+import LogoSlider from './_components/LogoSlider'
+import Offers from './_components/Offers'
 
 function page() {
   return (
     <div>
         <Header />
         <Intro />
-        <AboutSection/>
-        <Counters/>
-        <Contact/>
-        <TestimonialSection/>
-        <Footer/>
+        <AboutSection />
+        <Counters />
+        <Team />
+        <Offers />
+        <YTVideo  ytVideoId="AaiSd3SrU6A" />
+        <LogoSlider />
+        <TestimonialSection />
+        <Footer />
     </div>
   )
 }

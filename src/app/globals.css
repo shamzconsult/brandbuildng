@@ -38,6 +38,31 @@ img {
   }
 }
 
+@layer components {
+  .loader {
+    @apply w-12 h-12 inline-block relative;
+  }
+  .loader::after,
+  .loader::before {
+    content: "";
+    @apply box-border w-12 h-12 rounded-full border-2 border-white absolute left-0 top-0;
+    animation: animloader 2s linear infinite;
+  }
+  .loader::after {
+    animation-delay: 1s;
+  }
+  @keyframes animloader {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+}
+
 
 body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
