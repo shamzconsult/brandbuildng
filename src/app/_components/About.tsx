@@ -3,9 +3,9 @@ import React from 'react';
 function About() {
   return (
     <section className="flex w-full flex-col items-center bg-white p-10 max-md:px-4">
-      <h3 className="text-primary text-4xl text-gray-500 font-semibold mb-8">Our <span className='text-white bg-orange-500 p-2 rounded-full '>ORGANIZATION</span> at a glance</h3>
+      <h3 className="text-primary md:text-4xl text-2xl text-gray-500 font-semibold mb-8">Our <span className='text-white bg-orange-500 p-2 rounded-full '>ORGANIZATION</span> at a glance</h3>
 
-      <div className="text-lg text-center max-w-[900px] mb-5">
+      <div className="text-lg text-pretty text-center max-w-[900px] mb-5">
         <h2>
           Our approach to business is client-focused and customer-centric. We do this by keeping our clients in the loop in various stages of planning and execution of tasks. From conception, through ideation to execution, we deploy cutting-edge project management technology and human-centered design to bring our clients’ brands to the faces of their audience.
         </h2>
