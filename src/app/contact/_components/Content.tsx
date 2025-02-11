@@ -71,9 +71,9 @@ function Content() {
                         <li className='lg:mb-6'>How can I improve my online presence with branding?</li>
                     </ol>
                 </div>
-
             </div>
 
+            {/* Second half section right side */}
             <div className='md:w-1/2  text-gray-600 p-10'>
                 <div className=''>
                     <h2 className='text-3xl md:text-5xl lg:text-7xl text-orange-500'>Have questions?</h2>
@@ -81,11 +81,11 @@ function Content() {
                     <p className='lg:text-xl'>Brandbuild.ng are available on the internet and across all social media platforms.</p>
                 </div>
 
-
+                {/* Form section */}
                 <div className=''>
-                    <div className="mx-auto max-w-screen-xl px-2 py-6 sm:px-2 lg:px-4">
+                    <div className="mx-auto max-w-screen-xl mt-10 ">
                         {/* Form section */}
-                        <div className="mx-auto max-w-lg">
+                        <div className=" ">
                             <form onSubmit={handleSubmit} className="mb-0 mt-2 space-y-4 rounded-lg p-4 h-[500px] shadow-lg sm:p-6 lg:p-8 bg-gray-200">
 
                                 <div>

@@ -9,7 +9,7 @@ export function YTVideo({
 }) {
   return (
     <div
-      className={`relative border-none bg-white aspect-video overflow-hidden max-w-screen-xl mx-auto  ${
+      className={`relative border-none bg-white aspect-video overflow-hidden max-w-screen-xl mx-auto mt-10  ${
         removeRounded ? "" : ""
       }`}
     >

@@ -5,7 +5,7 @@ function Collection() {
     <section>
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
             <header className='text-center'>
-            <h2 className="text-3xl font-bold text-orange-500 ">Product Collection</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-orange-500 ">Product Collection</h2>
 
             <p className="mt-4 max-w-4xl mx-auto text-gray-500 mb-6">
             At brandbuild.ng, we offer a wide range of products and services designed to help our clients effectively 
@@ -207,7 +207,7 @@ function Collection() {
                         />
 
                         <div className="relative bg-white pt-3">
-                            <h3 className="text-lg text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                            <h3 className="text-lg text-gray-700">
                             10 Capacity Umbrella
                             </h3>
                         </div>
@@ -223,7 +223,7 @@ function Collection() {
                         />
 
                         <div className="relative bg-white pt-3">
-                            <h3 className="text-lg text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                            <h3 className="text-lg text-gray-700">
                             Double padded Steel Jotter
                             </h3>
                         </div>
@@ -239,7 +239,7 @@ function Collection() {
                         />
 
                         <div className="relative bg-white pt-3">
-                            <h3 className="text-lg text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                            <h3 className="text-lg text-gray-700 ">
                             USB and memory card
                             </h3>
                         </div>
@@ -255,7 +255,7 @@ function Collection() {
                         />
 
                         <div className="relative bg-white pt-3">
-                            <h3 className="text-lg text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                            <h3 className="text-lg text-gray-700 ">
                             Mini Exclusive Package
                             </h3>
                         </div>
@@ -271,7 +271,7 @@ function Collection() {
                         />
 
                         <div className="relative bg-white pt-3">
-                            <h3 className="text-lg text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                            <h3 className="text-lg text-gray-700">
                             Branded Paper Bag
                             </h3>
                         </div>
@@ -287,7 +287,7 @@ function Collection() {
                         />
 
                         <div className="relative bg-white pt-3">
-                            <h3 className="text-lg text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                            <h3 className="text-lg text-gray-700">
                             Basic T-Shirt
                             </h3>
                         </div>
@@ -303,7 +303,7 @@ function Collection() {
                         />
 
                         <div className="relative bg-white pt-3">
-                            <h3 className="text-lg text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                            <h3 className="text-lg text-gray-700">
                             Branded Gift box
                             </h3>
                         </div>
@@ -319,7 +319,7 @@ function Collection() {
                     />
 
                     <div className="relative bg-white pt-3">
-                        <h3 className="text-lg text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                        <h3 className="text-lg text-gray-700">
                         Branded Umbrella
                         </h3>
                     </div>

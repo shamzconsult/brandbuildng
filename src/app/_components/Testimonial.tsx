@@ -60,7 +60,7 @@ const TestimonialSection = () => {
 
   
   return (
-    <section className="mt-5 flex w-full flex-col items-center p-[5%]">
+    <section className=" flex w-full flex-col items-center p-10">
       <h3 className="text-orange-500 text-3xl font-medium max-md:text-2xl">
         What some of our Customers say
       </h3>
