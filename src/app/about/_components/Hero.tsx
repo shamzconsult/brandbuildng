@@ -2,7 +2,7 @@ import React from 'react'
 
 function Hero() {
   return (
-    <section className="relative flex h-[650px] w-full max-w-[100vw] flex-col overflow-hidden mb-56 md:mb-6">
+    <section className="relative flex h-[650px] w-full max-w-[100vw] flex-col overflow-hidden mb-10 md:mb-6">
         <div className="flex bg-orange-500">
             <div className="w-1/2 bg-orange-500 h-[650px] animate-slideInLeft"></div>
             <div className="w-1/2 bg-orange-300 h-[650px] rounded-l-full animate-slideInRight"></div>
