@@ -1,7 +1,7 @@
 import mongoose, { models, Schema } from "mongoose";
 
 const OfferSchema = new Schema({
-    name: { 
+    title: { 
         type: String, 
         required: true 
     },
