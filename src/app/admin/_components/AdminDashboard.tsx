@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { CiEdit } from "react-icons/ci";
 import { CiTrash } from "react-icons/ci";
+import { useRef } from "react";
 
 
 interface Offer {
@@ -22,6 +23,7 @@ export default function AdminDashboard() {
   const [offers, setOffers] = useState<Offer[]>([]);
   const [editingOffer, setEditingOffer] = useState<Offer | null>(null);
   const router = useRouter();
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -101,6 +103,16 @@ export default function AdminDashboard() {
           const responseData = await offerRes.json();
           const newOffer: Offer = await responseData.newOffer;;
           setOffers((prevOffers) => [...prevOffers, newOffer]);
+          setFormData({
+            title: "",
+            description: "",
+            discount: "",
+            price: "",
+          });
+          setFile(null);
+          if (fileInputRef.current) {
+            fileInputRef.current.value = "";
+          }
         }
       } catch (error) {
         console.error('Error submitting form:', error);
@@ -252,6 +264,7 @@ export default function AdminDashboard() {
           <input 
             type="file" 
             accept="image/*"
+            ref={fileInputRef}
             onChange={(e) => setFile(e.target.files?.[0] || null)} 
             className="w-full p-4 border rounded-md"
           />
