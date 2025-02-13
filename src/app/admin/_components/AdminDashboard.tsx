@@ -1,7 +1,11 @@
 'use client';
+
+import { useRouter } from 'next/navigation';
+// import router from 'next/router';
 import { useEffect, useState } from 'react';
 import { CiEdit } from "react-icons/ci";
 import { CiTrash } from "react-icons/ci";
+
 
 interface Offer {
   _id: string;
@@ -17,12 +21,14 @@ export default function AdminDashboard() {
   const [uploading, setUploading] = useState(false);
   const [offers, setOffers] = useState<Offer[]>([]);
   const [editingOffer, setEditingOffer] = useState<Offer | null>(null);
+  const router = useRouter();
   const [formData, setFormData] = useState({
     title: '',
     description: '',
     discount: '',
     price: ''
   });
+
 
   useEffect(() => {
     async function fetchOffers() {
@@ -41,6 +47,12 @@ export default function AdminDashboard() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  const handleLogout = async () => {
+    await fetch('/api/auth/logout', { method: 'POST' });
+    router.push('/admin/login');
+  };
+  
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -187,72 +199,78 @@ export default function AdminDashboard() {
 
   
   return (
-    <div className="p-10 mt-20 max-w-6xl mx-auto">
+    <div className="p-10 mt-20 max-w-screen-xl mx-auto">
+      <div className="flex justify-end p-4">
+        <button onClick={handleLogout} className="bg-black text-white px-4 py-2 rounded-md">
+          Logout
+        </button>
+      </div>
+
       <h2 className="text-2xl text-orange-500 font-bold text-center">Admin Dashboard</h2>
 
       {/* Offer Submission Form */}
-      <form onSubmit={handleSubmit} className="mt-6 max-w-2xl mx-auto space-y-4 bg-white p-6 shadow-md rounded-md">
-        <input 
-          type="text" 
-          name="title" 
-          value={formData.title} 
-          onChange={handleChange} 
-          placeholder="Offer Title" 
-          className="w-full p-4 border rounded-md"
-          required 
-        />
+        <form onSubmit={handleSubmit} className="mt-6 max-w-2xl mx-auto space-y-4 bg-white p-6 shadow-md rounded-md">
+          <input 
+            type="text" 
+            name="title" 
+            value={formData.title} 
+            onChange={handleChange} 
+            placeholder="Offer Title" 
+            className="w-full p-4 border rounded-md"
+            required 
+          />
 
-        <textarea 
-          name="description" 
-          value={formData.description} 
-          onChange={handleChange} 
-          placeholder="Offer Description" 
-          className="w-full p-4 border rounded-md"
-          required
-        ></textarea>
+          <textarea 
+            name="description" 
+            value={formData.description} 
+            onChange={handleChange} 
+            placeholder="Offer Description" 
+            className="w-full p-4 border rounded-md"
+            required
+          ></textarea>
 
-        <input 
-          type="text" 
-          name="discount" 
-          value={formData.discount} 
-          onChange={handleChange} 
-          placeholder="Discount %" 
-          className="w-full p-4 border rounded-md"
-          required
-        />
+          <input 
+            type="text" 
+            name="discount" 
+            value={formData.discount} 
+            onChange={handleChange} 
+            placeholder="Discount %" 
+            className="w-full p-4 border rounded-md"
+            required
+          />
 
-        <input 
-          type="text" 
-          name="price" 
-          value={formData.price} 
-          onChange={handleChange} 
-          placeholder="Price" 
-          className="w-full p-4 border rounded-md"
-          required
-        />
+          <input 
+            type="text" 
+            name="price" 
+            value={formData.price} 
+            onChange={handleChange} 
+            placeholder="Price" 
+            className="w-full p-4 border rounded-md"
+            required
+          />
 
-        <input 
-          type="file" 
-          accept="image/*"
-          onChange={(e) => setFile(e.target.files?.[0] || null)} 
-          className="w-full p-4 border rounded-md"
-        />
+          <input 
+            type="file" 
+            accept="image/*"
+            onChange={(e) => setFile(e.target.files?.[0] || null)} 
+            className="w-full p-4 border rounded-md"
+          />
 
-        <button 
-          type="submit" 
-          className="bg-orange-500 text-white w-full py-2 rounded-md"
-          disabled={uploading}
-        >
-          {uploading ? 'Uploading...' : 'Upload Offer'}
-        </button>
-      </form>
+          <button 
+            type="submit" 
+            className="bg-orange-500 text-white w-full py-2 rounded-md"
+            disabled={uploading}
+          >
+            {uploading ? 'Uploading...' : 'Upload Offer'}
+          </button>
+        </form>
+     
 
       {/* Display All Offers */}
       <h2 className='text-center mt-20 text-3xl text-gray-400 md:text-5xl '>Uploaded offers</h2>
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
        
         {offers.map((offer) => (
-          
           <div key={offer._id} className="relative block rounded-tr-3xl border bg-slate-50 rounded-2xl border-gray-100 shadow-md">
             
             <div className="absolute -top-8 right-3 flex space-x-2">
@@ -329,7 +347,6 @@ export default function AdminDashboard() {
                 required 
               />
 
-              {/* Image Upload Field */}
               <input 
                 type="file" 
                 accept="image/*" 
@@ -351,7 +368,6 @@ export default function AdminDashboard() {
           </div>
         </div>
       )}
-
     </div>
   );
 }
