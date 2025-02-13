@@ -17,10 +17,14 @@ interface Offer {
   image: string;
 }
 
-export default function AdminDashboard() {
+interface AdminDashboardProps {
+  offers: Offer[];
+}
+
+export default function AdminDashboard({ offers: initialOffers }: AdminDashboardProps) {
   const [file, setFile] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
-  const [offers, setOffers] = useState<Offer[]>([]);
+  const [offers, setOffers] = useState<Offer[]>(initialOffers);
   const [editingOffer, setEditingOffer] = useState<Offer | null>(null);
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement | null>(null);

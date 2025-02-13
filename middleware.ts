@@ -17,7 +17,7 @@ export function middleware(req: NextRequest) {
   try {
     jwt.verify(token, process.env.JWT_SECRET!);
     return NextResponse.next();
-  } catch (error) {
+  } catch {
     return NextResponse.redirect(new URL('/admin/login', req.url));
   }
 }

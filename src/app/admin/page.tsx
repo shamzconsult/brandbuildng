@@ -1,22 +1,18 @@
-// import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import React from 'react'
-import AdminDashboard from './_components/AdminDashboard'
-import Header from '../_components/Header'
-import Footer from '../_components/Footer'
+// src/app/admin/page.tsx
+import React from 'react';
+import AdminDashboard from './_components/AdminDashboard';
+import Header from '../_components/Header';
+import Footer from '../_components/Footer';
+import { getAllOffer } from '@/service/offers/offers.server';
 
-// const queryClient = new QueryClient();
+export default async function Page() {
+  const offers = await getAllOffer();
 
-function page() {
   return (
     <div>
-      <Header/>
-      {/* <QueryClientProvider client={queryClient}> */}
-        <AdminDashboard/>
-      {/* </QueryClientProvider> */}
-
-      <Footer/>
+      <Header />
+      <AdminDashboard offers={offers} />
+      <Footer />
     </div>
-  )
+  );
 }
-
-export default page
