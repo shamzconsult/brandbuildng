@@ -202,8 +202,8 @@ const Header = () => {
                   <i className="bi bi-instagram text-xl"></i>
                 </Link>
                 <Link
-                  href="https://api.whatsapp.com/send?phone=%2B2349038940088"
-                  target="_blank"
+                    href="https://wa.me/2349038940088"
+                    target="_blank"
                   rel="noopener noreferrer"
                   aria-label="whatsapp"
                   className="text-black"

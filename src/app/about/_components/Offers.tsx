@@ -31,11 +31,11 @@ function Offers() {
                     <p className='text-3xl text-orange-500 mt-4'>$30.99</p>
                     <p className='mt-2 text-yellow-400 text-xl'>★★★★☆</p>
 
-                    <span
+                    <Link href='/offers'
                     className="mt-4 block rounded-md border border-orange-900 bg-orange-500 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors"
                     >
                     LEARN MORE
-                    </span>
+                    </Link>
                 </div>
             </div>
 
@@ -63,11 +63,11 @@ function Offers() {
                     <p className='text-3xl text-orange-500 mt-4'>$110.99</p>
                     <p className='mt-2 text-yellow-400 text-xl'>★★★★★</p>
 
-                    <span
+                    <Link href='/offers'
                     className="mt-4 block rounded-md border border-orange-900 bg-orange-500 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors"
                     >
                     LEARN MORE
-                    </span>
+                    </Link>
                 </div>
             </div>
 
@@ -95,11 +95,11 @@ function Offers() {
                     <p className='text-3xl text-orange-500 mt-4'>$20.99</p>
                     <p className='mt-2 text-yellow-400 text-xl'>★★★★☆</p>
 
-                    <span
+                    <Link href='/offers'
                     className="mt-4 block rounded-md border border-orange-900 bg-orange-500 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors"
                     >
                     LEARN MORE
-                    </span>
+                    </Link>
                 </div>
             </div>
 
@@ -127,11 +127,11 @@ function Offers() {
                     <p className='text-3xl text-orange-500 mt-4'>$40.99</p>
                     <p className='mt-2 text-yellow-400 text-xl'>★★★★☆</p>
 
-                    <span
+                    <Link href='/offers'
                     className="mt-4 block rounded-md border border-orange-900 bg-orange-500 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors"
                     >
                     LEARN MORE
-                    </span>
+                    </Link>
                 </div>
             </div>
 
@@ -159,11 +159,11 @@ function Offers() {
                     <p className='text-3xl text-orange-500 mt-4'>$15.99</p>
                     <p className='mt-2 text-yellow-400 text-xl'>★★★☆☆</p>
 
-                    <span
+                    <Link href='/offers'
                     className="mt-4 block rounded-md border border-orange-900 bg-orange-500 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors"
                     >
                     LEARN MORE
-                    </span>
+                    </Link>
                 </div>
             </div>
 
@@ -191,11 +191,11 @@ function Offers() {
                     <p className='text-3xl text-orange-500 mt-4'>$25.99</p>
                     <p className='mt-2 text-yellow-400 text-xl'>★★★★★</p>
 
-                    <span
+                    <Link href='/offers'
                     className="mt-4 block rounded-md border border-orange-900 bg-orange-500 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors"
                     >
                     LEARN MORE
-                    </span>
+                    </Link>
                 </div>
             </div>
 

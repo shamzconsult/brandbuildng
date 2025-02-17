@@ -200,8 +200,8 @@ function Footer() {
                     <li>
                         <a
                             className="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
-                            href="#"
-                        >
+                            href="mailto:brandbuildng@gmail.com"
+                            >
                             <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="size-5 shrink-0 text-gray-900"
@@ -224,8 +224,8 @@ function Footer() {
                     <li>
                         <a
                             className="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
-                            href="#"
-                        >
+                            href="https://wa.me/2349038940088"
+                            >
                             <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="size-5 shrink-0 text-gray-900"

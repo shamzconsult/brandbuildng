@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 interface Offer {
@@ -40,9 +41,14 @@ interface Offer {
                   <p className="mt-2 text-gray-400">{offer.description}</p>
                   <p className='text-3xl text-orange-500 mt-4'>${offer.price}</p>
                   <p className='mt-2 text-yellow-400 text-xl'>★★★★☆</p>
-                  <span className="mt-4 block rounded-md border border-orange-900 bg-orange-500 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors">
-                    LEARN MORE
-                  </span>
+                  <Link 
+                    href="https://wa.me/2349038940088"
+                    className="mt-4 block rounded-md border border-orange-900 bg-orange-500 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    CONTACT US
+                  </Link>
                 </div>
               </div>
             ))}
