@@ -1,12 +1,10 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-// import router from 'next/router';
 import { useEffect, useState } from 'react';
 import { CiEdit } from "react-icons/ci";
 import { CiTrash } from "react-icons/ci";
 import { useRef } from "react";
-// import Link from 'next/link';
 
 
 interface Offer {
@@ -27,6 +25,7 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
   const [uploading, setUploading] = useState(false);
   const [offers, setOffers] = useState<Offer[]>(initialOffers);
   const [editingOffer, setEditingOffer] = useState<Offer | null>(null);
+  const [,setIsAuthenticated] = useState<boolean | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -37,6 +36,19 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
     price: ''
   });
 
+
+
+  useEffect(() => {
+    const loggedInStatus = localStorage.getItem("isLoggedIn") === "true";
+
+    if (loggedInStatus) {
+      setIsAuthenticated(true);
+    } else {
+      setIsAuthenticated(false);
+      router.push("/login");
+    }
+  }, [router]);
+  
 
   useEffect(() => {
     async function fetchOffers() {
@@ -51,14 +63,28 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
     fetchOffers();
   }, [])
 
+  useEffect(() => {
+    const loggedInStatus = localStorage.getItem("isLoggedIn") === "true";
+    if (!loggedInStatus) {
+      router.replace("/login");
+    }
+  }, [router]);
+  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleLogout = async () => {
-    await fetch('/api/auth/logout', { method: 'POST' });
-    router.push('/admin/login');
+    localStorage.removeItem("isLoggedIn");
+  
+    router.replace("/login");
+  
+    setTimeout(() => {
+      window.location.reload();
+    }, 100);
   };
+  
 
   const openModal = (offer: Offer | null = null) => {
     if (offer) {
@@ -169,15 +195,15 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
     }
   };
 
-  const handleEditClick = (offer: Offer) => {
-    setEditingOffer(offer);
-    setFormData({
-        title: offer.title,
-        description: offer.description,
-        discount: offer.discount,
-        price: offer.price
-    });
-  };
+  // const handleEditClick = (offer: Offer) => {
+  //   setEditingOffer(offer);
+  //   setFormData({
+  //       title: offer.title,
+  //       description: offer.description,
+  //       discount: offer.discount,
+  //       price: offer.price
+  //   });
+  // };
 
   const handleUpdate = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -259,7 +285,7 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
 
         <button 
           onClick={handleLogout} 
-          className="bg-black text-white px-4 py-2 rounded-md"
+          className=" text-black hover:underline px-4 py-2 rounded-md"
         >
           Logout
         </button>
@@ -390,170 +416,3 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
 }
 
 
-
-
-
- {/* Offer Submission Form */}
-      {/* <form onSubmit={handleSubmit} className="mt-6 max-w-2xl mx-auto space-y-4 bg-white p-6 shadow-md rounded-md">
-        <input 
-          type="text" 
-          name="title" 
-          value={formData.title} 
-          onChange={handleChange} 
-          placeholder="Offer Title" 
-          className="w-full p-4 border rounded-md"
-          required 
-        />
-
-        <textarea 
-          name="description" 
-          value={formData.description} 
-          onChange={handleChange} 
-          placeholder="Offer Description" 
-          className="w-full p-4 border rounded-md"
-          required
-        ></textarea>
-
-        <input 
-          type="text" 
-          name="discount" 
-          value={formData.discount} 
-          onChange={handleChange} 
-          placeholder="Discount %" 
-          className="w-full p-4 border rounded-md"
-          required
-        />
-
-        <input 
-          type="text" 
-          name="price" 
-          value={formData.price} 
-          onChange={handleChange} 
-          placeholder="Price" 
-          className="w-full p-4 border rounded-md"
-          required
-        />
-
-        <input 
-          type="file" 
-          accept="image/*"
-          ref={fileInputRef}
-          onChange={(e) => setFile(e.target.files?.[0] || null)} 
-          className="w-full p-4 border rounded-md"
-        />
-
-        <button 
-          type="submit" 
-          className="bg-orange-500 text-white w-full py-2 rounded-md"
-          disabled={uploading}
-        >
-          {uploading ? 'Uploading...' : 'Upload Offer'}
-        </button>
-      </form> */}
-     
-
-      {/* Display All Offers */}
-      {/* <h2 className='text-center mt-20 text-3xl text-gray-400 md:text-5xl '>Uploaded offers</h2>
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-       
-        {offers.map((offer) => (
-          <div key={offer._id} className="relative block rounded-tr-3xl border bg-slate-50 rounded-2xl border-gray-100 shadow-md">
-            
-            <div className="absolute -top-8 right-3 flex space-x-2">
-              <CiEdit onClick={() => handleEditClick(offer)} size={24} className="text-blue-500 hover:text-blue-700 cursor-pointer"/>
-              <CiTrash onClick={() => handleDelete(offer._id)} size={24} className="text-red-500 hover:text-red-700 cursor-pointer"/>
-            </div>
-
-            <span
-              className="absolute -right-px -top-px rounded-bl-3xl rounded-tr-3xl bg-orange-500 px-6 py-4 font-medium uppercase tracking-widest text-white"
-            >
-              Save {offer.discount}%
-            </span>
-
-            <img
-              src={offer.image}
-              alt={offer.title}
-              className="h-80 w-full rounded-tr-3xl object-cover"
-            />
-
-            <div className="p-4 text-center">
-              <strong className="text-xl font-medium text-gray-900"> {offer.title} </strong>
-
-              <p className="mt-2 text-gray-400">
-                {offer.description}
-              </p>
-
-              <p className='text-3xl text-orange-500 mt-4'>${offer.price}</p>
-              <p className='mt-2 text-yellow-400 text-xl'>★★★★☆</p>
-
-              <Link 
-                href="https://wa.me/2349038940088"
-                className="mt-4 block rounded-md border border-orange-900 bg-orange-500 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors"
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                CONTACT US
-              </Link>
-            </div>
-          </div>
-        ))}
-      </div> */}
-
-      {/* {editingOffer && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-md w-96">
-            <h2 className="text-xl font-bold mb-6">Edit Offer</h2>
-            <form onSubmit={handleUpdate} className="space-y-4">
-              <input 
-                type="text" 
-                name="title" 
-                value={formData.title} 
-                onChange={handleChange} 
-                className="w-full p-4 border rounded-md" 
-                required 
-              />
-              <textarea 
-                name="description" 
-                value={formData.description} 
-                onChange={handleChange} 
-                className="w-full p-4 border rounded-md" 
-                required
-              />
-              <input 
-                type="text" 
-                name="discount" 
-                value={formData.discount} 
-                onChange={handleChange} 
-                className="w-full p-4 border rounded-md" 
-                required 
-              />
-              <input 
-                type="text" 
-                name="price" 
-                value={formData.price} 
-                onChange={handleChange} 
-                className="w-full p-4 border rounded-md" 
-                required 
-              />
-
-              <input 
-                type="file" 
-                accept="image/*" 
-                onChange={(e) => setFile(e.target.files?.[0] || null)} 
-                className="w-full p-4 border rounded-md" 
-              />
-
-              <button type="submit" className="bg-orange-500 text-white w-full py-2 rounded-md">
-                Update Offer
-              </button>
-              <button 
-                type="button" 
-                onClick={() => setEditingOffer(null)} 
-                className="bg-gray-500 text-white w-full py-2 mt-2 rounded-md"
-              >
-                Cancel
-              </button>
-            </form>
-          </div>
-        </div>
-      )} */}

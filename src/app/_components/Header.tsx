@@ -78,13 +78,13 @@ const Header = () => {
               href="/offers"
               className="text-base font-medium transition-colors duration-300 hover:text-gray-500"
             >
-              Our Products
+              Products
             </Link>
             <Link
               href="/services"
               className="text-base font-medium transition-colors duration-300 hover:text-gray-500"
             >
-              Our Services
+              Services
             </Link>
             <Link
               href="/contact"
@@ -180,13 +180,13 @@ const Header = () => {
                 className="text-base font-medium hover:text-gray-500"
                 href="/services"
               >
-                Our Products
+                Products
               </Link>
               <Link
                 className="text-base font-medium hover:text-gray-500"
                 href="/services"
               >
-                Our Services
+               Services
               </Link>
               <Link
                 className="text-base font-medium hover:text-gray-500"

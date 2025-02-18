@@ -1,7 +1,7 @@
 import React from 'react'
-import LoginPage from './_components/LoginPage'
 import Header from '@/app/_components/Header'
 import Footer from '@/app/_components/Footer'
+import LoginPage from './_components/LoginPage'
 
 function page() {
   return (
