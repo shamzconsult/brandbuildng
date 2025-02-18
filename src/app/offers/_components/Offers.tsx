@@ -98,7 +98,7 @@ function Offers({ offers }: OffersProps) {
             <p className="text-gray-600 text-sm text-center mt-4">
               🚚 **Fast Delivery Available** | 🏠 **Pay on Delivery**
             </p>
-
+            
             {/* Contact Options */}
             <div className="mt-4 flex flex-col space-y-2">
               {/* WhatsApp Contact */}
@@ -123,7 +123,8 @@ function Offers({ offers }: OffersProps) {
 
               {/* Email Option */}
               <a
-                href="mailto:sales@brandbuild.com?subject=Product Inquiry&body=Hello, I am interested in..."
+                href={`mailto:brandbuild@gmail.com?subject=Product Inquiry&body=
+                Hello, I'm interested in this product:\n\n*${selectedOffer.title}* 📌\n${selectedOffer.description}\nPrice: $${selectedOffer.price} 💰\nDiscount: ${selectedOffer.discount}% 🎉                  `}
                 className="block text-center bg-gray-800 text-white py-3 rounded-lg font-medium transition hover:bg-gray-900"
               >
                 Send Email 
