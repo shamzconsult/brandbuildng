@@ -16,7 +16,7 @@ interface Offer {
   function Offers({ offers }: OffersProps) {
     return (
       <div className="max-w-screen-xl mx-auto p-6">
-        <h2 className='text-center mt-20 text-3xl text-gray-400 md:text-5xl '>Available offers</h2>
+        <h2 className='text-center mt-20 text-3xl text-gray-400 md:text-5xl '>Available Products</h2>
         {offers.length === 0 ? (
           <div className="flex flex-col items-center justify-center mt-10">
             <img
@@ -25,7 +25,7 @@ interface Offer {
               className="w-96 h-96 opacity-75"
             />
             <p className="text-gray-500 text-lg mt-4">
-              We are SORRY! No special offers available at the moment.
+              We are SORRY! No Product available at the moment.
             </p>
           </div>
         ) : (
@@ -42,13 +42,20 @@ interface Offer {
                   <p className='text-3xl text-orange-500 mt-4'>${offer.price}</p>
                   <p className='mt-2 text-yellow-400 text-xl'>★★★★☆</p>
                   <Link 
-                    href="https://wa.me/2349038940088"
+                    href={`https://wa.me/2349038940088?text=${encodeURIComponent(
+                      `Hello, I'm interested in this product:
+                      *${offer.title}* 📌
+                      ${offer.description}
+                      Price: $${offer.price} 💰
+                      Discount: ${offer.discount}% 🎉`
+                    )}`}
                     className="mt-4 block rounded-md border border-orange-900 bg-orange-500 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors"
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
                     CONTACT US
                   </Link>
+
                 </div>
               </div>
             ))}

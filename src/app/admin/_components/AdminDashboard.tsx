@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { CiEdit } from "react-icons/ci";
 import { CiTrash } from "react-icons/ci";
 import { useRef } from "react";
-import Link from 'next/link';
+// import Link from 'next/link';
 
 
 interface Offer {
@@ -27,6 +27,7 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
   const [uploading, setUploading] = useState(false);
   const [offers, setOffers] = useState<Offer[]>(initialOffers);
   const [editingOffer, setEditingOffer] = useState<Offer | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [formData, setFormData] = useState({
@@ -47,7 +48,6 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
         console.error('Error fetching offers: ', error);
       }
     }
-
     fetchOffers();
   }, [])
 
@@ -58,6 +58,28 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
   const handleLogout = async () => {
     await fetch('/api/auth/logout', { method: 'POST' });
     router.push('/admin/login');
+  };
+
+  const openModal = (offer: Offer | null = null) => {
+    if (offer) {
+      setEditingOffer(offer);
+      setFormData({
+        title: offer.title,
+        description: offer.description,
+        discount: offer.discount,
+        price: offer.price,
+      });
+    } else {
+      setEditingOffer(null);
+      setFormData({
+        title: "",
+        description: "",
+        discount: "",
+        price: "",
+      });
+      setFile(null);
+    }
+    setIsModalOpen(true);
   };
   
 
@@ -102,29 +124,29 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
       });
 
       if (!offerRes.ok) {
-          console.error('Failed to save offer:', await offerRes.text());
-        } else {
-          console.log('Offer saved successfully');
-          const responseData = await offerRes.json();
-          const newOffer: Offer = await responseData.newOffer;;
-          setOffers((prevOffers) => [...prevOffers, newOffer]);
-          setFormData({
-            title: "",
-            description: "",
-            discount: "",
-            price: "",
-          });
-          setFile(null);
-          if (fileInputRef.current) {
-            fileInputRef.current.value = "";
-          }
-        }
-      } catch (error) {
-        console.error('Error submitting form:', error);
-      } finally {
-        setUploading(false);
+        console.error('Failed to save offer:', await offerRes.text());
+      } else {
+        console.log('Offer saved successfully');
+        const responseData = await offerRes.json();
+        const newOffer: Offer = responseData.newOffer;
+        setOffers((prevOffers) => [...prevOffers, newOffer]);
+        setIsModalOpen(false);
+        setFormData({ 
+          title: '', 
+          description: '', 
+          discount: '', 
+          price: '' 
+        });
+        setFile(null);
       }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    } finally {
+      setUploading(false);
+    }
   };
+
+
 
   const handleDelete = async (id: string) => {
     const confirmDelete = window.confirm("Are you sure you want to delete this offer?");
@@ -208,6 +230,14 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
         )
       );
       setEditingOffer(null);
+      setIsModalOpen(false);
+      setFormData({ 
+        title: '', 
+        description: '', 
+        discount: '', 
+        price: '' 
+      });
+      setFile(null);
     } catch (error) {
       console.error("Error updating offer:", error);
     }
@@ -217,75 +247,213 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
   
   return (
     <div className="p-10 mt-20 max-w-screen-xl mx-auto">
-      <div className="flex justify-end p-4">
-        <button onClick={handleLogout} className="bg-black text-white px-4 py-2 rounded-md">
+      <h2 className="text-2xl text-orange-500 font-bold text-center">Admin Dashboard</h2>
+
+      <div className="flex justify-between p-4">
+        <button 
+          onClick={() => openModal()} 
+          className="bg-orange-500 text-white px-4 py-2 rounded-md"
+        >
+          Add New Offer
+        </button>
+
+        <button 
+          onClick={handleLogout} 
+          className="bg-black text-white px-4 py-2 rounded-md"
+        >
           Logout
         </button>
       </div>
 
-      <h2 className="text-2xl text-orange-500 font-bold text-center">Admin Dashboard</h2>
+      
 
-      {/* Offer Submission Form */}
-        <form onSubmit={handleSubmit} className="mt-6 max-w-2xl mx-auto space-y-4 bg-white p-6 shadow-md rounded-md">
-          <input 
-            type="text" 
-            name="title" 
-            value={formData.title} 
-            onChange={handleChange} 
-            placeholder="Offer Title" 
-            className="w-full p-4 border rounded-md"
-            required 
-          />
+      <h2 className="text-center mt-20 text-3xl text-gray-400 md:text-5xl">Uploaded Products</h2>
 
-          <textarea 
-            name="description" 
-            value={formData.description} 
-            onChange={handleChange} 
-            placeholder="Offer Description" 
-            className="w-full p-4 border rounded-md"
-            required
-          ></textarea>
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {offers.map((offer) => (
+          <div key={offer._id} className="relative block border mt-10 bg-slate-50 rounded-2xl shadow-md">
+            
+            <span
+              className="absolute -right-px -top-px rounded-bl-3xl rounded-tr-3xl bg-orange-500 px-6 py-4 font-medium uppercase tracking-widest text-white"
+            >
+              Save {offer.discount}%
+            </span>
+            <img src={offer.image} alt={offer.title} className="h-80 w-full object-cover rounded-tr-3xl" />
+            <div className="p-4 text-center">
+              <strong className="text-xl font-medium text-gray-900"> {offer.title} </strong>
 
-          <input 
-            type="text" 
-            name="discount" 
-            value={formData.discount} 
-            onChange={handleChange} 
-            placeholder="Discount %" 
-            className="w-full p-4 border rounded-md"
-            required
-          />
+              <p className="mt-2 text-gray-400">
+                {offer.description}
+              </p>
 
-          <input 
-            type="text" 
-            name="price" 
-            value={formData.price} 
-            onChange={handleChange} 
-            placeholder="Price" 
-            className="w-full p-4 border rounded-md"
-            required
-          />
+              <p className='text-3xl text-orange-500 mt-4'>${offer.price}</p>
+              {/* <p className='mt-2 text-yellow-400 text-xl'>★★★★☆</p> */}
 
-          <input 
-            type="file" 
-            accept="image/*"
-            ref={fileInputRef}
-            onChange={(e) => setFile(e.target.files?.[0] || null)} 
-            className="w-full p-4 border rounded-md"
-          />
+              <div className=" p-4 justify-center flex space-x-2">
+                <CiEdit onClick={() => openModal(offer)} size={24} className="text-blue-500 hover:text-blue-700 cursor-pointer " />
+                <CiTrash onClick={() => handleDelete(offer._id)} size={24} className="text-red-500 hover:text-red-700 cursor-pointer" />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
 
-          <button 
-            type="submit" 
-            className="bg-orange-500 text-white w-full py-2 rounded-md"
-            disabled={uploading}
-          >
-            {uploading ? 'Uploading...' : 'Upload Offer'}
-          </button>
-        </form>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-md w-96">
+            <h2 className="text-xl font-bold mb-6">{editingOffer ? 'Edit Offer' : 'Create Offer'}</h2>
+            <form onSubmit={editingOffer ? handleUpdate : handleSubmit} className="space-y-4">
+              <div className=''>
+                <label htmlFor="title">Title</label>
+                <input 
+                  type="text" 
+                  name="title" 
+                  value={formData.title} 
+                  onChange={handleChange} 
+                  placeholder="Offer Title" 
+                  className="w-full p-4 border rounded-md"
+                  required 
+                />
+              </div>
+
+              <div>
+                <label htmlFor="description">Description</label>
+                <textarea 
+                  name="description" 
+                  value={formData.description} 
+                  onChange={handleChange} 
+                  placeholder="Offer Description" 
+                  className="w-full p-4 border rounded-md"
+                  required
+                ></textarea>
+              </div>
+
+              <div>
+                <label htmlFor="discount">Discount</label>
+                <input 
+                  type="text" 
+                  name="discount" 
+                  value={formData.discount} 
+                  onChange={handleChange} 
+                  placeholder="Discount %" 
+                  className="w-full p-4 border rounded-md"
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="price">Price</label>
+                <input 
+                  type="text" 
+                  name="price" 
+                  value={formData.price} 
+                  onChange={handleChange} 
+                  placeholder="Price" 
+                  className="w-full p-4 border rounded-md"
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="image">Image</label>
+                <input 
+                  type="file" 
+                  accept="image/*"
+                  ref={fileInputRef}
+                  onChange={(e) => setFile(e.target.files?.[0] || null)} 
+                  className="w-full p-4 border rounded-md"
+                />
+              </div>
+
+              <button 
+                type="submit" 
+                className="bg-orange-500 text-white w-full py-2 rounded-md">
+                  {uploading ? 'Uploading...' : editingOffer ? 'Update Offer' : 'Upload Offer'}
+              </button>
+
+              <button 
+                type="button"
+                onClick={() => setIsModalOpen(false)}
+                className="bg-gray-500 text-white w-full py-2 mt-2 rounded-md"
+              >
+                Cancel
+              </button>
+
+            </form>
+          </div>
+        </div>
+      )}
+
+    </div>
+  );
+}
+
+
+
+
+
+ {/* Offer Submission Form */}
+      {/* <form onSubmit={handleSubmit} className="mt-6 max-w-2xl mx-auto space-y-4 bg-white p-6 shadow-md rounded-md">
+        <input 
+          type="text" 
+          name="title" 
+          value={formData.title} 
+          onChange={handleChange} 
+          placeholder="Offer Title" 
+          className="w-full p-4 border rounded-md"
+          required 
+        />
+
+        <textarea 
+          name="description" 
+          value={formData.description} 
+          onChange={handleChange} 
+          placeholder="Offer Description" 
+          className="w-full p-4 border rounded-md"
+          required
+        ></textarea>
+
+        <input 
+          type="text" 
+          name="discount" 
+          value={formData.discount} 
+          onChange={handleChange} 
+          placeholder="Discount %" 
+          className="w-full p-4 border rounded-md"
+          required
+        />
+
+        <input 
+          type="text" 
+          name="price" 
+          value={formData.price} 
+          onChange={handleChange} 
+          placeholder="Price" 
+          className="w-full p-4 border rounded-md"
+          required
+        />
+
+        <input 
+          type="file" 
+          accept="image/*"
+          ref={fileInputRef}
+          onChange={(e) => setFile(e.target.files?.[0] || null)} 
+          className="w-full p-4 border rounded-md"
+        />
+
+        <button 
+          type="submit" 
+          className="bg-orange-500 text-white w-full py-2 rounded-md"
+          disabled={uploading}
+        >
+          {uploading ? 'Uploading...' : 'Upload Offer'}
+        </button>
+      </form> */}
      
 
       {/* Display All Offers */}
-      <h2 className='text-center mt-20 text-3xl text-gray-400 md:text-5xl '>Uploaded offers</h2>
+      {/* <h2 className='text-center mt-20 text-3xl text-gray-400 md:text-5xl '>Uploaded offers</h2>
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
        
         {offers.map((offer) => (
@@ -329,9 +497,9 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
 
-      {editingOffer && (
+      {/* {editingOffer && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-md w-96">
             <h2 className="text-xl font-bold mb-6">Edit Offer</h2>
@@ -388,7 +556,4 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
             </form>
           </div>
         </div>
-      )}
-    </div>
-  );
-}
+      )} */}

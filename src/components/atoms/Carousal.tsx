@@ -17,7 +17,7 @@ export const Carousel = ({
   subheader?: string;
 }) => {
   return (
-    <div className="py-20 max-w-7xl mx-auto px-2">
+    <div className="py-20 max-w-2xl mx-auto px-2">
       
       <section className="flex flex-col md:flex-row justify-center items-center">
         <Marquee speed={50} pauseOnHover={true}>

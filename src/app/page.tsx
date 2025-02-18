@@ -5,12 +5,16 @@ import Footer from "./_components/Footer";
 import FAQs from "./_components/FAQs";
 import Header from "./_components/Header";
 import Hero from "./_components/Hero";
-import Offers from "./about/_components/Offers";
 import Collection from "./services/_components/Collection";
 import { YTVideo } from "./about/_components/Video";
 import LogoSlider from "./about/_components/LogoSlider";
+import Offers from "./offers/_components/Offers";
+import { getAllOffer } from "@/service/offers/offers.server";
 
-export default function Home() {
+
+export default async function Home() {
+    const offers = await getAllOffer();
+  
   return (
    <div>
      <Head>
@@ -21,7 +25,7 @@ export default function Home() {
 
       <Header />
       <Hero/>
-      <Offers/>
+      <Offers offers={offers} />
       <Statistics />
       <Collection/>
       <YTVideo  ytVideoId="AaiSd3SrU6A" />

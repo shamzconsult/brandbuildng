@@ -8,7 +8,7 @@ function Hero() {
       <div className="bg-black/50 h-[600px] p-8 md:p-12 lg:px-16 lg:py-24">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-white mt-40 sm:text-3xl md:text-5xl">
-            Special Offers
+            Special Products
           </h2>
 
           <p className="max-w-lg mx-auto text-white/90 mt-4 md:text-lg md:leading-relaxed">

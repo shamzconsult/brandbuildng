@@ -65,15 +65,21 @@ const Header = () => {
                   >
                     History
                   </Link>
-                  <Link
+                  {/* <Link
                     href="/offers"
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                   >
-                    Special Offers
-                  </Link>
+                    Our Products
+                  </Link> */}
                 </div>
               )}
             </div>
+            <Link
+              href="/offers"
+              className="text-base font-medium transition-colors duration-300 hover:text-gray-500"
+            >
+              Our Products
+            </Link>
             <Link
               href="/services"
               className="text-base font-medium transition-colors duration-300 hover:text-gray-500"
@@ -156,20 +162,26 @@ const Header = () => {
                 {isDropdownOpen && (
                   <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg">
                     <Link
-                      href="/offers"
+                      href="/about"
                       className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                     >
-                      Special Offers
+                      History
                     </Link>
-                    <Link
+                    {/* <Link
                       href="/offers"
                       className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                     >
                       Seasonal Offers
-                    </Link>
+                    </Link> */}
                   </div>
                 )}
               </div>
+              <Link
+                className="text-base font-medium hover:text-gray-500"
+                href="/services"
+              >
+                Our Products
+              </Link>
               <Link
                 className="text-base font-medium hover:text-gray-500"
                 href="/services"
