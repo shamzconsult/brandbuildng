@@ -63,27 +63,33 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
     fetchOffers();
   }, [])
 
-  useEffect(() => {
-    const loggedInStatus = localStorage.getItem("isLoggedIn") === "true";
-    if (!loggedInStatus) {
-      router.replace("/login");
-    }
-  }, [router]);
+  // useEffect(() => {
+  //   const loggedInStatus = localStorage.getItem("isLoggedIn") === "true";
+  //   if (!loggedInStatus) {
+  //     router.replace("/login");
+  //   }
+  // }, [router]);
   
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleLogout = async () => {
+  const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
-  
-    router.replace("/login");
-  
-    setTimeout(() => {
-      window.location.reload();
-    }, 100);
+    window.location.href = "/login";
   };
+
+
+  // const handleLogout = async () => {
+  //   localStorage.removeItem("isLoggedIn");
+  
+  //   router.replace("/login");
+  
+  //   setTimeout(() => {
+  //     window.location.reload();
+  //   }, 100);
+  // };
   
 
   const openModal = (offer: Offer | null = null) => {
@@ -195,16 +201,6 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
     }
   };
 
-  // const handleEditClick = (offer: Offer) => {
-  //   setEditingOffer(offer);
-  //   setFormData({
-  //       title: offer.title,
-  //       description: offer.description,
-  //       discount: offer.discount,
-  //       price: offer.price
-  //   });
-  // };
-
   const handleUpdate = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!editingOffer) return;
@@ -313,11 +309,19 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
               </p>
 
               <p className='text-3xl text-orange-500 mt-4'>${offer.price}</p>
-              {/* <p className='mt-2 text-yellow-400 text-xl'>★★★★☆</p> */}
 
               <div className=" p-4 justify-center flex space-x-2">
-                <CiEdit onClick={() => openModal(offer)} size={24} className="text-blue-500 hover:text-blue-700 cursor-pointer " />
-                <CiTrash onClick={() => handleDelete(offer._id)} size={24} className="text-red-500 hover:text-red-700 cursor-pointer" />
+                <div className="flex gap-4 w-full">
+                  <div className="flex items-center justify-center gap-2 border border-blue-500 text-blue-500 px-4 py-2 rounded-2xl cursor-pointer hover:bg-blue-50 w-1/2">
+                    <h3>Edit</h3>
+                    <CiEdit onClick={() => openModal(offer)} size={24} className="cursor-pointer" />
+                  </div>
+
+                  <div className="flex items-center justify-center gap-2 bg-red-500 text-white px-4 py-2 rounded-2xl cursor-pointer hover:bg-red-700 w-1/2">
+                    <h3>Delete</h3>
+                    <CiTrash onClick={() => handleDelete(offer._id)} size={24} className="cursor-pointer" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

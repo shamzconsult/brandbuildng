@@ -178,7 +178,7 @@ const Header = () => {
               </div>
               <Link
                 className="text-base font-medium hover:text-gray-500"
-                href="/services"
+                href="/offers"
               >
                 Products
               </Link>

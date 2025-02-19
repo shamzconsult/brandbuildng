@@ -104,7 +104,7 @@ function Offers({ offers }: OffersProps) {
               {/* WhatsApp Contact */}
               <a
                 href={`https://wa.me/2349038940088?text=${encodeURIComponent(
-                  `Hello, I'm interested in this product:\n\n*${selectedOffer.title}* 📌\n${selectedOffer.description}\nPrice: $${selectedOffer.price} 💰\nDiscount: ${selectedOffer.discount}% 🎉`
+                  `Hello brandbuildng, I'm interested in this product:\n\n*${selectedOffer.title}* 📌\n${selectedOffer.description}\nPrice: $${selectedOffer.price} 💰\nDiscount: ${selectedOffer.discount}% 🎉`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -124,7 +124,7 @@ function Offers({ offers }: OffersProps) {
               {/* Email Option */}
               <a
                 href={`mailto:brandbuild@gmail.com?subject=Product Inquiry&body=
-                Hello, I'm interested in this product:\n\n*${selectedOffer.title}* 📌\n${selectedOffer.description}\nPrice: $${selectedOffer.price} 💰\nDiscount: ${selectedOffer.discount}% 🎉                  `}
+                Hello brandbuildng, I'm interested in this product:\n\n*${selectedOffer.title}* 📌\n${selectedOffer.description}\nPrice: $${selectedOffer.price} 💰\nDiscount: ${selectedOffer.discount}% 🎉                  `}
                 className="block text-center bg-gray-800 text-white py-3 rounded-lg font-medium transition hover:bg-gray-900"
               >
                 Send Email 
@@ -139,3 +139,6 @@ function Offers({ offers }: OffersProps) {
 }
 
 export default Offers;
+
+
+// https://f40skwq9-3000.uks1.devtunnels.ms/
