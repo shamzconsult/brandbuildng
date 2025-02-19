@@ -27,7 +27,7 @@ export default function Signin() {
 
       if (!res.ok) {
         const errorData = await res.json();
-        setError(errorData.message || "Login failed");
+        setError(errorData.message || "Invalid credentials");
         setLoading(false);
         return;
       }
@@ -45,6 +45,7 @@ export default function Signin() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <h2 className="text-2xl font-bold">Admin Login</h2>
+      {error && <p className="text-red-500 mb-2">{error}</p>}
       <form onSubmit={handleLogin} className="w-96 p-6 bg-white shadow-md rounded-md">
         <input
           type="username"
@@ -64,7 +65,6 @@ export default function Signin() {
           className="w-full p-2 border rounded-md mb-4"
           required
         />
-        {error && <p className="text-red-500 mb-2">{error}</p>}
         <button
           type="submit"
           className="w-full bg-orange-500 text-white py-2 rounded-md"
