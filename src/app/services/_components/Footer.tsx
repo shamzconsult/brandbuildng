@@ -158,21 +158,21 @@ function Footer() {
 
                 <ul className="mt-8 space-y-4 text-sm">
                     <li>
-                    <a className="text-gray-700 transition hover:text-gray-700/75" href="/services">
+                    <a className="text-gray-700 transition hover:text-gray-700/75" href="#strategy-development">
                         Strategy Development
                     </a>
                     </li>
 
                     <li>
-                    <a className="text-gray-700 transition hover:text-gray-700/75" href="/services"> Creative Design </a>
+                    <a className="text-gray-700 transition hover:text-gray-700/75" href="#creative-design"> Creative Design </a>
                     </li>
 
                     <li>
-                    <a className="text-gray-700 transition hover:text-gray-700/75" href="/services"> Web Development </a>
+                    <a className="text-gray-700 transition hover:text-gray-700/75" href="#web-development"> Web Development </a>
                     </li>
 
                     <li>
-                    <a className="text-gray-700 transition hover:text-gray-700/75" href="/services"> Event Branding </a>
+                    <a className="text-gray-700 transition hover:text-gray-700/75" href="#event-branding"> Event Branding </a>
                     </li>
                 </ul>
             </div>

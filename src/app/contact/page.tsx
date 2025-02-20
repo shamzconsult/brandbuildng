@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from './_components/Header'
 import Content from './_components/Content'
 import Footer from '../_components/Footer'
+import Header from '../_components/Header'
 
 function page() {
   return (

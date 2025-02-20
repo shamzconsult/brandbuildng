@@ -2,7 +2,7 @@ import React from 'react';
 
 function Team() {
   return (
-    <div className="mb-20 hidden md:block h-auto">
+    <div className="mb-20 hidden md:block h-auto max-w-screen-2xl mx-auto">
       <div className="flex flex-col md:flex-row">
         {/* Left Image Section */}
         <div className="w-full md:w-1/2 relative">
@@ -15,7 +15,7 @@ function Team() {
 
         <div className="h-[400px] md:h-[600px] md:w-1/2 bg-gray-200 flex items-center">
           <div className="p-6 lg:p-10 w-full lg:w-5/6">
-            <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl px-4 lg:px-16 mb-6 leading-6">
+            <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl px-6 lg:px-24 mb-6 leading-6">
               Focused team with specialized skills
             </h2>
 

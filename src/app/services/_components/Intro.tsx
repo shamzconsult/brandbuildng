@@ -3,8 +3,8 @@ import React from 'react';
 function Intro() {
   return (
     <div className="max-w-screen-xl mx-auto p-10">
-      <div className="mb-10">
-        <h2 className="text-3xl text-orange-500 text-center font-semibold mb-6">
+      <div className="mb-10 text-center">
+        <h2 className="text-3xl text-orange-500 font-semibold mb-6">
           What we do
         </h2>
         <p>
@@ -16,7 +16,7 @@ function Intro() {
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
-        <div className="border shadow-md rounded-lg p-6 text-center">
+        <div className="border shadow-md rounded-lg p-6 text-center" id='strategy-development'>
           <i className="bi bi-lightbulb-fill text-5xl text-[#ff6600] mb-10"></i>
           <h3 className="text-orange-500 mt-4 font-semibold mb-4">
             Brand Strategy Development
@@ -36,7 +36,7 @@ function Intro() {
           </p>
         </div>
 
-        <div className="border shadow-md rounded-lg p-6 text-center">
+        <div className="border shadow-md rounded-lg p-6 text-center" id='creative-design'>
           <i className="bi bi-palette-fill text-5xl text-[#ff6600] mb-10"></i>
           <h3 className="text-orange-500 mt-4 font-semibold mb-4">
             Creative Design and Visual Identity
@@ -47,7 +47,7 @@ function Intro() {
           </p>
         </div>
 
-        <div className="border shadow-md rounded-lg p-6 text-center">
+        <div className="border shadow-md rounded-lg p-6 text-center" id='web-development'>
           <i className="bi bi-globe text-5xl text-[#ff6600] mb-10"></i>
           <h3 className="text-orange-500 mt-4 font-semibold mb-4">
             Web Development and E-Commerce Solutions
@@ -66,23 +66,26 @@ function Intro() {
           <p>We create content that engages and inspires.</p>
         </div>
 
-        <div className="border shadow-md rounded-lg p-6 text-center">
+        <div className="border shadow-md rounded-lg p-6 text-center" id='event-branding'>
           <i className="bi bi-megaphone-fill text-5xl text-[#ff6600] mb-10"></i>
           <h3 className="text-orange-500 mt-4 font-semibold mb-4">
             Event Branding and Marketing
           </h3>
           <p>We make your events unforgettable with our tailored branding solutions.</p>
         </div>
-
-        <div className="border shadow-md rounded-lg p-6 text-center ">
-          <i className="bi bi-printer-fill text-5xl text-[#ff6600] mb-10"></i>
-          <h3 className="text-orange-500 mt-4 font-semibold mb-4">
-            General Printing
-          </h3>
-          <p>We offer high-quality printing services for business cards, brochures, banners, flyers, and more.</p>
-        </div>
         
       </div>
+
+      <div className='justify-items-center mt-8'>
+          <div className="border shadow-md rounded-lg p-6 text-center ">
+            <i className="bi bi-printer-fill text-5xl text-[#ff6600] mb-10"></i>
+            <h3 className="text-orange-500 mt-4 font-semibold mb-4">
+              General Printing
+            </h3>
+            <p>We offer high-quality printing services for business cards, brochures, banners, flyers, and more.</p>
+          </div>
+        </div>
+    
     </div>
   );
 }
