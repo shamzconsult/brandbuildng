@@ -123,7 +123,7 @@ function Offers({ offers }: OffersProps) {
 
               {/* Email Option */}
               <a
-                href={`mailto:brandbuild@gmail.com?subject=Product Inquiry&body=
+                href={`mailto:brandbuildnglimited@gmail.com?subject=Product Inquiry&body=
                 Hello brandbuildng, I'm interested in this product:\n\n*${selectedOffer.title}* 📌\n${selectedOffer.description}\nPrice: $${selectedOffer.price} 💰\nDiscount: ${selectedOffer.discount}% 🎉                  `}
                 className="block text-center bg-gray-800 text-white py-3 rounded-lg font-medium transition hover:bg-gray-900"
               >

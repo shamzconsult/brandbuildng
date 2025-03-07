@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
 
     await transporter.sendMail({
       from: email, 
-      to: 'brandbuildng@gmail.com',
+      to: 'brandbuildnglimited@gmail.com',
       subject: `Message from ${name}`,
       text: `Hi BrandBuild, I am ${name}, 
       Here is my message ${message}

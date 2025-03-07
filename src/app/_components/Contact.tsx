@@ -38,7 +38,7 @@ function Contact() {
                     </div>
                     <div className="flex gap-2 mb-2 items-center">
                     <i className="bi bi-envelope-fill"></i>
-                    <p>brandbuildng@gmail.com</p>
+                    <p>brandbuildnglimited@gmail.com</p>
                     </div>
                     <div className="flex gap-2 mb-2 items-center">
                     <i className="bi bi-geo-alt-fill"></i>
