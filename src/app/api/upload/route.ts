@@ -20,6 +20,7 @@ function getCorsHeaders(origin: string) {
     'Access-Control-Allow-Origin': allowedOrigins.includes(origin) ? origin : allowedOrigins[0],
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    'Access-Control-Allow-Credentials': 'true',
   };
 }
 
@@ -41,7 +42,10 @@ export async function POST(req: Request) {
     const file = formData.get('image') as File;
     if (!file) {
       console.error("No file found in FormData");
-      return NextResponse.json({ error: 'No file uploaded' }, { status: 400 });
+      return NextResponse.json(
+        { error: 'No file uploaded' }, 
+        { status: 400, headers: corsHeaders }
+      );
     }
 
     const bytes = await file.arrayBuffer();
@@ -63,22 +67,25 @@ export async function POST(req: Request) {
       uploadStream.end();
     });
 
-    return NextResponse.json({ url: uploadResponse.secure_url }, { status: 201 });
+    return NextResponse.json(
+      { url: uploadResponse.secure_url }, 
+      { status: 201, headers: corsHeaders }
+    );
 
   } catch (error) {
     console.error("Upload Error:", error);
-    return NextResponse.json({ error: "Upload failed" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Upload failed" }, 
+      { status: 500, headers: getCorsHeaders(req.headers.get('origin') || '') }
+    );
   }
 }
 
 export async function OPTIONS(req: Request) {
   const origin = req.headers.get('origin') || '';
   
-  return NextResponse.json(
-    {},
-    {
-      status: 204,
-      headers: getCorsHeaders(origin)
-    }
-  );
+  return new NextResponse(null, {
+    status: 204,
+    headers: getCorsHeaders(origin)
+  });
 }
