@@ -1,5 +1,13 @@
+export const dynamic = "force-dynamic"; 
+
 import { NextResponse } from 'next/server';
 import { v2 as cloudinary } from 'cloudinary';
+
+const allowedOrigins = [
+  'https://www.brandbuildng.com',
+  'https://brandbuildng.com',
+  'http://localhost:3000'
+];
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME!,
@@ -7,8 +15,26 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET!,
 });
 
+function getCorsHeaders(origin: string) {
+  return {
+    'Access-Control-Allow-Origin': allowedOrigins.includes(origin) ? origin : allowedOrigins[0],
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+  };
+}
+
 export async function POST(req: Request) {
   try {
+    const origin = req.headers.get('origin') || '';
+    const corsHeaders = getCorsHeaders(origin);
+
+    if (!allowedOrigins.includes(origin)) {
+      return NextResponse.json(
+        { error: 'Unauthorized' },
+        { status: 401, headers: corsHeaders }
+      );
+    }
+
     const formData = await req.formData();
     console.log("Received FormData keys:", [...formData.keys()]);
 
@@ -45,13 +71,14 @@ export async function POST(req: Request) {
   }
 }
 
-export async function OPTIONS() {
-  return new NextResponse(null, {
-    status: 204,
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "POST, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization",
-    },
-  });
+export async function OPTIONS(req: Request) {
+  const origin = req.headers.get('origin') || '';
+  
+  return NextResponse.json(
+    {},
+    {
+      status: 204,
+      headers: getCorsHeaders(origin)
+    }
+  );
 }
