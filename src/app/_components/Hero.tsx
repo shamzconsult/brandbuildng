@@ -36,15 +36,16 @@ function Hero() {
                     its audience.
                 </p>
 
-                <div>
+                <div className=""> 
                     <a
-                    href="/contact"
-                    rel="noreferrer"
-                    className="inline-block md:text-lg text-sm font-bold rounded-full bg-orange-500 py-2 px-4 md:py-3 md:px-6 text-white transition-colors duration-[0.3s] hover:bg-white hover:text-orange-500"                    
+                        href="/contact"
+                        rel="noreferrer"
+                        className="inline-block md:text-lg text-sm font-bold rounded-full bg-orange-500 py-2 px-6 md:py-3 md:px-8 text-white transition-colors duration-300 hover:bg-white hover:text-orange-500 w-full max-w-[300px] text-center"
                     >
                         Work with us!
                     </a>
                 </div>
+
             </div>
         </div>
     </section>

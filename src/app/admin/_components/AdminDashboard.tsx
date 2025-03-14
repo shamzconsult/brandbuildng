@@ -308,7 +308,7 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
                 {offer.description}
               </p>
 
-              <p className='text-3xl text-orange-500 mt-4'>${offer.price}</p>
+              <p className='text-3xl text-orange-500 mt-4'>#{offer.price}</p>
 
               <div className=" p-4 justify-center flex space-x-2">
                 <div className="flex gap-4 w-full">

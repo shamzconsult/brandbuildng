@@ -48,13 +48,12 @@ function Intro() {
         </div>
 
         <div className="border shadow-md rounded-lg p-6 text-center" id='web-development'>
-          <i className="bi bi-globe text-5xl text-[#ff6600] mb-10"></i>
+          <i className="bi bi-printer-fill text-5xl text-[#ff6600] mb-10"></i>
           <h3 className="text-orange-500 mt-4 font-semibold mb-4">
-            Web Development and E-Commerce Solutions
+            General Printing
           </h3>
           <p>
-            Build a seamless online presence with our customized web development
-            services.
+          We offer high-quality printing services for business cards, brochures, banners, flyers, and more.
           </p>
         </div>
 
@@ -76,7 +75,7 @@ function Intro() {
         
       </div>
 
-      <div className='justify-items-center mt-8'>
+      {/* <div className='justify-items-center mt-8'>
           <div className="border shadow-md rounded-lg p-6 text-center ">
             <i className="bi bi-printer-fill text-5xl text-[#ff6600] mb-10"></i>
             <h3 className="text-orange-500 mt-4 font-semibold mb-4">
@@ -84,7 +83,7 @@ function Intro() {
             </h3>
             <p>We offer high-quality printing services for business cards, brochures, banners, flyers, and more.</p>
           </div>
-        </div>
+        </div> */}
     
     </div>
   );
