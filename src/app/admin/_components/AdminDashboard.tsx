@@ -268,153 +268,102 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
 
   
   return (
-    <div className="p-10 mt-20 max-w-screen-xl mx-auto">
-      <h2 className="text-2xl text-orange-500 font-bold text-center">Admin Dashboard</h2>
-
-      <div className="flex justify-between p-4">
-        <button 
-          onClick={() => openModal()} 
-          className="bg-orange-500 text-white px-4 py-2 rounded-md"
-        >
-          Add New Offer
-        </button>
-
-        <button 
-          onClick={handleLogout} 
-          className=" text-black hover:underline px-4 py-2 rounded-md"
-        >
-          Logout
-        </button>
+    <div className="max-w-screen-2xl mx-auto">
+      {/* Hero Section */}
+      <div className="relative  h-[600px] bg-cover bg-center flex items-center justify-center text-white" style={{ backgroundImage: "url('/assets/images/kappframework-bRXJUP(1)(1).png')" }}>
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div className="relative text-center z-10">
+          <h1 className="text-4xl md:text-5xl font-bold">Welcome, Admin!</h1>
+          <p className="mt-4 text-lg text-gray-200">Manage your offers efficiently with ease</p>
+          <div className="flex justify-center gap-4 mt-6">
+            <button
+              onClick={() => openModal()}
+              className="bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-orange-600 transition"
+            >
+              + Add New Offer
+            </button>
+            <button
+              onClick={handleLogout}
+              className="bg-gray-700 text-white px-6 py-3 rounded-md hover:bg-gray-800 transition"
+            >
+              Logout
+            </button>
+          </div>
+        </div>
       </div>
 
-      
+      {/* Uploaded Products Section */}
+      <h2 className="text-center mt-16 text-4xl text-gray-700 font-semibold">Uploaded Products</h2>
 
-      <h2 className="text-center mt-20 text-3xl text-gray-400 md:text-5xl">Uploaded Products</h2>
-
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="mt-10 max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {offers.map((offer) => (
-          <div key={offer._id} className="relative block border mt-10 bg-slate-50 rounded-2xl shadow-md">
-            
-            <span
-              className="absolute -right-px -top-px rounded-bl-3xl rounded-tr-3xl bg-orange-500 px-6 py-4 font-medium uppercase tracking-widest text-white"
-            >
+          <div key={offer._id} className="relative bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all">
+            <span className="absolute top-0 right-0 bg-orange-500 text-white px-4 py-2 text-sm font-semibold rounded-bl-lg">
               Save {offer.discount}%
             </span>
-            <img src={offer.image} alt={offer.title} className="h-80 w-full object-cover rounded-tr-3xl" />
-            <div className="p-4 text-center">
-              <strong className="text-xl font-medium text-gray-900"> {offer.title} </strong>
 
-              <p className="mt-2 text-gray-400">
-                {offer.description}
-              </p>
+            <img src={offer.image} alt={offer.title} className="h-80 w-full object-cover" />
 
-              <p className='text-3xl text-orange-500 mt-4'>#{offer.price}</p>
+            <div className="p-5 text-center">
+              <h3 className="text-2xl font-semibold text-gray-900">{offer.title}</h3>
+              <p className="mt-2 text-gray-500">{offer.description}</p>
+              <p className="text-3xl text-orange-500 font-bold mt-4">#{offer.price}</p>
 
-              <div className=" p-4 justify-center flex space-x-2">
-                <div className="flex gap-4 w-full">
-                  <div className="flex items-center justify-center gap-2 border border-blue-500 text-blue-500 px-4 py-2 rounded-2xl cursor-pointer hover:bg-blue-50 w-1/2">
-                    <h3>Edit</h3>
-                    <CiEdit onClick={() => openModal(offer)} size={24} className="cursor-pointer" />
-                  </div>
-
-                  <div className="flex items-center justify-center gap-2 bg-red-500 text-white px-4 py-2 rounded-2xl cursor-pointer hover:bg-red-700 w-1/2">
-                    <h3>Delete</h3>
-                    <CiTrash onClick={() => handleDelete(offer._id)} size={24} className="cursor-pointer" />
-                  </div>
-                </div>
+              <div className="flex gap-4 mt-6">
+                <button
+                  onClick={() => openModal(offer)}
+                  className="flex items-center justify-center gap-2 border border-blue-500 text-blue-500 px-5 py-2 rounded-lg cursor-pointer hover:bg-blue-50 transition w-1/2"
+                >
+                  <CiEdit size={20} /> Edit
+                </button>
+                <button
+                  onClick={() => handleDelete(offer._id)}
+                  className="flex items-center justify-center gap-2 bg-red-500 text-white px-5 py-2 rounded-lg cursor-pointer hover:bg-red-600 transition w-1/2"
+                >
+                  <CiTrash size={20} /> Delete
+                </button>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-
+      {/* Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-md w-96">
-            <h2 className="text-xl font-bold mb-6">{editingOffer ? 'Edit Offer' : 'Create Offer'}</h2>
-            <form onSubmit={editingOffer ? handleUpdate : handleSubmit} className="space-y-4">
-              <div className=''>
-                <label htmlFor="title">Title</label>
-                <input 
-                  type="text" 
-                  name="title" 
-                  value={formData.title} 
-                  onChange={handleChange} 
-                  placeholder="Offer Title" 
-                  className="w-full p-4 border rounded-md"
-                  required 
-                />
-              </div>
-
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-8 rounded-lg shadow-lg w-96">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">{editingOffer ? "Edit Offer" : "Create Offer"}</h2>
+            <form onSubmit={editingOffer ? handleUpdate : handleSubmit} className="space-y-5">
               <div>
-                <label htmlFor="description">Description</label>
-                <textarea 
-                  name="description" 
-                  value={formData.description} 
-                  onChange={handleChange} 
-                  placeholder="Offer Description" 
-                  className="w-full p-4 border rounded-md"
-                  required
-                ></textarea>
+                <label className="text-gray-700 font-medium">Title</label>
+                <input type="text" name="title" value={formData.title} onChange={handleChange} placeholder="Offer Title" className="w-full p-3 border rounded-md focus:ring-2 focus:ring-orange-400" required />
               </div>
-
               <div>
-                <label htmlFor="discount">Discount</label>
-                <input 
-                  type="text" 
-                  name="discount" 
-                  value={formData.discount} 
-                  onChange={handleChange} 
-                  placeholder="Discount %" 
-                  className="w-full p-4 border rounded-md"
-                  required
-                />
+                <label className="text-gray-700 font-medium">Description</label>
+                <textarea name="description" value={formData.description} onChange={handleChange} placeholder="Offer Description" className="w-full p-3 border rounded-md focus:ring-2 focus:ring-orange-400" required></textarea>
               </div>
-
               <div>
-                <label htmlFor="price">Price</label>
-                <input 
-                  type="text" 
-                  name="price" 
-                  value={formData.price} 
-                  onChange={handleChange} 
-                  placeholder="Price" 
-                  className="w-full p-4 border rounded-md"
-                  required
-                />
+                <label className="text-gray-700 font-medium">Discount (%)</label>
+                <input type="text" name="discount" value={formData.discount} onChange={handleChange} placeholder="Discount %" className="w-full p-3 border rounded-md focus:ring-2 focus:ring-orange-400" required />
               </div>
-
               <div>
-                <label htmlFor="image">Image</label>
-                <input 
-                  type="file" 
-                  accept="image/*"
-                  ref={fileInputRef}
-                  onChange={(e) => setFile(e.target.files?.[0] || null)} 
-                  className="w-full p-4 border rounded-md"
-                />
+                <label className="text-gray-700 font-medium">Price</label>
+                <input type="text" name="price" value={formData.price} onChange={handleChange} placeholder="Price" className="w-full p-3 border rounded-md focus:ring-2 focus:ring-orange-400" required />
               </div>
-
-              <button 
-                type="submit" 
-                className="bg-orange-500 text-white w-full py-2 rounded-md">
-                  {uploading ? 'Uploading...' : editingOffer ? 'Update Offer' : 'Upload Offer'}
+              <div>
+                <label className="text-gray-700 font-medium">Upload Image</label>
+                <input type="file" accept="image/*" ref={fileInputRef} onChange={(e) => setFile(e.target.files?.[0] || null)} className="w-full p-3 border rounded-md" />
+              </div>
+              <button type="submit" className="bg-orange-500 text-white w-full py-3 rounded-md font-medium hover:bg-orange-600 transition">
+                {uploading ? "Uploading..." : editingOffer ? "Update Offer" : "Upload Offer"}
               </button>
-
-              <button 
-                type="button"
-                onClick={() => setIsModalOpen(false)}
-                className="bg-gray-500 text-white w-full py-2 mt-2 rounded-md"
-              >
+              <button type="button" onClick={() => setIsModalOpen(false)} className="bg-gray-500 text-white w-full py-3 mt-2 rounded-md font-medium hover:bg-gray-600 transition">
                 Cancel
               </button>
-
             </form>
           </div>
         </div>
       )}
-
     </div>
   );
 }

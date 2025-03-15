@@ -27,19 +27,20 @@ function Intro() {
         </div>
 
         <div className="border shadow-md rounded-lg p-6 text-center">
-          <i className="bi bi-bar-chart-fill text-5xl text-[#ff6600] mb-10"></i>
+          <i className="bi bi-person-badge text-5xl text-[#ff6600] mb-10"></i>
           <h3 className="text-orange-500 mt-4 font-semibold mb-4">
-            Digital Marketing Solutions
+            Corporate Branding
           </h3>
           <p>
-            Leverage the power of digital with our cutting-edge marketing strategies.
+            We offer holistic brand identity crafting for
+            corporate organizations          
           </p>
         </div>
 
         <div className="border shadow-md rounded-lg p-6 text-center" id='creative-design'>
           <i className="bi bi-palette-fill text-5xl text-[#ff6600] mb-10"></i>
           <h3 className="text-orange-500 mt-4 font-semibold mb-4">
-            Creative Design and Visual Identity
+            Creative Design Solutions
           </h3>
           <p>
             Wecreate stunning logos, packaging, and visual assets that
@@ -47,7 +48,18 @@ function Intro() {
           </p>
         </div>
 
-        <div className="border shadow-md rounded-lg p-6 text-center" id='web-development'>
+        <div className="border shadow-md rounded-lg p-6 text-center" id='creative-design'>
+          <i className="bi bi-box-seam text-5xl text-[#ff6600] mb-10"></i>
+          <h3 className="text-orange-500 mt-4 font-semibold mb-4">
+            Packaging Design
+          </h3>
+          <p>
+            We create custom packaging materials that align
+            with brand identities and ensure brands stand out.
+          </p>
+        </div>
+
+        {/* <div className="border shadow-md rounded-lg p-6 text-center" id='web-development'>
           <i className="bi bi-printer-fill text-5xl text-[#ff6600] mb-10"></i>
           <h3 className="text-orange-500 mt-4 font-semibold mb-4">
             General Printing
@@ -55,20 +67,21 @@ function Intro() {
           <p>
           We offer high-quality printing services for business cards, brochures, banners, flyers, and more.
           </p>
-        </div>
+        </div> */}
 
         <div className="border shadow-md rounded-lg p-6 text-center">
           <i className="bi bi-pencil-fill text-5xl text-[#ff6600] mb-10"></i>
           <h3 className="text-orange-500 mt-4 font-semibold mb-4">
-            Content Creation and Storytelling
+            Rebranding Services
           </h3>
-          <p>We create content that engages and inspires.</p>
+          <p>Our Rebranding services include signage, logo redesign, souvenir production, and
+           visual overhaul</p>
         </div>
 
         <div className="border shadow-md rounded-lg p-6 text-center" id='event-branding'>
           <i className="bi bi-megaphone-fill text-5xl text-[#ff6600] mb-10"></i>
           <h3 className="text-orange-500 mt-4 font-semibold mb-4">
-            Event Branding and Marketing
+            Event and Campaign Branding
           </h3>
           <p>We make your events unforgettable with our tailored branding solutions.</p>
         </div>
