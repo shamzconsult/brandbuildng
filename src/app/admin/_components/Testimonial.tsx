@@ -11,8 +11,12 @@ interface Testimonial {
   image: string;
 }
 
-const Testimonial = () => {
-  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+interface TestimonialProps {
+  testimonials: Testimonial[];
+}
+
+const Testimonial = ({ testimonials: initialTestimonials }: TestimonialProps) => {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>(initialTestimonials);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState<Testimonial>({
     _id: "",
@@ -23,23 +27,11 @@ const Testimonial = () => {
   });
   const [editingTestimonial, setEditingTestimonial] = useState<Testimonial | null>(null);
 
-  useEffect(() => {
-    fetchTestimonials();
-  }, []);
-
-  const fetchTestimonials = async () => {
-    try {
-      const res = await fetch("/api/testimonial");
-      const data: Testimonial[] = await res.json();
-      setTestimonials(data);
-    } catch (error) {
-      console.error("Error fetching testimonials:", error);
-    }
-  };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -52,6 +44,30 @@ const Testimonial = () => {
     }
   };
 
+  useEffect(() => {
+    // Check if data exists in localStorage
+    const cachedTestimonials = localStorage.getItem("testimonials");
+    if (cachedTestimonials) {
+      setTestimonials(JSON.parse(cachedTestimonials));
+    }
+
+    // Fetch fresh data from the server
+    fetchTestimonials();
+  }, []);
+
+  const fetchTestimonials = async () => {
+    try {
+      const res = await fetch("/api/testimonial");
+      const data: Testimonial[] = await res.json();
+      setTestimonials(data);
+
+      localStorage.setItem("testimonials", JSON.stringify(data));
+    } catch (error) {
+      console.error("Error fetching testimonials:", error);
+    }
+  };
+
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {

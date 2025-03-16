@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { CiEdit } from "react-icons/ci";
 import { CiTrash } from "react-icons/ci";
 import { useRef } from "react";
-import Testimonial from './Testimonial';
+// import Testimonial from './Testimonial';
 
 
 interface Offer {
@@ -50,6 +50,15 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
     }
   }, [router]);
   
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    window.location.href = "/login";
+  };
+
 
   useEffect(() => {
     async function fetchOffers() {
@@ -64,23 +73,13 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
     fetchOffers();
   }, [])
 
-  // useEffect(() => {
-  //   const loggedInStatus = localStorage.getItem("isLoggedIn") === "true";
-  //   if (!loggedInStatus) {
-  //     router.replace("/login");
-  //   }
-  // }, [router]);
   
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
+  // };
 
-  const handleLogout = () => {
-    localStorage.removeItem("isLoggedIn");
-    window.location.href = "/login";
-  };
-
+  
 
   // const handleLogout = async () => {
   //   localStorage.removeItem("isLoggedIn");
@@ -365,11 +364,8 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
           </div>
         </div>
       )}
-
-      <Testimonial/>
+      {/* <Testimonial/> */}
     </div>
-
-    
   );
 }
 
