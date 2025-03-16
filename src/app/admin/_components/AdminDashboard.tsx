@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { CiEdit } from "react-icons/ci";
 import { CiTrash } from "react-icons/ci";
 import { useRef } from "react";
+import Testimonial from './Testimonial';
 
 
 interface Offer {
@@ -295,7 +296,7 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
       {/* Uploaded Products Section */}
       <h2 className="text-center mt-16 text-4xl text-gray-700 font-semibold">Uploaded Products</h2>
 
-      <div className="mt-10 max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="mt-10 max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-6">
         {offers.map((offer) => (
           <div key={offer._id} className="relative bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all">
             <span className="absolute top-0 right-0 bg-orange-500 text-white px-4 py-2 text-sm font-semibold rounded-bl-lg">
@@ -331,7 +332,7 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-8 rounded-lg shadow-lg w-96">
+          <div className="bg-white p-8 rounded-lg shadow-lg">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">{editingOffer ? "Edit Offer" : "Create Offer"}</h2>
             <form onSubmit={editingOffer ? handleUpdate : handleSubmit} className="space-y-5">
               <div>
@@ -364,7 +365,11 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
           </div>
         </div>
       )}
+
+      <Testimonial/>
     </div>
+
+    
   );
 }
 

@@ -1,0 +1,216 @@
+'use client'
+
+import React, { useEffect, useState } from "react";
+import { CiEdit, CiTrash } from "react-icons/ci";
+
+interface Testimonial {
+  _id: string;
+  quote: string;
+  name: string;
+  stars: number;
+  image: string;
+}
+
+const Testimonial = () => {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState<Testimonial>({
+    _id: "",
+    quote: "",
+    name: "",
+    stars: 0,
+    image: "",
+  });
+  const [editingTestimonial, setEditingTestimonial] = useState<Testimonial | null>(null);
+
+  useEffect(() => {
+    fetchTestimonials();
+  }, []);
+
+  const fetchTestimonials = async () => {
+    try {
+      const res = await fetch("/api/testimonial");
+      const data: Testimonial[] = await res.json();
+      setTestimonials(data);
+    } catch (error) {
+      console.error("Error fetching testimonials:", error);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFormData({ ...formData, image: reader.result as string });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const method = editingTestimonial ? "PUT" : "POST";
+      const url = editingTestimonial
+        ? `/api/testimonial/${editingTestimonial._id}`
+        : "/api/testimonial";
+      await fetch(url, {
+        method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      fetchTestimonials();
+      setIsModalOpen(false);
+      setEditingTestimonial(null);
+    } catch (error) {
+      console.error("Error saving testimonial:", error);
+    }
+  };
+
+  const handleEdit = (testimonial: Testimonial) => {
+    setFormData(testimonial);
+    setEditingTestimonial(testimonial);
+    setIsModalOpen(true);
+  };
+
+  const handleDelete = async (id: string) => {
+    try {
+      await fetch(`/api/testimonial/${id}`, { method: "DELETE" });
+      fetchTestimonials();
+    } catch (error) {
+      console.error("Error deleting testimonial:", error);
+    }
+  };
+
+  return (
+    <div className="flex flex-col items-center p-10 w-full">
+  <h3 className="text-orange-500 text-3xl font-medium max-md:text-2xl text-center">
+    Manage Testimonials
+  </h3>
+
+  <div className="flex justify-end w-full max-w-screen-lg mt-6">
+    <button
+      onClick={() => setIsModalOpen(true)}
+      className="bg-orange-500 text-white px-6 py-2 rounded-md"
+    >
+      Add Testimonial
+    </button>
+  </div>
+
+  <div className="mt-10 flex flex-wrap justify-center gap-6 w-full max-w-screen-lg">
+    {testimonials.map((testimonial) => (
+      <div
+        key={testimonial._id}
+        className="relative p-6 w-[400px] bg-white shadow-md rounded-lg text-center"
+      >
+        {/* Border corner accents */}
+        <span className="absolute top-0 left-0 h-6 w-6 border-t-4 border-l-4 border-orange-500 rounded-tl-lg"></span>
+        <span className="absolute bottom-0 right-0 h-6 w-6 border-b-4 border-r-4 border-orange-500 rounded-br-lg"></span>
+
+        {/* Testimonial Image */}
+        <img
+          src={testimonial.image}
+          alt={testimonial.name}
+          className="w-24 h-24 rounded-full object-cover mb-4 shadow-lg border border-gray-200 mx-auto"
+        />
+
+        {/* Quote */}
+        <q className="italic text-gray-600 block">{testimonial.quote}</q>
+
+        {/* Star Rating */}
+        <div className="mt-2 text-yellow-400">
+          {[...Array(testimonial.stars)].map((_, i) => (
+            <i key={i} className="bi bi-star-fill"></i>
+          ))}
+        </div>
+
+        {/* Name */}
+        <p className="mt-3 text-gray-700 font-medium">- {testimonial.name}</p>
+
+        {/* Buttons */}
+        <div className="flex gap-4 mt-6 justify-center">
+          <button
+            onClick={() => handleEdit(testimonial)}
+            className="flex items-center justify-center gap-2 border border-blue-500 text-blue-500 px-5 py-2 rounded-lg cursor-pointer hover:bg-blue-50 transition w-1/2"
+          >
+            <CiEdit size={20} /> Edit
+          </button>
+          <button
+            onClick={() => handleDelete(testimonial._id)}
+            className="flex items-center justify-center gap-2 bg-red-500 text-white px-5 py-2 rounded-lg cursor-pointer hover:bg-red-600 transition w-1/2"
+          >
+            <CiTrash size={20} /> Delete
+          </button>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  {/* Modal */}
+  {isModalOpen && (
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+      <div className="bg-white p-6 rounded-md w-96">
+        <h2 className="text-xl font-bold mb-6">
+          {editingTestimonial ? "Edit Testimonial" : "Add Testimonial"}
+        </h2>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <input
+            type="text"
+            name="quote"
+            value={formData.quote}
+            onChange={handleChange}
+            placeholder="Testimonial quote"
+            className="w-full p-2 border rounded-md"
+            required
+          />
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Customer Name"
+            className="w-full p-2 border rounded-md"
+            required
+          />
+          <input
+            type="number"
+            name="stars"
+            value={formData.stars}
+            onChange={handleChange}
+            placeholder="Stars (1-5)"
+            className="w-full p-2 border rounded-md"
+            required
+          />
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleImageUpload}
+            className="w-full p-2 border rounded-md"
+            required
+          />
+
+          <button type="submit" className="bg-orange-500 text-white w-full py-2 rounded-md">
+            {editingTestimonial ? "Update" : "Add"} Testimonial
+          </button>
+          <button
+            type="button"
+            onClick={() => setIsModalOpen(false)}
+            className="bg-gray-500 text-white w-full py-2 mt-2 rounded-md"
+          >
+            Cancel
+          </button>
+        </form>
+      </div>
+    </div>
+  )}
+</div>
+
+  );
+};
+
+export default Testimonial;
