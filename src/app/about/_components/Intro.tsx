@@ -32,7 +32,7 @@ function Intro() {
                 <div className='mb-20'>
                     <div className="max-w-lg md:max-w-none lg:text-lg">
                         <h2 className="text-2xl p-2 font-semibold text-orange-500 sm:text-3xl">
-                            Brief Introduction
+                            Meet BrandBuild.ng
                         </h2>
 
                         <p className="mt-4 text-gray-700 p-2">

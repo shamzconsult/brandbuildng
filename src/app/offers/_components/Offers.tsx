@@ -48,7 +48,7 @@ function Offers({ offers }: OffersProps) {
               <div className="p-4 text-center">
                 <strong className="text-xl font-medium text-gray-900">{offer.title}</strong>
                 <p className="mt-2 text-gray-400">{offer.description}</p>
-                <p className='text-3xl text-orange-500 mt-4'>${offer.price}</p>
+                <p className='text-3xl text-orange-500 mt-4'>#{offer.price}</p>
                 {/* <p className='mt-2 text-yellow-400 text-xl'>★★★★☆</p> */}
 
                 {/* LEARN MORE BUTTON - Opens Modal */}

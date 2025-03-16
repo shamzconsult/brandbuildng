@@ -53,7 +53,7 @@ function Content() {
                     <img 
                         src="./assets/images/contact-hero-image.jpg" 
                         alt="" 
-                        className='max-w-2xl'
+                        className='max-w-lg'
                     />
                 </div>
 
@@ -149,7 +149,7 @@ function Content() {
                             <h2 className="mb-10 text-2xl font-bold">Follow Us</h2>
                             <div className="flex items-center justify-center gap-4">
                                 <a
-                                href="https://www.facebook.com/"
+                                href="https://www.facebook.com/brandbuild.ng"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="facebook"
@@ -159,7 +159,7 @@ function Content() {
                                 </a>
 
                                 <a
-                                href="https://www.instagram.com/"
+                                href="https://www.instagram.com/brandbuild.ng"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="instagram"

@@ -13,11 +13,17 @@ export function YTVideo({
         removeRounded ? "" : ""
       }`}
     >
-      <h2 className="text-center mb-6 text-gray-500 text-3xl md:text-4xl">
-        From the desk of the{" "}
-        {/* <span className="rotating-text">CEO</span> and{" "} */}
-        <span className="rotating-text">Founder</span>
-      </h2>
+     <div className="text-center mb-6">
+        <h2 className="font-bold text-gray-800 text-3xl md:text-4xl leading-tight">
+          Hear from our{" "}
+          <span className="text-orange-500 underline">
+            Founder
+          </span>
+        </h2>
+        <p className="text-gray-600 mt-2 text-lg md:text-xl">
+          Discover insights, vision, and journey directly from our Founder.
+        </p>
+      </div>
       <div className="absolute inset-0 flex justify-center items-center">
         <div className="loader"></div>
       </div>
@@ -33,6 +39,7 @@ export function YTVideo({
           />
         </div>
       </div>
+      
     </div>
   );
 }

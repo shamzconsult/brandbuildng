@@ -10,7 +10,7 @@ function Introduction() {
             className="flex h-[450px] w-[450px] overflow-hidden rounded-md max-md:mt-[5%] max-md:h-[300px] max-md:w-[300px]"
         >
             <img
-                src="./assets/images/branded-shirt.jpg"
+                src="./assets/images/kappframework-eiJZSF(1)(1).png"
                 alt="coffee"
                 className="w-full object-cover"
             />

@@ -1,13 +1,5 @@
-export const dynamic = "force-dynamic"; 
-
 import { NextResponse } from 'next/server';
 import { v2 as cloudinary } from 'cloudinary';
-
-const allowedOrigins = [
-  'https://www.brandbuildng.com',
-  'https://brandbuildng.com',
-  'http://localhost:3000'
-];
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME!,
@@ -15,36 +7,38 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET!,
 });
 
+const allowedOrigins = [
+  'https://www.brandbuildng.com',
+  'https://brandbuildng.com',
+  'http://localhost:3000',
+];
+
 function getCorsHeaders(origin: string) {
   return {
     'Access-Control-Allow-Origin': allowedOrigins.includes(origin) ? origin : allowedOrigins[0],
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-    'Access-Control-Allow-Credentials': 'true',
   };
 }
 
 export async function POST(req: Request) {
+  const origin = req.headers.get('origin') || '';
+
+  if (!allowedOrigins.includes(origin)) {
+    return NextResponse.json(
+      { error: 'Unauthorized' },
+      { status: 401, headers: getCorsHeaders(origin) }
+    );
+  }
+
   try {
-    const origin = req.headers.get('origin') || '';
-    const corsHeaders = getCorsHeaders(origin);
-
-    if (!allowedOrigins.includes(origin)) {
-      return NextResponse.json(
-        { error: 'Unauthorized' },
-        { status: 401, headers: corsHeaders }
-      );
-    }
-
     const formData = await req.formData();
-    console.log("Received FormData keys:", [...formData.keys()]);
-
     const file = formData.get('image') as File;
+
     if (!file) {
-      console.error("No file found in FormData");
       return NextResponse.json(
-        { error: 'No file uploaded' }, 
-        { status: 400, headers: corsHeaders }
+        { error: 'No file uploaded' },
+        { status: 400, headers: getCorsHeaders(origin) }
       );
     }
 
@@ -56,10 +50,11 @@ export async function POST(req: Request) {
         { folder: 'brandbuild-offers' },
         (error, result) => {
           if (error || !result) {
-            console.error("Cloudinary Upload Error:", error);
-            return reject(new Error("Cloudinary upload failed"));
+            console.error('Cloudinary Upload Error:', error);
+            reject(new Error('Cloudinary upload failed'));
+          } else {
+            resolve(result);
           }
-          resolve(result);
         }
       );
 
@@ -68,24 +63,22 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json(
-      { url: uploadResponse.secure_url }, 
-      { status: 201, headers: corsHeaders }
+      { url: uploadResponse.secure_url },
+      { status: 201, headers: getCorsHeaders(origin) }
     );
-
   } catch (error) {
-    console.error("Upload Error:", error);
+    console.error('Upload Error:', error);
     return NextResponse.json(
-      { error: "Upload failed" }, 
-      { status: 500, headers: getCorsHeaders(req.headers.get('origin') || '') }
+      { error: 'Upload failed' },
+      { status: 500, headers: getCorsHeaders(origin) }
     );
   }
 }
 
 export async function OPTIONS(req: Request) {
   const origin = req.headers.get('origin') || '';
-  
   return new NextResponse(null, {
     status: 204,
-    headers: getCorsHeaders(origin)
+    headers: getCorsHeaders(origin),
   });
 }
