@@ -66,6 +66,7 @@ const Testimonial = ({ testimonials: initialTestimonials }: TestimonialProps) =>
       console.error("Error fetching testimonials:", error);
     }
   };
+  
 
   
   const handleSubmit = async (e: React.FormEvent) => {
@@ -83,16 +84,33 @@ const Testimonial = ({ testimonials: initialTestimonials }: TestimonialProps) =>
       fetchTestimonials();
       setIsModalOpen(false);
       setEditingTestimonial(null);
+
+      // Reset form after submission
+      setFormData({
+        _id: "",
+        quote: "",
+        name: "",
+        stars: 0,
+        image: "",
+      });
     } catch (error) {
       console.error("Error saving testimonial:", error);
     }
   };
 
   const handleEdit = (testimonial: Testimonial) => {
-    setFormData(testimonial);
+    setFormData({
+      _id: testimonial._id,
+      quote: testimonial.quote,
+      name: testimonial.name,
+      stars: testimonial.stars,
+      image: testimonial.image, 
+    });
     setEditingTestimonial(testimonial);
     setIsModalOpen(true);
   };
+  
+
 
   const handleDelete = async (id: string) => {
     try {
@@ -118,7 +136,7 @@ const Testimonial = ({ testimonials: initialTestimonials }: TestimonialProps) =>
     </button>
   </div>
 
-  <div className="mt-10 flex flex-wrap justify-center gap-6 w-full max-w-screen-lg">
+  <div className="mt-10 flex flex-wrap justify-center gap-6 w-full max-w-screen-xl">
     {testimonials.map((testimonial) => (
       <div
         key={testimonial._id}
@@ -202,12 +220,15 @@ const Testimonial = ({ testimonials: initialTestimonials }: TestimonialProps) =>
             className="w-full p-2 border rounded-md"
             required
           />
+          {formData.image && !editingTestimonial && (
+            <img src={formData.image} alt="Uploaded Preview" className="w-20 h-20 object-cover mx-auto mb-2 rounded-full" />
+          )}
           <input
             type="file"
             accept="image/*"
             onChange={handleImageUpload}
             className="w-full p-2 border rounded-md"
-            required
+            required={!editingTestimonial}
           />
 
           <button type="submit" className="bg-orange-500 text-white w-full py-2 rounded-md">
