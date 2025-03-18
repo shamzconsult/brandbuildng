@@ -73,24 +73,6 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
     fetchOffers();
   }, [])
 
-  
-
-  // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-  //   setFormData({ ...formData, [e.target.name]: e.target.value });
-  // };
-
-  
-
-  // const handleLogout = async () => {
-  //   localStorage.removeItem("isLoggedIn");
-  
-  //   router.replace("/login");
-  
-  //   setTimeout(() => {
-  //     window.location.reload();
-  //   }, 100);
-  // };
-  
 
   const openModal = (offer: Offer | null = null) => {
     if (offer) {
