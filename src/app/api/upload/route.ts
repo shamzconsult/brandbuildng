@@ -51,3 +51,13 @@ export async function POST(req: Request) {
     );
   }
 }
+
+export async function GET() {
+  try {
+    const result = await cloudinary.api.ping();
+    return NextResponse.json({ message: 'Cloudinary is working', result });
+  } catch (error) {
+    console.error('Cloudinary Error:', error);
+    return NextResponse.json({ error: 'Cloudinary configuration failed' }, { status: 500 });
+  }
+}
