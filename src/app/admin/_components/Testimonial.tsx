@@ -113,13 +113,24 @@ const Testimonial = ({ testimonials: initialTestimonials }: TestimonialProps) =>
 
 
   const handleDelete = async (id: string) => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this testimonial?");
+    if (!confirmDelete) return; 
+  
     try {
-      await fetch(`/api/testimonial/${id}`, { method: "DELETE" });
+      const response = await fetch(`/api/testimonial/${id}`, { method: "DELETE" });
+  
+      if (!response.ok) {
+        throw new Error("Failed to delete testimonial");
+      }
+  
+      alert("Testimonial deleted successfully!");
       fetchTestimonials();
     } catch (error) {
       console.error("Error deleting testimonial:", error);
+      alert("An error occurred while deleting the testimonial. Please try again.");
     }
   };
+  
 
   return (
     <div className="flex flex-col items-center p-10 w-full py-20">
