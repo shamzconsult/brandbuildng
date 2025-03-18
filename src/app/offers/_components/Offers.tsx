@@ -84,7 +84,7 @@ function Offers({ offers }: OffersProps) {
             <div className='text-center'>
               <h3 className="text-2xl font-bold text-gray-900 mt-4">{selectedOffer.title}</h3>
               <p className="text-gray-600 mt-2">{selectedOffer.description}</p>
-              <p className="text-3xl text-orange-500 mt-4">${selectedOffer.price}</p>
+              <p className="text-3xl text-orange-500 mt-4">#{selectedOffer.price}</p>
             </div>
 
             <p className="text-center font-semibold mt-2">

@@ -7,30 +7,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET!,
 });
 
-const allowedOrigins = [
-  'https://www.brandbuildng.com',
-  'https://brandbuildng.com',
-  'http://localhost:3000',
-];
-
-function getCorsHeaders(origin: string) {
-  return {
-    'Access-Control-Allow-Origin': allowedOrigins.includes(origin) ? origin : allowedOrigins[0],
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-  };
-}
-
 export async function POST(req: Request) {
-  const origin = req.headers.get('origin') || '';
-
-  if (!allowedOrigins.includes(origin)) {
-    return NextResponse.json(
-      { error: 'Unauthorized' },
-      { status: 401, headers: getCorsHeaders(origin) }
-    );
-  }
-
   try {
     const formData = await req.formData();
     const file = formData.get('image') as File;
@@ -38,7 +15,7 @@ export async function POST(req: Request) {
     if (!file) {
       return NextResponse.json(
         { error: 'No file uploaded' },
-        { status: 400, headers: getCorsHeaders(origin) }
+        { status: 400 }
       );
     }
 
@@ -64,21 +41,13 @@ export async function POST(req: Request) {
 
     return NextResponse.json(
       { url: uploadResponse.secure_url },
-      { status: 201, headers: getCorsHeaders(origin) }
+      { status: 201 }
     );
   } catch (error) {
     console.error('Upload Error:', error);
     return NextResponse.json(
       { error: 'Upload failed' },
-      { status: 500, headers: getCorsHeaders(origin) }
+      { status: 500 }
     );
   }
-}
-
-export async function OPTIONS(req: Request) {
-  const origin = req.headers.get('origin') || '';
-  return new NextResponse(null, {
-    status: 204,
-    headers: getCorsHeaders(origin),
-  });
 }
