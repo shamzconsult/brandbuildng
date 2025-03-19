@@ -8,12 +8,13 @@ import Hero from "./_components/Hero";
 import Collection from "./services/_components/Collection";
 import { YTVideo } from "./about/_components/Video";
 import LogoSlider from "./about/_components/LogoSlider";
-import Offers from "./offers/_components/Offers";
-import { getAllOffer } from "@/service/offers/offers.server";
+// import Offers from "./offers/_components/Offers";
+// import { getAllOffer } from "@/service/offers/offers.server";
+import HomeOffer from "./_components/HomeOffer";
 
 
 export default async function Home() {
-    const offers = await getAllOffer();
+    // const offers = await getAllOffer();
   
   return (
    <div>
@@ -25,7 +26,8 @@ export default async function Home() {
 
       <Header />
       <Hero/>
-      <Offers offers={offers} />
+      <HomeOffer/>
+      {/* <Offers offers={offers} /> */}
       <Statistics />
       <Collection/>
       <YTVideo  ytVideoId="AaiSd3SrU6A" />
