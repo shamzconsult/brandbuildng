@@ -9,23 +9,33 @@ cloudinary.config({
 
 export async function POST(req: Request) {
   try {
-    const formData = await req.formData();
+    console.log(
+      "Checking request content type:",
+      req.headers.get("content-type")
+    );
+
+    // Ensure request is multipart/form-data
+    if (!req.headers.get("content-type")?.includes("multipart/form-data")) {
+      return NextResponse.json(
+        { error: "Invalid content type. Expected multipart/form-data" },
+        { status: 400 }
+      );
+    }
+
+    const formData = await req.formData(); // This is failing in your case
+    console.log("Parsed formData:", formData);
+
     const file = formData.get("image") as File;
-
-    console.log("formData", formData);
-    console.log("Uploading file", file);
-
     if (!file) {
       return NextResponse.json({ error: "No file uploaded" }, { status: 400 });
     }
 
-    const result = await cloudinary.api.ping();
+    console.log("Uploading file:", file);
 
-    console.log("ping result>>>", result);
-    console.log("Processing file bytes/buffer", file);
-
+    // Proceed with Cloudinary upload
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
+    console.log("Buffer size:", buffer.length);
 
     const uploadResponse = await new Promise<{ secure_url: string }>(
       (resolve, reject) => {
@@ -40,13 +50,10 @@ export async function POST(req: Request) {
             }
           }
         );
-        console.log("end");
         uploadStream.write(buffer);
         uploadStream.end();
       }
     );
-
-    console.log("upload response>>", uploadResponse);
 
     return NextResponse.json(
       { url: uploadResponse.secure_url },
