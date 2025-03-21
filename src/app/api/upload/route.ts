@@ -23,7 +23,7 @@ export async function POST(req: Request) {
     // }
 
     console.log("body >>>>>");
-    console.log(req.body);
+    console.log("req.body", req.body);
 
     const formData = await req.formData();
     console.log("Parsed formData:", formData);
