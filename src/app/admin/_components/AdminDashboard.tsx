@@ -259,6 +259,19 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
       {/* Uploaded Products Section */}
       <h2 className="text-center mt-16 text-4xl text-gray-700 font-semibold">Uploaded Products</h2>
 
+
+      {offers.length === 0 ? (
+        <div className="flex flex-col items-center justify-center mt-10">
+          <img
+            src="/assets/images/Offer-image/no-offer.avif"
+            alt="No Offers"
+            className="w-96 h-96 opacity-75"
+          />
+          <p className="text-gray-500 text-lg mt-4">
+            We are SORRY! No offers available at the moment.
+          </p>
+        </div>
+      ) : (
       <div className="mt-10 flex flex-wrap justify-center gap-6">
         {offers.map((offer) => (
             <div key={offer._id} className="relative w-[350px] sm:w-[400px] md:w-[400px] lg:w-[350px] xl:w-[380px] block rounded-tr-3xl border bg-slate-50 rounded-2xl border-gray-100 shadow-md">
@@ -291,6 +304,7 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
           </div>
         ))}
       </div>
+      )}
 
       {/* Modal */}
       {isModalOpen && (
