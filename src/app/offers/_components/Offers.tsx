@@ -13,13 +13,13 @@ interface Offer {
 }
 
 
-// interface OffersProps {
-//   offers: Offer[];
-// }
+interface OffersProps {
+  offers: Offer[];
+}
 
-function Offers() {
+function Offers({ offers: initialOffers }: OffersProps) {
   const [selectedOffer, setSelectedOffer] = useState<Offer | null>(null);
-  const [offers, setOffers] = useState<Offer[]>([]);
+  const [offers, setOffers] = useState<Offer[]>(initialOffers);
 
   useEffect(() => {
     async function fetchOffers() {
