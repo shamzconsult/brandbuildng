@@ -177,7 +177,7 @@ const Testimonial = ({ testimonials: initialTestimonials }: TestimonialProps) =>
                 : testimonial.quote}
             </q>
 
-            {/* Star Rating */}
+            {/* Star-Rating */}
             <div className="mt-2 text-yellow-400">
               {[...Array(testimonial.stars)].map((_, i) => (
                 <i key={i} className="bi bi-star-fill"></i>
