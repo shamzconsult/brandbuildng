@@ -22,7 +22,7 @@ function Offers({ offers }: OffersProps) {
 
   return (
     <div className="max-w-screen-xl mx-auto p-6">
-      <h2 className='text-center mt-20 text-3xl text-gray-400 md:text-5xl '>Available Products</h2>
+      <h2 className=' mt-20 text-4xl text-gray-400 md:text-5xl '> Hey Friend👋, checkout our Products</h2>
       
       {offers.length === 0 ? (
         <div className="flex flex-col items-center justify-center mt-10">
@@ -139,6 +139,3 @@ function Offers({ offers }: OffersProps) {
 }
 
 export default Offers;
-
-
-// https://f40skwq9-3000.uks1.devtunnels.ms/
