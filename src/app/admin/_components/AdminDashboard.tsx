@@ -268,7 +268,7 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
             className="w-96 h-96 opacity-75"
           />
           <p className="text-gray-500 text-lg mt-4">
-            We are SORRY! No offers available at the moment.
+            We are SORRY! No offers available at the moment..
           </p>
         </div>
       ) : (
