@@ -121,13 +121,13 @@ function HomeOffer() {
             {/* Close Button */}
             <button
               onClick={() => setSelectedOffer(null)}
-              className="absolute top-2 right-4 bg-black p-2 rounded-full text-white hover:text-gray-400 z-50"
+              className="absolute top-2 right-4 bg-black p-3 rounded-full text-white hover:text-gray-400 z-50"
             >
               ✖
             </button>
 
             {/* Image Section */}
-            <div className="md:w-1/2 h-[300px] md:h-auto">
+            <div className="md:w-1/2 h-[300px] md:h-auto"> 
               <img
                 src={selectedOffer.image}
                 alt={selectedOffer.title}
