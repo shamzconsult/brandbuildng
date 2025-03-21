@@ -134,9 +134,7 @@ const Testimonial = ({ testimonials: initialTestimonials }: TestimonialProps) =>
 
   return (
     <div className="flex flex-col items-center p-10 w-full py-20">
-      {/* <h3 className="text-orange-500 text-3xl font-medium max-md:text-2xl text-center">
-        Manage Testimonials
-      </h3> */}
+      
       <div className="relative w-full flex justify-center">
         <div className="relative max-w-screen-2xl w-full h-[400px] bg-cover bg-center flex items-center justify-center text-white"
           style={{ backgroundImage: "url('/assets/images/kappframework-elGsve(1)(1).png')" }}>
@@ -156,17 +154,6 @@ const Testimonial = ({ testimonials: initialTestimonials }: TestimonialProps) =>
         </div>
       </div>
 
-
-
-      {/* <div className="flex justify-end w-full max-w-screen-lg mt-6">
-        <button
-          onClick={() => setIsModalOpen(true)}
-          className="bg-orange-500 text-white px-6 py-2 rounded-md"
-        >
-          Add Testimonial
-        </button>
-      </div> */}
-
       <div className="mt-10 flex flex-wrap justify-center gap-6 w-full max-w-screen-xl">
         {testimonials.map((testimonial) => (
           <div
@@ -185,7 +172,12 @@ const Testimonial = ({ testimonials: initialTestimonials }: TestimonialProps) =>
             />
 
             {/* Quote */}
-            <q className="italic text-gray-600 block">{testimonial.quote}</q>
+            <q className="italic text-gray-600 block">
+              {testimonial.quote.split(" ").length > 30
+                ? testimonial.quote.split(" ").slice(0, 30).join(" ") + "..."
+                : testimonial.quote}
+            </q>
+
 
             {/* Star Rating */}
             <div className="mt-2 text-yellow-400">
