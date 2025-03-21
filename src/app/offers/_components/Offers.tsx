@@ -36,10 +36,10 @@ function Offers({ offers }: OffersProps) {
           </p>
         </div>
       ) : (
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-10 flex flex-wrap justify-center gap-6">
           {offers.map((offer) => (
-            <div key={offer._id} className="relative block rounded-tr-3xl border bg-slate-50 rounded-2xl border-gray-100 shadow-md">
-              <span className="absolute -right-px -top-px rounded-bl-3xl rounded-tr-3xl bg-orange-500 px-6 py-4 font-medium uppercase tracking-widest text-white">
+            <div key={offer._id} className="relative w-[350px] sm:w-[400px] md:w-[400px] lg:w-[350px] xl:w-[380px] block rounded-tr-3xl border bg-slate-50 rounded-2xl border-gray-100 shadow-md">
+              <span className="absolute -right-px -top-px rounded-bl-3xl rounded-tr-3xl bg-orange-500 px-6 py-2 font-medium uppercase tracking-widest text-white">
                 Save {offer.discount}%
               </span>
 
@@ -49,9 +49,7 @@ function Offers({ offers }: OffersProps) {
                 <strong className="text-xl font-medium text-gray-900">{offer.title}</strong>
                 <p className="mt-2 text-gray-400">{offer.description}</p>
                 <p className='text-3xl text-orange-500 mt-4'>#{offer.price}</p>
-                {/* <p className='mt-2 text-yellow-400 text-xl'>★★★★☆</p> */}
 
-                {/* LEARN MORE BUTTON - Opens Modal */}
                 <button 
                   onClick={() => setSelectedOffer(offer)}
                   className="mt-4 block w-full rounded-md border border-orange-900 bg-orange-500 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors"
@@ -62,73 +60,74 @@ function Offers({ offers }: OffersProps) {
             </div>
           ))}
         </div>
+
       )}
 
       {/* MODAL */}
       {selectedOffer && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-4">
-          <div className="relative w-full max-w-xl p-6 bg-white rounded-lg shadow-lg">
-            <button 
+          <div className="relative w-full max-w-4xl bg-white rounded-lg shadow-lg md:flex max-h-[90vh] overflow-y-auto">
+            {/* Close Button */}
+            <button
               onClick={() => setSelectedOffer(null)}
-              className="absolute top-2 right-4 text-gray-600 hover:text-gray-900"
+              className="absolute top-2 right-4 bg-black p-3 rounded-full text-white hover:text-gray-400 z-50"
             >
               ✖
             </button>
 
-            <img 
-              src={selectedOffer.image} 
-              alt={selectedOffer.title} 
-              className="w-full h-60 object-cover rounded-md" 
-            />
-
-            <div className='text-center'>
-              <h3 className="text-2xl font-bold text-gray-900 mt-4">{selectedOffer.title}</h3>
-              <p className="text-gray-600 mt-2">{selectedOffer.description}</p>
-              <p className="text-3xl text-orange-500 mt-4">#{selectedOffer.price}</p>
+            {/* Image Section */}
+            <div className="md:w-1/2 h-[300px] md:h-auto"> 
+              <img
+                src={selectedOffer.image}
+                alt={selectedOffer.title}
+                className="w-full h-full object-cover rounded-t-lg md:rounded-l-lg md:rounded-t-none"
+              />
             </div>
 
-            <p className="text-center font-semibold mt-2">
-              In Stock
-            </p>
+            {/* Text & Contact Section */}
+            <div className="md:w-1/2 p-6 flex flex-col justify-center">
+              <h3 className="text-2xl font-bold text-gray-900">{selectedOffer.title}</h3>
+              <p className="text-gray-600 mt-2">{selectedOffer.description}</p>
+              <p className="text-3xl text-orange-500 mt-4">#{selectedOffer.price}</p>
 
-            <p className="text-center mt-2 text-yellow-400 text-xl">
-              {"★".repeat(selectedOffer.rating || 0)}{"☆".repeat(5 - (selectedOffer.rating || 0))}
-            </p>
+              <p className="font-semibold mt-2">In Stock</p>
 
-            <p className="text-gray-600 text-sm text-center mt-4">
-              🚚 **Fast Delivery Available** | 🏠 **Pay on Delivery**
-            </p>
-            
-            {/* Contact Options */}
-            <div className="mt-4 flex flex-col space-y-2">
-              {/* WhatsApp Contact */}
-              <a
-                href={`https://wa.me/2349038940088?text=${encodeURIComponent(
-                  `Hello brandbuildng, I'm interested in this product:\n\n*${selectedOffer.title}* 📌\n${selectedOffer.description}\nPrice: $${selectedOffer.price} 💰\nDiscount: ${selectedOffer.discount}% 🎉`
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-center bg-green-500 text-white py-3 rounded-lg font-medium transition hover:bg-green-600"
-              >
-                Contact on WhatsApp 
-              </a>
+              {/* Star Rating */}
+              <p className="mt-2 text-yellow-400 text-xl">
+                {"★".repeat(selectedOffer.rating || 0)}{"☆".repeat(5 - (selectedOffer.rating || 0))}
+              </p>
 
-              {/* Call Option */}
-              <a
-                href="tel:+2349038940088"
-                className="block text-center bg-blue-500 text-white py-3 rounded-lg font-medium transition hover:bg-blue-600"
-              >
-                Call Us 📞
-              </a>
+              <p className="text-gray-600 text-sm mt-4">
+                🚚 **Fast Delivery Available** | 🏠 **Pay on Delivery**
+              </p>
 
-              {/* Email Option */}
-              <a
-                href={`mailto:brandbuildnglimited@gmail.com?subject=Product Inquiry&body=
-                Hello brandbuildng, I'm interested in this product:\n\n*${selectedOffer.title}* 📌\n${selectedOffer.description}\nPrice: $${selectedOffer.price} 💰\nDiscount: ${selectedOffer.discount}% 🎉                  `}
-                className="block text-center bg-gray-800 text-white py-3 rounded-lg font-medium transition hover:bg-gray-900"
-              >
-                Send Email 
-              </a>
+              {/* Contact Options */}
+              <div className="mt-4 flex flex-col space-y-2">
+                <a
+                  href={`https://wa.me/2349038940088?text=${encodeURIComponent(
+                    `Hello brandbuildng, I'm interested in this product:\n\n*${selectedOffer.title}* 📌\n${selectedOffer.description}\nPrice: #${selectedOffer.price} 💰\nDiscount: ${selectedOffer.discount}% 🎉`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center bg-green-500 text-white py-3 rounded-lg font-medium transition hover:bg-green-600"
+                >
+                  Contact on WhatsApp
+                </a>
+
+                <a
+                  href="tel:+2349038940088"
+                  className="block text-center bg-blue-500 text-white py-3 rounded-lg font-medium transition hover:bg-blue-600"
+                >
+                  Call Us 📞
+                </a>
+
+                <a
+                  href={`mailto:brandbuildnglimited@gmail.com?subject=Product Inquiry&body=Hello brandbuildng, I'm interested in this product:\n\n*${selectedOffer.title}* 📌\n${selectedOffer.description}\nPrice: #${selectedOffer.price} 💰\nDiscount: ${selectedOffer.discount}% 🎉`}
+                  className="block text-center bg-gray-800 text-white py-3 rounded-lg font-medium transition hover:bg-gray-900"
+                >
+                  Send Email
+                </a>
+              </div>
             </div>
           </div>
         </div>
