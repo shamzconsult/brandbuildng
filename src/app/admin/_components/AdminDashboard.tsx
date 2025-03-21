@@ -107,52 +107,34 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
         return;
     }
 
-    const imageFormData = new FormData();
-    imageFormData.append('image', file);
+    const formDataToSend = new FormData();
+    formDataToSend.append("title", formData.title);
+    formDataToSend.append("description", formData.description);
+    formDataToSend.append("price", formData.price);
+    formDataToSend.append("discount", formData.discount);
+    formDataToSend.append("image", file); 
 
     try {
-      const uploadRes = await fetch('/api/upload', {
+      const res = await fetch('/api/offers', {
         method: 'POST',
-        body: imageFormData,
+        body: formDataToSend, 
       });
-
-      if (!uploadRes.ok) {
-        console.error('Image upload failed:', await uploadRes.text());
-        setUploading(false);
+  
+      if (!res.ok) {
+        console.error('Failed to save offer:', await res.text());
         return;
       }
   
-      const imageData = await uploadRes.json();
-      const uploadedImageUrl = imageData.url;
-
-      const offerRes = await fetch('/api/offers', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          title: formData.title,
-          description: formData.description,
-          discount: formData.discount || 0,
-          price: formData.price,
-          image: uploadedImageUrl  
-        }),
+      const responseData = await res.json();
+      setOffers((prevOffers) => [...prevOffers, responseData.newOffer]);
+      setIsModalOpen(false);
+      setFormData({ 
+        title: '', 
+        description: '', 
+        discount: '', 
+        price: '' 
       });
-
-      if (!offerRes.ok) {
-        console.error('Failed to save offer:', await offerRes.text());
-      } else {
-        console.log('Offer saved successfully');
-        const responseData = await offerRes.json();
-        const newOffer: Offer = responseData.newOffer;
-        setOffers((prevOffers) => [...prevOffers, newOffer]);
-        setIsModalOpen(false);
-        setFormData({ 
-          title: '', 
-          description: '', 
-          discount: '', 
-          price: '' 
-        });
-        setFile(null);
-      }
+      setFile(null);
     } catch (error) {
       console.error('Error submitting form:', error);
     } finally {
@@ -277,14 +259,14 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
       {/* Uploaded Products Section */}
       <h2 className="text-center mt-16 text-4xl text-gray-700 font-semibold">Uploaded Products</h2>
 
-      <div className="mt-10 max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-6">
+      <div className="mt-10 flex flex-wrap justify-center gap-6">
         {offers.map((offer) => (
-          <div key={offer._id} className="relative bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all">
-            <span className="absolute top-0 right-0 bg-orange-500 text-white px-4 py-2 text-sm font-semibold rounded-bl-lg">
+            <div key={offer._id} className="relative w-[350px] sm:w-[400px] md:w-[400px] lg:w-[350px] xl:w-[380px] block rounded-tr-3xl border bg-slate-50 rounded-2xl border-gray-100 shadow-md">
+            <span className="absolute -right-px -top-px rounded-bl-3xl rounded-tr-3xl bg-orange-500 px-6 py-2 font-medium uppercase tracking-widest text-white">
               Save {offer.discount}%
             </span>
 
-            <img src={offer.image} alt={offer.title} className="h-80 w-full object-cover" />
+            <img src={offer.image} alt={offer.title} className="h-80 w-full rounded-tr-3xl object-cover" />
 
             <div className="p-5 text-center">
               <h3 className="text-2xl font-semibold text-gray-900">{offer.title}</h3>
@@ -326,15 +308,15 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
               </div>
               <div>
                 <label className="text-gray-700 font-medium">Discount (%)</label>
-                <input type="text" name="discount" value={formData.discount} onChange={handleChange} placeholder="Discount %" className="w-full p-3 border rounded-md focus:ring-2 focus:ring-orange-400" required />
+                <input type="number" name="discount" value={formData.discount} onChange={handleChange} placeholder="Discount %" className="w-full p-3 border rounded-md focus:ring-2 focus:ring-orange-400" required />
               </div>
               <div>
                 <label className="text-gray-700 font-medium">Price</label>
-                <input type="text" name="price" value={formData.price} onChange={handleChange} placeholder="Price" className="w-full p-3 border rounded-md focus:ring-2 focus:ring-orange-400" required />
+                <input type="number" name="price" value={formData.price} onChange={handleChange} placeholder="Price" className="w-full p-3 border rounded-md focus:ring-2 focus:ring-orange-400" required />
               </div>
               <div>
                 <label className="text-gray-700 font-medium">Upload Image</label>
-                <input type="file" accept="image/*" ref={fileInputRef} onChange={(e) => setFile(e.target.files?.[0] || null)} className="w-full p-3 border rounded-md" />
+                <input type="file"  accept="image/*" ref={fileInputRef} onChange={(e) => setFile(e.target.files?.[0] || null)} className="w-full p-3 border rounded-md" />
               </div>
               <button type="submit" className="bg-orange-500 text-white w-full py-3 rounded-md font-medium hover:bg-orange-600 transition">
                 {uploading ? "Uploading..." : editingOffer ? "Update Offer" : "Upload Offer"}
