@@ -113,7 +113,7 @@ export default function AdminDashboard({
         method: "POST",
         body: imageFormData,
         headers: {
-          "Content-Type": "multipart/form-data",
+          "Content-Type": "application/json",
         },
       });
 
@@ -124,6 +124,7 @@ export default function AdminDashboard({
       }
 
       const imageData = await uploadRes.json();
+      console.log(imageData);
       const uploadedImageUrl = imageData.url;
 
       const offerRes = await fetch("/api/offers", {

@@ -15,17 +15,21 @@ export async function POST(req: Request) {
     );
 
     // Ensure request is multipart/form-data
-    if (!req.headers.get("content-type")?.includes("multipart/form-data")) {
-      return NextResponse.json(
-        { error: "Invalid content type. Expected multipart/form-data" },
-        { status: 400 }
-      );
-    }
+    // if (!req.headers.get("content-type")?.includes("multipart/form-data")) {
+    //   return NextResponse.json(
+    //     { error: "Invalid content type. Expected multipart/form-data" },
+    //     { status: 400 }
+    //   );
+    // }
 
-    const formData = await req.formData(); // This is failing in your case
+    console.log("body >>>>>");
+    console.log(req.body);
+
+    const formData = await req.formData();
     console.log("Parsed formData:", formData);
 
     const file = formData.get("image") as File;
+    console.log("File before upload:", file);
     if (!file) {
       return NextResponse.json({ error: "No file uploaded" }, { status: 400 });
     }
