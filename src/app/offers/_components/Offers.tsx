@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface Offer {
   _id: string;
@@ -17,8 +17,22 @@ interface OffersProps {
   offers: Offer[];
 }
 
-function Offers({ offers }: OffersProps) {
+function Offers({ offers: initialOffers }: OffersProps) {
   const [selectedOffer, setSelectedOffer] = useState<Offer | null>(null);
+  const [offers, setOffers] = useState<Offer[]>(initialOffers);
+
+  useEffect(() => {
+    async function fetchOffers() {
+      try {
+        const res = await fetch('/api/offers', { cache: 'no-store' });
+        const data = await res.json();
+        setOffers(data);
+      } catch (error) {
+        console.error('Error fetching offers: ', error);
+      }
+    }
+    fetchOffers();
+  }, []);
 
   return (
     <div className="max-w-screen-xl mx-auto p-6">
