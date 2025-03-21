@@ -36,7 +36,7 @@ function Offers({ offers: initialOffers }: OffersProps) {
 
   return (
     <div className="max-w-screen-xl mx-auto p-6">
-      <h2 className=' mt-20 text-4xl text-gray-400 md:text-5xl '> Hey Friend👋, checkout our Products</h2>
+      <h2 className=' mt-20 text-4xl text-center text-gray-400 md:text-5xl '> Hey Friend👋, checkout our Products</h2>
       
       {offers.length === 0 ? (
         <div className="flex flex-col items-center justify-center mt-10">
