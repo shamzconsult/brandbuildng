@@ -158,9 +158,8 @@ const Testimonial = ({ testimonials: initialTestimonials }: TestimonialProps) =>
         {testimonials.map((testimonial) => (
           <div
             key={testimonial._id}
-            className="relative p-6 w-[400px] bg-white shadow-md rounded-lg text-center"
+            className="relative p-6 w-[400px] min-h-[300px] bg-white shadow-md rounded-lg text-center flex flex-col"
           >
-            {/* Border corner accents */}
             <span className="absolute top-0 left-0 h-6 w-6 border-t-4 border-l-4 border-orange-500 rounded-tl-lg"></span>
             <span className="absolute bottom-0 right-0 h-6 w-6 border-b-4 border-r-4 border-orange-500 rounded-br-lg"></span>
 
@@ -172,12 +171,11 @@ const Testimonial = ({ testimonials: initialTestimonials }: TestimonialProps) =>
             />
 
             {/* Quote */}
-            <q className="italic text-gray-600 block">
+            <q className="italic text-gray-600 block flex-grow">
               {testimonial.quote.split(" ").length > 30
                 ? testimonial.quote.split(" ").slice(0, 30).join(" ") + "..."
                 : testimonial.quote}
             </q>
-
 
             {/* Star Rating */}
             <div className="mt-2 text-yellow-400">
@@ -189,8 +187,7 @@ const Testimonial = ({ testimonials: initialTestimonials }: TestimonialProps) =>
             {/* Name */}
             <p className="mt-3 text-gray-700 font-medium">- {testimonial.name}</p>
 
-            {/* Buttons */}
-            <div className="flex gap-4 mt-6 justify-center">
+            <div className="flex gap-4 mt-auto justify-center">
               <button
                 onClick={() => handleEdit(testimonial)}
                 className="flex items-center justify-center gap-2 border border-blue-500 text-blue-500 px-5 py-2 rounded-lg cursor-pointer hover:bg-blue-50 transition w-1/2"
@@ -207,6 +204,7 @@ const Testimonial = ({ testimonials: initialTestimonials }: TestimonialProps) =>
           </div>
         ))}
       </div>
+
 
       {/* Modal */}
       {isModalOpen && (
