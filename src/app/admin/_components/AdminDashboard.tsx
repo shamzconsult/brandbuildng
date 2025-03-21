@@ -112,9 +112,6 @@ export default function AdminDashboard({
       const uploadRes = await fetch("/api/upload", {
         method: "POST",
         body: imageFormData,
-        headers: {
-          "Content-Type": "application/json",
-        },
       });
 
       if (!uploadRes.ok) {
