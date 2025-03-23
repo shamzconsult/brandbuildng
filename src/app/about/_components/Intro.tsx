@@ -17,7 +17,7 @@ function Intro() {
                         <p className='font-semibold'>Founder and CEO</p>
                         <div>
                             <Link
-                                href="https://www.linkedin.com/compLinkny/brandbuild-ng"
+                                href="https://www.linkedin.com/in/kaosarah-a-800680172/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="linkedin"
