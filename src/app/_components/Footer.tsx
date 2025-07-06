@@ -61,7 +61,7 @@ function Footer() {
 
                 <li>
                     <a
-                        href="mailto:brandbuildnglimited@email.com"
+                        href="mailto:brandbuildng@gmail.com"
                         rel="noreferrer"
                         target="_blank"
                         className="text-orange-500 transition hover:text-teal-700/75"
@@ -200,7 +200,7 @@ function Footer() {
                     <li>
                         <a
                             className="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
-                            href="mailto:brandbuildnglimited@gmail.com"
+                            href="mailto:brandbuildng@gmail.com"
                             >
                             <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -217,7 +217,7 @@ function Footer() {
                             />
                             </svg>
 
-                            <span className="flex-1 text-gray-700"> brandbuildnglimited@gmail.com</span>
+                            <span className="flex-1 text-gray-700"> brandbuildng@gmail.com</span>
                         </a>
                     </li>
 
