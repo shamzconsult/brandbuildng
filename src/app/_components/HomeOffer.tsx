@@ -164,7 +164,7 @@ function HomeOffer() {
 
       {/* View More Button */}
       <div className="mt-16 text-center">
-        <button className="px-8 py-3 bg-gray-900 hover:bg-gray-800 text-white rounded-lg text-lg font-medium transition inline-flex items-center">
+        <a href="/offers" className="px-8 py-3 bg-gray-900 hover:bg-gray-800 text-white rounded-lg text-lg font-medium transition inline-flex items-center">
           View All Products
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -178,7 +178,7 @@ function HomeOffer() {
               clipRule="evenodd"
             />
           </svg>
-        </button>
+        </a >
       </div>
 
       {/* MODAL - Enhanced Version */}
