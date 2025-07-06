@@ -37,7 +37,10 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
     price: ''
   });
 
-
+const truncateText = (text: string, maxLength: number) => {
+  if (text.length <= maxLength) return text;
+  return text.substring(0, maxLength) + '...';
+};
 
   useEffect(() => {
     const loggedInStatus = localStorage.getItem("isLoggedIn") === "true";
@@ -283,7 +286,7 @@ export default function AdminDashboard({ offers: initialOffers }: AdminDashboard
 
             <div className="p-5 text-center">
               <h3 className="text-2xl font-semibold text-gray-900">{offer.title}</h3>
-              <p className="mt-2 text-gray-500">{offer.description}</p>
+              <p className="mt-2 text-gray-500">{truncateText(offer.description, 50)}</p>
               <p className="text-3xl text-orange-500 font-bold mt-4">#{offer.price}</p>
 
               <div className="flex gap-4 mt-6">
